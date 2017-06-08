@@ -17,5 +17,17 @@ public class MainActivity extends Activity {
         // 正如我悄悄地走
         //我挥挥衣袖
         //不带走一片云彩
+        //打发啊发顺丰那份
+        //打
+        //l
+
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        //stop 方法
+        //nishuo sha
+        //最后hi二环房IEhi而非
     }
 }
