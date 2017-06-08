@@ -22,5 +22,7 @@ public class MainActivity extends Activity {
     protected void onStop() {
         super.onStop();
         //stop 方法
+        //nishuo sha
+        //最后hi二环房IEhi而非
     }
 }
