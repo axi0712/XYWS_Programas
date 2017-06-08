@@ -13,5 +13,14 @@ public class MainActivity extends Activity {
         //呵呵呵呵呵
         //ncienciencei
         //不说帮我吃了它
+        //打发啊发顺丰那份
+        //打
+
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        //stop 方法
     }
 }
