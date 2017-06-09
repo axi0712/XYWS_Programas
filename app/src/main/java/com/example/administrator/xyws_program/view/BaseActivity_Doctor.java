@@ -36,5 +36,6 @@ package com.example.administrator.xyws_program.view;
 
 
 public interface BaseActivity_Doctor {
+   //
 
 }
