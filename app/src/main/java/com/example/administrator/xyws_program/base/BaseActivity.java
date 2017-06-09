@@ -18,7 +18,7 @@ import butterknife.ButterKnife;
  * 类描述:  Activity公共类
  * 创建人: XIl
  * 创建时间: 2017/6/9 0009 9:44
- * 修改人:
+ * 修改人:x
  * 修改内容:
  * 修改时间:
  * #                                                   #
