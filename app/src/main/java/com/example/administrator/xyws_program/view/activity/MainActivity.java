@@ -101,7 +101,8 @@ public class MainActivity extends BaseActivity implements BaseActivity_Zhu {
     public void setMainTouText(TextView mainTouText) {
         this.mainTouText = mainTouText;
     }
-//得到第一个单选框
+
+    //得到第一个单选框
     public RadioButton getDoctorBtn() {
 
         return mainZhuRadioBtnDoctor;
@@ -139,10 +140,16 @@ public class MainActivity extends BaseActivity implements BaseActivity_Zhu {
 
     @Override
     protected void loadData() {
-        mFraList.add(new Fragment_Doctor());
-        mFraList.add(new Fragment_Blood());
-        mFraList.add(new Fragment_Persional());
-        mainView.setAdapter(new MainAdapter(getSupportFragmentManager(), mFraList));
+        if (!mFraList.equals(new Fragment_Doctor())) {
+            mFraList.add(new Fragment_Doctor());
+            mFraList.add(new Fragment_Blood());
+            mFraList.add(new Fragment_Persional());
+            mainView.setAdapter(new MainAdapter(getSupportFragmentManager(), mFraList));
+
+        } else {
+            mainView.setAdapter(new MainAdapter(getSupportFragmentManager(), mFraList));
+
+        }
 
 
     }
