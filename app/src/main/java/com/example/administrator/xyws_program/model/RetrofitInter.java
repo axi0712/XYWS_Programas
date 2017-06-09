@@ -55,25 +55,31 @@ import retrofit2.http.Url;
 public interface RetrofitInter {
     //普通的get请求
     @GET
-    Call<ResponseBody> get(@Url String url, @QueryMap Map<String,String> map);
+    Call<ResponseBody> get(@Url String url, @QueryMap Map<String, String> map);
+
     //带cookie值得get请求
     @GET
-    Call<ResponseBody> getCookie(@Header("cookie")String cookie,@Url String url, @QueryMap Map<String,String> map);
+    Call<ResponseBody> getCookie(@Header("cookie") String cookie, @Url String url, @QueryMap Map<String, String> map);
+
     //获取cookie值得get请求
     @GET
-    Call<ResponseBody> getLogin(@Url String url, @QueryMap Map<String,String> map);
+    Call<ResponseBody> getLogin(@Url String url, @QueryMap Map<String, String> map);
+
     //普通的post请求
     @FormUrlEncoded
     @POST
-    Call<ResponseBody> post(@Url String url, @FieldMap Map<String,String> map);
+    Call<ResponseBody> post(@Url String url, @FieldMap Map<String, String> map);
+
     //带cookie值得post请求
     @FormUrlEncoded
     @POST
-    Call<ResponseBody> postCookie(@Header("cookie")String cookie,@Url String url, @QueryMap Map<String,String> map);
+    Call<ResponseBody> postCookie(@Header("cookie") String cookie, @Url String url, @QueryMap Map<String, String> map);
+
     //获取cookie值得post请求
     @FormUrlEncoded
     @POST
-    Call<ResponseBody> postLogin(@Url String url, @QueryMap Map<String,String> map);
+    Call<ResponseBody> postLogin(@Url String url, @QueryMap Map<String, String> map);
+
     //上传文件的post请求
     @Multipart
     @POST

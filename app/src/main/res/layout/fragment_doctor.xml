@@ -1,10 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="hehe"
-        />
-</LinearLayout>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/doctor_title"
+            android:layout_width="match_parent"
+            android:layout_height="70px"
+            android:layout_marginBottom="20px"
+            android:layout_marginTop="20px"
+            android:background="#F9F9F9"
+            android:gravity="center"
+            android:paddingLeft="58px"
+            android:text="全国有70046位血压专家为您在线治疗"
+            android:textColor="#B4B4B4"
+            android:textSize="30px" />
+
+    </RelativeLayout>
+</ScrollView>
