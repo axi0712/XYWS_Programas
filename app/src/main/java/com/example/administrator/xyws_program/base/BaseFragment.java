@@ -7,6 +7,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
+
 /**
  * /**
  * 项目名称: 血压卫士
@@ -43,16 +46,42 @@ import android.view.ViewGroup;
 
 
 public abstract class BaseFragment extends Fragment {
+    protected Bundle bundle;
+    protected Unbinder unbinder;
+
+
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+    }
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(layoutId(), container, false);
-        initView(v);
-        initData();
-        updateTitleBar();
-        return v;
+        return inflater.inflate(layoutId(), container, false);
     }
 
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
+    }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        unbinder = ButterKnife.bind(this, view);
+        initView(view);
+        initListener();
+        initData();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        loadData();
+    }
 
     /**
      * 加载布局
@@ -71,36 +100,35 @@ public abstract class BaseFragment extends Fragment {
      */
     protected abstract void initData();
 
-    //更改标题
-    protected abstract void updateTitleBar();
+    /**
+     * 初始化监听
+     */
+    protected abstract void initListener();
 
-    public abstract void setParams(Bundle bundle);
-
-    @Override
-    public void onResume() {
-        super.onResume();
-    }
+    /**
+     * 加载数据
+     */
+    protected abstract void loadData();
 
     @Override
     public void onHiddenChanged(boolean hidden) {
         super.onHiddenChanged(hidden);
-        if (hidden) {
+        if(hidden){
             onHidden();
-        } else {
-            onShow();
+        }else{
+            onshow();
         }
     }
 
-    public void onHidden() {
-    }
+    public void onshow(){}
+    public void onHidden(){}
 
-    public void onShow() {
-        updateTitleBar();
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        layoutId();
-    }
+    /**
+     * Fragment销毁时
+     */
+//    @Override
+//    public void onDestroyView() {
+//        super.onDestroyView();
+//        unbinder.unbind();
+//    }
 }

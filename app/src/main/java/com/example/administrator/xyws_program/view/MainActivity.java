@@ -1,9 +1,18 @@
 package com.example.administrator.xyws_program.view;
 
-import android.app.Activity;
-import android.os.Bundle;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.example.administrator.xyws_program.R;
+import com.example.administrator.xyws_program.base.BaseActivity;
+
+import butterknife.BindView;
+import butterknife.OnClick;
 
 /**
  * /**
@@ -39,15 +48,76 @@ import com.example.administrator.xyws_program.R;
  * #                                                   #
  */
 
-public class MainActivity extends Activity {
+public class MainActivity extends BaseActivity implements BaseActivity_Zhu {
+
+
+    @BindView(R.id.main_tou_text)
+    TextView mainTouText;
+    @BindView(R.id.main_tou_linea)
+    LinearLayout mainTouLinea;
+    @BindView(R.id.main_zhu_frame)
+    FrameLayout mainZhuFrame;
+    @BindView(R.id.main_zhu_radio_btn_doctor)
+    RadioButton mainZhuRadioBtnDoctor;
+    @BindView(R.id.main_zhu_radio_btn_blood)
+    RadioButton mainZhuRadioBtnBlood;
+    @BindView(R.id.main_zhu_radio_btn_persional)
+    RadioButton mainZhuRadioBtnPersional;
+    @BindView(R.id.main_zhu_radio_group)
+    RadioGroup mainZhuRadioGroup;
+    @BindView(R.id.activity_main)
+    RelativeLayout activityMain;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    protected int getLayout() {
+        return R.layout.activity_main;
+    }
 
+    @Override
+    protected void init() {
+
+    }
+
+    @Override
+    protected void initListener() {
+
+    }
+
+    @Override
+    protected void loadData() {
 
     }
 
 
+    @Override
+    public void mFrame() {
+
+    }
+
+    @Override
+    public void getText(String str) {
+
+    }
+
+    @Override
+    public void getRadio(View.OnClickListener onClick) {
+
+    }
+
+
+    @OnClick({R.id.main_zhu_radio_btn_doctor, R.id.main_zhu_radio_btn_blood, R.id.main_zhu_radio_btn_persional})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.main_zhu_radio_btn_doctor:
+                mainTouText.setText("医生在线");
+
+                break;
+            case R.id.main_zhu_radio_btn_blood:
+                mainTouText.setText("血压管理");
+                break;
+            case R.id.main_zhu_radio_btn_persional:
+                mainTouLinea.setVisibility(View.GONE);
+                break;
+        }
+    }
 }

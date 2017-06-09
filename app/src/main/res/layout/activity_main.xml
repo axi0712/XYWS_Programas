@@ -4,14 +4,73 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.administrator.xyws_program.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    tools:context="com.example.administrator.xyws_program.view.MainActivity">
+
+    <LinearLayout
+        android:background="#24CE5E"
+        android:id="@+id/main_tou_linea"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <TextView
+            android:text="医生在线"
+            android:textColor="#fff"
+            android:textSize="20sp"
+            android:layout_gravity="center_vertical"
+            android:id="@+id/main_tou_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/main_zhu_frame"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:layout_below="@id/main_tou_linea"></FrameLayout>
+
+    <RadioGroup
+        android:id="@+id/main_zhu_radio_group"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:background="#F9F9F9"
+        android:layout_centerVertical="true"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <RadioButton
+            android:padding="5dp"
+            android:id="@+id/main_zhu_radio_btn_doctor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/main_zhu_doctor"
+            android:gravity="center"
+            android:text="医生在线" />
+
+        <RadioButton
+            android:padding="5dp"
+            android:id="@+id/main_zhu_radio_btn_blood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/main_zhu_blood"
+            android:gravity="center"
+            android:text="血压管理" />
+
+        <RadioButton
+            android:padding="5dp"
+            android:id="@+id/main_zhu_radio_btn_persional"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/main_zhu_persional"
+            android:gravity="center"
+            android:text="个人信息" />
+    </RadioGroup>
 </RelativeLayout>

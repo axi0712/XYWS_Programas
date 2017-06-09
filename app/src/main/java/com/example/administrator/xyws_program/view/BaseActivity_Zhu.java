@@ -1,5 +1,7 @@
 package com.example.administrator.xyws_program.view;
 
+import android.view.View;
+
 /**
  * /**
  * 项目名称: 血压卫士
@@ -35,7 +37,12 @@ package com.example.administrator.xyws_program.view;
  */
 
 
-public interface BaseActivity_Doctor {
-   //
+public interface BaseActivity_Zhu {
+    //中间的FrameLayout
+    void mFrame();
+    //LinearLayout的TextView
+      void getText(String str);
+    //RadioButton的点击事件
+    void getRadio(View.OnClickListener onClick);
 
 }
