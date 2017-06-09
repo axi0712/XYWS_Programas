@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.view.KeyEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -100,6 +101,25 @@ public class MainActivity extends BaseActivity implements BaseActivity_Zhu {
     public void setMainTouText(TextView mainTouText) {
         this.mainTouText = mainTouText;
     }
+//得到第一个单选框
+    public RadioButton getDoctorBtn() {
+
+        return mainZhuRadioBtnDoctor;
+    }
+//得到第二个单选框
+
+    public RadioButton getBloodBtn() {
+
+        return mainZhuRadioBtnBlood;
+    }
+//得到第三个单选框
+
+    public RadioButton getPersionalBtn() {
+
+        return mainZhuRadioBtnPersional;
+    }
+    //得到RadioGroup
+
 
     @Override
     protected int getLayout() {

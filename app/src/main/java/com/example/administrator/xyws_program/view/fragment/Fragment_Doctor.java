@@ -80,12 +80,16 @@ public class Fragment_Doctor extends BaseFragment {
     @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {
         super.setUserVisibleHint(isVisibleToUser);
-        if (isVisibleToUser){
+        if (isVisibleToUser) {
             ((MainActivity) MyApp.activity).getMainTouLinea().setVisibility(View.VISIBLE);
             ((MainActivity) MyApp.activity).getMainTouText().setText("医生在线");
+            ((MainActivity) MyApp.activity).getDoctorBtn().setChecked(true);
 
-        }else {
+
+        } else {
             ((MainActivity) MyApp.activity).getMainTouLinea().setVisibility(View.GONE);
+            ((MainActivity) MyApp.activity).getDoctorBtn().setChecked(false);
+
 
         }
     }

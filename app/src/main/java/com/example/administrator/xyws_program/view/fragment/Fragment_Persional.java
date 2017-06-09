@@ -85,11 +85,17 @@ public class Fragment_Persional extends BaseFragment {
         if (isVisibleToUser){
             ((MainActivity) MyApp.activity).getMainTouLinea().setVisibility(View.GONE);
 
+            ((MainActivity) MyApp.activity).getPersionalBtn().setChecked(true);
+
+
 
 
 
         }else {
             ((MainActivity) MyApp.activity).getMainTouLinea().setVisibility(View.VISIBLE);
+            ((MainActivity) MyApp.activity).getPersionalBtn().setChecked(false);
+
+
 
         }
     }

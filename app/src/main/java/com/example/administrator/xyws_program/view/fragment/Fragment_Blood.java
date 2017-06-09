@@ -82,9 +82,16 @@ public class Fragment_Blood extends BaseFragment {
         if (isVisibleToUser){
             ((MainActivity) MyApp.activity).getMainTouLinea().setVisibility(View.VISIBLE);
             ((MainActivity) MyApp.activity).getMainTouText().setText("血压管理");
+            ((MainActivity) MyApp.activity).getBloodBtn().setChecked(true);
+
+
 
         }else {
             ((MainActivity) MyApp.activity).getMainTouLinea().setVisibility(View.GONE);
+            ((MainActivity) MyApp.activity).getBloodBtn().setChecked(true);
+
+
+
 
         }
         //
