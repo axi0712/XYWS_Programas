@@ -1,10 +1,11 @@
 package com.example.administrator.xyws_program.view.activity;
 
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.ViewPager;
 import android.view.KeyEvent;
 import android.view.View;
-import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -18,6 +19,9 @@ import com.example.administrator.xyws_program.view.activity.inter.BaseActivity_Z
 import com.example.administrator.xyws_program.view.fragment.Fragment_Blood;
 import com.example.administrator.xyws_program.view.fragment.Fragment_Doctor;
 import com.example.administrator.xyws_program.view.fragment.Fragment_Persional;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -63,8 +67,7 @@ public class MainActivity extends BaseActivity implements BaseActivity_Zhu {
     TextView mainTouText;
     @BindView(R.id.main_tou_linea)
     LinearLayout mainTouLinea;
-    @BindView(R.id.main_zhu_frame)
-    FrameLayout mainZhuFrame;
+
     @BindView(R.id.main_zhu_radio_btn_doctor)
     RadioButton mainZhuRadioBtnDoctor;
     @BindView(R.id.main_zhu_radio_btn_blood)
@@ -75,9 +78,12 @@ public class MainActivity extends BaseActivity implements BaseActivity_Zhu {
     RadioGroup mainZhuRadioGroup;
     @BindView(R.id.activity_main)
     RelativeLayout activityMain;
+    @BindView(R.id.main_view)
+    ViewPager mainView;
     private FragmentManager man;
     private FragmentTransaction tra;
     private long mExitTime;
+    private List<Fragment> mFraList = new ArrayList<>();
     public LinearLayout getMainTouLinea() {
         return mainTouLinea;
     }
@@ -111,6 +117,11 @@ public class MainActivity extends BaseActivity implements BaseActivity_Zhu {
 
     @Override
     protected void loadData() {
+        mFraList.add(new Fragment_Doctor());
+        mFraList.add(new Fragment_Blood());
+        mFraList.add(new Fragment_Persional());
+        mainView.setAdapter(new MainAdapter(getSupportFragmentManager(),mFraList));
+
 
     }
 
@@ -127,7 +138,6 @@ public class MainActivity extends BaseActivity implements BaseActivity_Zhu {
 
     @Override
     public void getRadio(View.OnClickListener onClick) {
-
     }
 
 
@@ -135,28 +145,26 @@ public class MainActivity extends BaseActivity implements BaseActivity_Zhu {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.main_zhu_radio_btn_doctor:
+
                 mainTouText.setText("医生在线");
-                man = getSupportFragmentManager();
-                tra = man.beginTransaction();
-                tra.replace(R.id.main_zhu_frame, new Fragment_Doctor());
-                tra.commit();
+                mainView.setCurrentItem(0);
+
                 break;
             case R.id.main_zhu_radio_btn_blood:
+
                 mainTouText.setText("血压管理");
-                man = getSupportFragmentManager();
-                tra = man.beginTransaction();
-                tra.replace(R.id.main_zhu_frame, new Fragment_Blood());
-                tra.commit();
+                mainView.setCurrentItem(1);
+
                 break;
             case R.id.main_zhu_radio_btn_persional:
+
                 mainTouLinea.setVisibility(View.GONE);
-                man = getSupportFragmentManager();
-                tra = man.beginTransaction();
-                tra.replace(R.id.main_zhu_frame, new Fragment_Persional());
-                tra.commit();
+                mainView.setCurrentItem(2);
+
                 break;
         }
     }
+
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
             if ((System.currentTimeMillis() - mExitTime) > 2000) {
