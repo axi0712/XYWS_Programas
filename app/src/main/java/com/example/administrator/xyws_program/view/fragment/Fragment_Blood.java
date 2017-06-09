@@ -87,5 +87,6 @@ public class Fragment_Blood extends BaseFragment {
             ((MainActivity) MyApp.activity).getMainTouLinea().setVisibility(View.GONE);
 
         }
+        //
     }
 }
