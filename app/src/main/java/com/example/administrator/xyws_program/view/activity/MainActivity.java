@@ -15,7 +15,6 @@ import android.widget.Toast;
 
 import com.example.administrator.xyws_program.R;
 import com.example.administrator.xyws_program.base.BaseActivity;
-import com.example.administrator.xyws_program.view.activity.inter.BaseActivity_Zhu;
 import com.example.administrator.xyws_program.view.fragment.Fragment_Blood;
 import com.example.administrator.xyws_program.view.fragment.Fragment_Doctor;
 import com.example.administrator.xyws_program.view.fragment.Fragment_Persional;

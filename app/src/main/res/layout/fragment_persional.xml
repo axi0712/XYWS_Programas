@@ -5,6 +5,93 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="我的加号"
+        android:background="@drawable/tv_shuibowen"
+        android:drawableLeft="@drawable/jiahao"
+        android:gravity="center_vertical"
+        android:layout_gravity="center_vertical"
+        android:drawablePadding="10dp"
+        android:padding="10dp"
+        android:id="@+id/persional_btn_jiahao"
+        android:drawableRight="@drawable/ic_diary_forward"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:background="#d1d0d0"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="我的收藏"
+        android:background="@drawable/tv_shuibowen"
+        android:drawableLeft="@drawable/collect"
+        android:gravity="center_vertical"
+        android:layout_gravity="center_vertical"
+        android:drawablePadding="10dp"
+        android:padding="10dp"
+        android:id="@+id/persional_btn_collect"
+        android:drawableRight="@drawable/ic_diary_forward"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="18dp"
+        android:background="#F9F9F9"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="个人资料"
+        android:background="@drawable/tv_shuibowen"
+        android:drawableLeft="@drawable/info"
+        android:gravity="center_vertical"
+        android:layout_gravity="center_vertical"
+        android:drawablePadding="10dp"
+        android:padding="10dp"
+        android:id="@+id/persional_btn_info"
+        android:drawableRight="@drawable/ic_diary_forward"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="18dp"
+        android:background="#F9F9F9"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="消息"
+        android:background="@drawable/tv_shuibowen"
+        android:drawableLeft="@drawable/message"
+        android:gravity="center_vertical"
+        android:layout_gravity="center_vertical"
+        android:drawablePadding="10dp"
+        android:padding="10dp"
+        android:id="@+id/persional_btn_message"
+        android:drawableRight="@drawable/ic_diary_forward"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:background="#d1d0d0"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="设置"
+        android:background="@drawable/tv_shuibowen"
+        android:drawableLeft="@drawable/setting"
+        android:gravity="center_vertical"
+        android:layout_gravity="center_vertical"
+        android:drawablePadding="10dp"
+        android:padding="10dp"
+        android:drawableRight="@drawable/ic_diary_forward"
+        android:id="@+id/persional_btn_Setting" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="165dp"
+        android:background="#F9F9F9"
         android:text="persional"
         />
 </LinearLayout>

@@ -1,13 +1,11 @@
-package com.example.administrator.xyws_program.view.activity.inter;
-
-import android.view.View;
+package com.example.administrator.xyws_program.view.activity.persional.inter;
 
 /**
  * /**
  * 项目名称: 血压卫士
  * 类描述:
  * 创建人: XI
- * 创建时间: 2017/6/9 0009 8:14
+ * 创建时间: 2017/6/9 0009 20:31
  * 修改人:
  * 修改内容:
  * 修改时间:
@@ -37,12 +35,11 @@ import android.view.View;
  */
 
 
-public interface BaseActivity_Zhu {
-    //中间的FrameLayout
-    void mFrame();
-    //LinearLayout的TextView
-      void getText(String str);
-    //RadioButton的点击事件
-    void getRadio(View.OnClickListener onClick);
+public interface Activity_Persional_Login_view_Inter {
+    String getName();
+    String getPwd();
+    void login();
+    void loginPwd();
+    String doToast(String toast);
 
 }

@@ -61,13 +61,13 @@ public abstract class BaseActivity extends AppCompatActivity {
 
         ButterKnife.bind(this);
         MyApp.activity = this;
-        loadData();
+
 
         //初始化组件
         init();
         //初始化监听
         initListener();
-
+        loadData();
     }
     //加载布局
 
