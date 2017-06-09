@@ -150,7 +150,7 @@ public class MainActivity extends BaseActivity implements BaseActivity_Zhu {
             mainView.setAdapter(new MainAdapter(getSupportFragmentManager(), mFraList));
 
         }
-
+//
 
     }
 
