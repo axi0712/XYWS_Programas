@@ -1,14 +1,7 @@
-package com.example.administrator.xyws_program.presenter.persional;
+package com.example.administrator.xyws_program.model;
 
-import android.util.Log;
-
-import com.example.administrator.xyws_program.model.ModelInter;
-import com.example.administrator.xyws_program.model.Modelimple;
 import com.example.administrator.xyws_program.model.callback.MyCallBack;
-import com.example.administrator.xyws_program.presenter.Activity_Persional_Login_Presenter_Inter;
-import com.example.administrator.xyws_program.view.activity.persional.inter.Activity_Persional_Login_view_Inter;
 
-import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -16,7 +9,7 @@ import java.util.Map;
  * 项目名称: 血压卫士
  * 类描述:
  * 创建人: XI
- * 创建时间: 2017/6/9 0009 21:32
+ * 创建时间: 2017/6/9 0009 23:18
  * 修改人:
  * 修改内容:
  * 修改时间:
@@ -46,33 +39,9 @@ import java.util.Map;
  */
 
 
-public class Activity_Persional_login_Presenter_Imple implements Activity_Persional_Login_Presenter_Inter {
-    private Activity_Persional_Login_view_Inter inter;
-    private ModelInter inters ;
-    public Activity_Persional_login_Presenter_Imple(Activity_Persional_Login_view_Inter inter) {
-        this.inter = inter;
-        inters = new Modelimple();
-    }
-
+public class Modelimple implements ModelInter {
     @Override
-    public void login(String name, String pwd) {
-        if(name.isEmpty()||pwd.isEmpty()){
-            return;
-        }else {
-            Map<String, String> map = new HashMap<>();
-            map.put("phonenum", name);
-            map.put("password", pwd);
-            inters.get(map, new MyCallBack() {
-                @Override
-                public void onSuccess(String strSuccess) {
-                    Log.d("Activity_Persional_logi", strSuccess);
-                }
-
-                @Override
-                public void onError(String strError) {
-                    Log.d("Activity_Persional_logi", strError);
-                }
-            });
-        }
+     public void get(Map<String, String> map, MyCallBack callBack) {
+        HttpFactory.initParsing().getLogin("http://api.wws.xywy.com/index.php?tag=BloodAndroid&sign=2c19b2821ebc5306c3ac37bac5b4288b&act=kbb&fun=users&type=login", map, callBack);
     }
 }

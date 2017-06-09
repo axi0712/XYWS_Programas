@@ -2,11 +2,36 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <TextView
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:background="#AAAAAA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="您还没有登录哦~"
+            android:layout_centerHorizontal="true"
+            android:textColor="#fff"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="15dp"
+            android:id="@+id/fragment_persional_text"
+            />
+        <Button
+            android:id="@+id/fragment_persional_btn_login"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="28dp"
+            android:layout_below="@id/fragment_persional_text"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/persional_login"
+            android:text="马上登录"
+            />
+    </RelativeLayout>
+    <Button
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="我的加号"
-        android:background="@drawable/tv_shuibowen"
+        android:background="#fff"
         android:drawableLeft="@drawable/jiahao"
         android:gravity="center_vertical"
         android:layout_gravity="center_vertical"
@@ -24,7 +49,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="我的收藏"
-        android:background="@drawable/tv_shuibowen"
+        android:background="#fff"
         android:drawableLeft="@drawable/collect"
         android:gravity="center_vertical"
         android:layout_gravity="center_vertical"
@@ -42,7 +67,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="个人资料"
-        android:background="@drawable/tv_shuibowen"
+        android:background="#fff"
         android:drawableLeft="@drawable/info"
         android:gravity="center_vertical"
         android:layout_gravity="center_vertical"
@@ -60,7 +85,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="消息"
-        android:background="@drawable/tv_shuibowen"
+        android:background="#fff"
         android:drawableLeft="@drawable/message"
         android:gravity="center_vertical"
         android:layout_gravity="center_vertical"
@@ -79,7 +104,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="设置"
-        android:background="@drawable/tv_shuibowen"
+        android:background="#fff"
         android:drawableLeft="@drawable/setting"
         android:gravity="center_vertical"
         android:layout_gravity="center_vertical"
@@ -92,6 +117,5 @@
         android:layout_width="match_parent"
         android:layout_height="165dp"
         android:background="#F9F9F9"
-        android:text="persional"
         />
 </LinearLayout>

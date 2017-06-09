@@ -8,6 +8,8 @@ import android.widget.TextView;
 
 import com.example.administrator.xyws_program.R;
 import com.example.administrator.xyws_program.base.BaseActivity;
+import com.example.administrator.xyws_program.presenter.Activity_Persional_Login_Presenter_Inter;
+import com.example.administrator.xyws_program.presenter.persional.Activity_Persional_login_Presenter_Imple;
 import com.example.administrator.xyws_program.view.activity.persional.inter.Activity_Persional_Login_view_Inter;
 
 import butterknife.BindView;
@@ -61,7 +63,7 @@ public class Activity_Persional_View_Login extends BaseActivity implements Activ
     TextView persionalLoginTextPwd;
     @BindView(R.id.persional_login_btn_login)
     Button persionalLoginBtnLogin;
-
+    private Activity_Persional_Login_Presenter_Inter inter ;
     @Override
     protected int getLayout() {
         return R.layout.activity_persional_login;
@@ -69,6 +71,7 @@ public class Activity_Persional_View_Login extends BaseActivity implements Activ
 
     @Override
     protected void init() {
+        inter = new Activity_Persional_login_Presenter_Imple(this);
 
     }
 
@@ -114,6 +117,7 @@ public class Activity_Persional_View_Login extends BaseActivity implements Activ
             case R.id.persional_login_text_pwd:
                 break;
             case R.id.persional_login_btn_login:
+                inter.login(getName(),getPwd());
 
                 break;
         }
