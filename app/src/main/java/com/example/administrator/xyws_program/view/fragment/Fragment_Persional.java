@@ -1,11 +1,15 @@
 package com.example.administrator.xyws_program.view.fragment;
 
+import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.LinearLayout;
 
 import com.example.administrator.xyws_program.MyApp;
 import com.example.administrator.xyws_program.R;
 import com.example.administrator.xyws_program.base.BaseFragment;
 import com.example.administrator.xyws_program.view.activity.MainActivity;
+
+import static android.os.Build.VERSION_CODES.M;
 
 /**
  * /**
@@ -43,6 +47,7 @@ import com.example.administrator.xyws_program.view.activity.MainActivity;
 
 
 public class Fragment_Persional extends BaseFragment {
+
     @Override
     protected int layoutId() {
         return R.layout.fragment_persional;
@@ -70,8 +75,22 @@ public class Fragment_Persional extends BaseFragment {
 
     @Override
     protected void updateTitleBar() {
-        if (MyApp.activity instanceof MainActivity) {
+
+    }
+
+
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+        if (isVisibleToUser){
             ((MainActivity) MyApp.activity).getMainTouLinea().setVisibility(View.GONE);
+
+
+
+
+        }else {
+            ((MainActivity) MyApp.activity).getMainTouLinea().setVisibility(View.VISIBLE);
+
         }
     }
 }

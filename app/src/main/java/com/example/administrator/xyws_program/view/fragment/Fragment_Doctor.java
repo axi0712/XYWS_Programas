@@ -1,6 +1,8 @@
 package com.example.administrator.xyws_program.view.fragment;
 
+import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.LinearLayout;
 
 import com.example.administrator.xyws_program.MyApp;
 import com.example.administrator.xyws_program.R;
@@ -43,6 +45,7 @@ import com.example.administrator.xyws_program.view.activity.MainActivity;
 
 
 public class Fragment_Doctor extends BaseFragment {
+
     @Override
     protected int layoutId() {
         return R.layout.fragment_doctor;
@@ -50,6 +53,7 @@ public class Fragment_Doctor extends BaseFragment {
 
     @Override
     protected void initView(View view) {
+
 
     }
 
@@ -70,14 +74,19 @@ public class Fragment_Doctor extends BaseFragment {
 
     @Override
     protected void updateTitleBar() {
-        if (MyApp.activity instanceof MainActivity) {
-            //显示\
-            ((MainActivity) MyApp.activity).getMainTouText().setVisibility(View.VISIBLE);
-            ((MainActivity) MyApp.activity).getMainTouLinea().setVisibility(View.VISIBLE);
 
-        }
-        if (MyApp.activity instanceof MainActivity) {
+    }
+
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+        if (isVisibleToUser){
+            ((MainActivity) MyApp.activity).getMainTouLinea().setVisibility(View.VISIBLE);
             ((MainActivity) MyApp.activity).getMainTouText().setText("医生在线");
+
+        }else {
+            ((MainActivity) MyApp.activity).getMainTouLinea().setVisibility(View.GONE);
+
         }
     }
 }

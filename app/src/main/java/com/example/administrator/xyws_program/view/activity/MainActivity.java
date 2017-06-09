@@ -84,6 +84,7 @@ public class MainActivity extends BaseActivity implements BaseActivity_Zhu {
     private FragmentTransaction tra;
     private long mExitTime;
     private List<Fragment> mFraList = new ArrayList<>();
+
     public LinearLayout getMainTouLinea() {
         return mainTouLinea;
     }
@@ -108,6 +109,7 @@ public class MainActivity extends BaseActivity implements BaseActivity_Zhu {
     @Override
     protected void init() {
 
+
     }
 
     @Override
@@ -120,7 +122,7 @@ public class MainActivity extends BaseActivity implements BaseActivity_Zhu {
         mFraList.add(new Fragment_Doctor());
         mFraList.add(new Fragment_Blood());
         mFraList.add(new Fragment_Persional());
-        mainView.setAdapter(new MainAdapter(getSupportFragmentManager(),mFraList));
+        mainView.setAdapter(new MainAdapter(getSupportFragmentManager(), mFraList));
 
 
     }
@@ -146,19 +148,17 @@ public class MainActivity extends BaseActivity implements BaseActivity_Zhu {
         switch (view.getId()) {
             case R.id.main_zhu_radio_btn_doctor:
 
-                mainTouText.setText("医生在线");
                 mainView.setCurrentItem(0);
 
                 break;
             case R.id.main_zhu_radio_btn_blood:
 
-                mainTouText.setText("血压管理");
+
                 mainView.setCurrentItem(1);
 
                 break;
             case R.id.main_zhu_radio_btn_persional:
 
-                mainTouLinea.setVisibility(View.GONE);
                 mainView.setCurrentItem(2);
 
                 break;
