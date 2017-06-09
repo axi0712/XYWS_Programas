@@ -61,6 +61,8 @@ public abstract class BaseActivity extends AppCompatActivity {
 
         ButterKnife.bind(this);
         MyApp.activity = this;
+        loadData();
+
         //初始化组件
         init();
         //初始化监听
@@ -83,7 +85,6 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onResume () {
         super.onResume();
         MyApp.activity = this;
-        loadData();
 
     }
 }
