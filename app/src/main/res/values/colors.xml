@@ -3,4 +3,10 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="greenteshu">#24CF5F</color>
+    <color name="huise">#a6a5a5</color>
+    <color name="titleColor">#19ACCA</color>
+    <color name="result_view">#b0000000</color>
+    <color name="viewfinder_mask">#60000000</color>
+    <color name="possible_result_points">#18ACCA</color>
 </resources>
