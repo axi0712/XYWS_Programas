@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
-    tools:context="com.example.administrator.xyws_program.view.MainActivity">
+    tools:context="com.example.administrator.xyws_program.view.activity.MainActivity">
 
     <LinearLayout
         android:background="#24CE5E"
@@ -49,6 +49,7 @@
             android:button="@null"
             android:drawableTop="@drawable/main_zhu_doctor"
             android:gravity="center"
+            android:textColor="@drawable/main_zhu_text"
             android:text="医生在线" />
 
         <RadioButton
@@ -60,6 +61,7 @@
             android:button="@null"
             android:drawableTop="@drawable/main_zhu_blood"
             android:gravity="center"
+            android:textColor="@drawable/main_zhu_text"
             android:text="血压管理" />
 
         <RadioButton
@@ -71,6 +73,7 @@
             android:button="@null"
             android:drawableTop="@drawable/main_zhu_persional"
             android:gravity="center"
+            android:textColor="@drawable/main_zhu_text"
             android:text="个人信息" />
     </RadioGroup>
 </RelativeLayout>

@@ -1,16 +1,11 @@
-package com.example.administrator.xyws_program;
-
-import android.app.Application;
-
-import com.example.administrator.xyws_program.base.BaseActivity;
-import com.example.administrator.xyws_program.base.BaseFragment;
+package com.example.administrator.xyws_program.model.callback;
 
 /**
  * /**
  * 项目名称: 血压卫士
- * 类描述: App
+ * 类描述:   接口回调
  * 创建人: XI
- * 创建时间: 2017/6/9 0009 9:33
+ * 创建时间: 2017/6/9 0009 8:40
  * 修改人:
  * 修改内容:
  * 修改时间:
@@ -40,7 +35,7 @@ import com.example.administrator.xyws_program.base.BaseFragment;
  */
 
 
-public class MyApp extends Application {
-    public static BaseActivity activity;
-    public static BaseFragment lastFragment;
+public interface MyCallBack {
+    void onSuccess(String strSuccess);
+    void onError(String strError);
 }

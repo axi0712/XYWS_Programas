@@ -1,16 +1,18 @@
-package com.example.administrator.xyws_program;
+package com.example.administrator.xyws_program.view.fragment;
 
-import android.app.Application;
+import android.view.View;
 
-import com.example.administrator.xyws_program.base.BaseActivity;
+import com.example.administrator.xyws_program.MyApp;
+import com.example.administrator.xyws_program.R;
 import com.example.administrator.xyws_program.base.BaseFragment;
+import com.example.administrator.xyws_program.view.activity.MainActivity;
 
 /**
  * /**
  * 项目名称: 血压卫士
- * 类描述: App
+ * 类描述:
  * 创建人: XI
- * 创建时间: 2017/6/9 0009 9:33
+ * 创建时间: 2017/6/9 0009 16:06
  * 修改人:
  * 修改内容:
  * 修改时间:
@@ -40,7 +42,36 @@ import com.example.administrator.xyws_program.base.BaseFragment;
  */
 
 
-public class MyApp extends Application {
-    public static BaseActivity activity;
-    public static BaseFragment lastFragment;
+public class Fragment_Persional extends BaseFragment {
+    @Override
+    protected int layoutId() {
+        return R.layout.fragment_persional;
+    }
+
+    @Override
+    protected void initView(View view) {
+
+    }
+
+    @Override
+    protected void initData() {
+
+    }
+
+    @Override
+    protected void initListener() {
+
+    }
+
+    @Override
+    protected void loadData() {
+
+    }
+
+    @Override
+    protected void updateTitleBar() {
+        if (MyApp.activity instanceof MainActivity) {
+            ((MainActivity) MyApp.activity).getMainTouLinea().setVisibility(View.GONE);
+        }
+    }
 }

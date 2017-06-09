@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.util.Log;
 
 import com.example.administrator.xyws_program.MyApp;
+import com.example.administrator.xyws_program.model.callback.MyCallBack;
 
 import java.io.File;
 import java.io.IOException;

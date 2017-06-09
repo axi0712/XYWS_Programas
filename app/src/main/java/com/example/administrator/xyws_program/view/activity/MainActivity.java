@@ -1,5 +1,8 @@
-package com.example.administrator.xyws_program.view;
+package com.example.administrator.xyws_program.view.activity;
 
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
@@ -7,9 +10,14 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.administrator.xyws_program.R;
 import com.example.administrator.xyws_program.base.BaseActivity;
+import com.example.administrator.xyws_program.view.activity.inter.BaseActivity_Zhu;
+import com.example.administrator.xyws_program.view.fragment.Fragment_Blood;
+import com.example.administrator.xyws_program.view.fragment.Fragment_Doctor;
+import com.example.administrator.xyws_program.view.fragment.Fragment_Persional;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -67,6 +75,24 @@ public class MainActivity extends BaseActivity implements BaseActivity_Zhu {
     RadioGroup mainZhuRadioGroup;
     @BindView(R.id.activity_main)
     RelativeLayout activityMain;
+    private FragmentManager man;
+    private FragmentTransaction tra;
+    private long mExitTime;
+    public LinearLayout getMainTouLinea() {
+        return mainTouLinea;
+    }
+
+    public void setMainTouLinea(LinearLayout mainTouLinea) {
+        this.mainTouLinea = mainTouLinea;
+    }
+
+    public TextView getMainTouText() {
+        return mainTouText;
+    }
+
+    public void setMainTouText(TextView mainTouText) {
+        this.mainTouText = mainTouText;
+    }
 
     @Override
     protected int getLayout() {
@@ -110,14 +136,40 @@ public class MainActivity extends BaseActivity implements BaseActivity_Zhu {
         switch (view.getId()) {
             case R.id.main_zhu_radio_btn_doctor:
                 mainTouText.setText("医生在线");
-
+                man = getSupportFragmentManager();
+                tra = man.beginTransaction();
+                tra.replace(R.id.main_zhu_frame, new Fragment_Doctor());
+                tra.commit();
                 break;
             case R.id.main_zhu_radio_btn_blood:
                 mainTouText.setText("血压管理");
+                man = getSupportFragmentManager();
+                tra = man.beginTransaction();
+                tra.replace(R.id.main_zhu_frame, new Fragment_Blood());
+                tra.commit();
                 break;
             case R.id.main_zhu_radio_btn_persional:
                 mainTouLinea.setVisibility(View.GONE);
+                man = getSupportFragmentManager();
+                tra = man.beginTransaction();
+                tra.replace(R.id.main_zhu_frame, new Fragment_Persional());
+                tra.commit();
                 break;
         }
     }
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            if ((System.currentTimeMillis() - mExitTime) > 2000) {
+                Object mHelperUtils;
+                Toast.makeText(this, "再按一次退出程序", Toast.LENGTH_SHORT).show();
+                mExitTime = System.currentTimeMillis();
+
+            } else {
+                finish();
+            }
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
 }

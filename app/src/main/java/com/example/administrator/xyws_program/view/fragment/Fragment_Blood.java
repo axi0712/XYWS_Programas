@@ -1,13 +1,18 @@
-package com.example.administrator.xyws_program.view;
+package com.example.administrator.xyws_program.view.fragment;
 
 import android.view.View;
+
+import com.example.administrator.xyws_program.MyApp;
+import com.example.administrator.xyws_program.R;
+import com.example.administrator.xyws_program.base.BaseFragment;
+import com.example.administrator.xyws_program.view.activity.MainActivity;
 
 /**
  * /**
  * 项目名称: 血压卫士
  * 类描述:
  * 创建人: XI
- * 创建时间: 2017/6/9 0009 8:14
+ * 创建时间: 2017/6/9 0009 16:05
  * 修改人:
  * 修改内容:
  * 修改时间:
@@ -37,12 +42,42 @@ import android.view.View;
  */
 
 
-public interface BaseActivity_Zhu {
-    //中间的FrameLayout
-    void mFrame();
-    //LinearLayout的TextView
-      void getText(String str);
-    //RadioButton的点击事件
-    void getRadio(View.OnClickListener onClick);
+public class Fragment_Blood extends BaseFragment {
+    @Override
+    protected int layoutId() {
+        return R.layout.fragment_blood;
+    }
 
+    @Override
+    protected void initView(View view) {
+
+    }
+
+    @Override
+    protected void initData() {
+
+    }
+
+    @Override
+    protected void initListener() {
+
+    }
+
+    @Override
+    protected void loadData() {
+
+    }
+
+    @Override
+    protected void updateTitleBar() {
+        if (MyApp.activity instanceof MainActivity) {
+            //显示\
+            ((MainActivity) MyApp.activity).getMainTouText().setVisibility(View.VISIBLE);
+            ((MainActivity) MyApp.activity).getMainTouLinea().setVisibility(View.VISIBLE);
+
+        }
+        if (MyApp.activity instanceof MainActivity) {
+            ((MainActivity) MyApp.activity).getMainTouText().setText("血压管理");
+        }
+    }
 }

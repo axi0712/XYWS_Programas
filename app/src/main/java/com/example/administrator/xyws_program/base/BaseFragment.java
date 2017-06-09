@@ -75,6 +75,7 @@ public abstract class BaseFragment extends Fragment {
         initView(view);
         initListener();
         initData();
+        updateTitleBar();
     }
 
     @Override
@@ -110,6 +111,9 @@ public abstract class BaseFragment extends Fragment {
      */
     protected abstract void loadData();
 
+    //更改标题
+    protected abstract void updateTitleBar();
+
     @Override
     public void onHiddenChanged(boolean hidden) {
         super.onHiddenChanged(hidden);
@@ -119,8 +123,9 @@ public abstract class BaseFragment extends Fragment {
             onshow();
         }
     }
-
-    public void onshow(){}
+    public void onshow(){
+        updateTitleBar();
+    }
     public void onHidden(){}
 
     /**

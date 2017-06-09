@@ -1,11 +1,13 @@
-package com.example.administrator.xyws_program.model;
+package com.example.administrator.xyws_program.view.activity.inter;
+
+import android.view.View;
 
 /**
  * /**
  * 项目名称: 血压卫士
- * 类描述:   接口回调
+ * 类描述:
  * 创建人: XI
- * 创建时间: 2017/6/9 0009 8:40
+ * 创建时间: 2017/6/9 0009 8:14
  * 修改人:
  * 修改内容:
  * 修改时间:
@@ -35,7 +37,12 @@ package com.example.administrator.xyws_program.model;
  */
 
 
-public interface MyCallBack {
-    void onSuccess(String strSuccess);
-    void onError(String strError);
+public interface BaseActivity_Zhu {
+    //中间的FrameLayout
+    void mFrame();
+    //LinearLayout的TextView
+      void getText(String str);
+    //RadioButton的点击事件
+    void getRadio(View.OnClickListener onClick);
+
 }
