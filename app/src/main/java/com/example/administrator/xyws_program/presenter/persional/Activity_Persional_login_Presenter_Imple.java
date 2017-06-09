@@ -56,7 +56,7 @@ public class Activity_Persional_login_Presenter_Imple implements Activity_Persio
 
     @Override
     public void login(String name, String pwd) {
-        //
+        //name
         if(name.isEmpty()||pwd.isEmpty()){
             return;
         }else {
