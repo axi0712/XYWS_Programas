@@ -1,7 +1,9 @@
-package com.example.administrator.xyws_program;
+package com.example.administrator.xyws_program.view;
 
 import android.app.Activity;
 import android.os.Bundle;
+
+import com.example.administrator.xyws_program.R;
 
 /**
  * /**
