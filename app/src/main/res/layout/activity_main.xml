@@ -37,6 +37,7 @@
         android:weightSum="3">
 
         <RadioButton
+            android:checked="true"
             android:padding="5dp"
             android:id="@+id/main_zhu_radio_btn_doctor"
             android:layout_width="wrap_content"
@@ -77,5 +78,7 @@
         android:layout_above="@id/main_zhu_radio_group"
         android:id="@+id/main_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"></android.support.v4.view.ViewPager>
+        android:layout_height="wrap_content">
+
+    </android.support.v4.view.ViewPager>
 </RelativeLayout>

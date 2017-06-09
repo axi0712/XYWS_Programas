@@ -77,6 +77,8 @@ public class Fragment_Doctor extends BaseFragment {
 
     }
 
+
+
     @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {
         super.setUserVisibleHint(isVisibleToUser);

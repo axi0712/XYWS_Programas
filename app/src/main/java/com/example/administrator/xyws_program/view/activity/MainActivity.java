@@ -6,7 +6,6 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.view.KeyEvent;
 import android.view.View;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -81,10 +80,12 @@ public class MainActivity extends BaseActivity implements BaseActivity_Zhu {
     RelativeLayout activityMain;
     @BindView(R.id.main_view)
     ViewPager mainView;
-    private FragmentManager man;
-    private FragmentTransaction tra;
+
+
     private long mExitTime;
     private List<Fragment> mFraList = new ArrayList<>();
+    private MainAdapter mainAdapter;
+
 
     public LinearLayout getMainTouLinea() {
         return mainTouLinea;
@@ -130,6 +131,37 @@ public class MainActivity extends BaseActivity implements BaseActivity_Zhu {
     @Override
     protected void init() {
 
+        mainTouLinea.setVisibility(View.VISIBLE);
+
+        mFraList.add(new Fragment_Doctor());
+        mFraList.add(new Fragment_Blood());
+        mFraList.add(new Fragment_Persional());
+        mainAdapter = new MainAdapter(getSupportFragmentManager(),mFraList);
+        mainView.setAdapter(mainAdapter);
+
+        mainView.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                  String id=String.valueOf(position);
+                if(id.equals("0")){
+                mainZhuRadioBtnDoctor.setChecked(true);
+            }else if(id.equals("1")){
+                mainZhuRadioBtnBlood.setChecked(true);
+            }else if(id.equals("2")){
+                mainZhuRadioBtnPersional.setChecked(true);
+            }
+        }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
 
     }
 
@@ -175,15 +207,20 @@ public class MainActivity extends BaseActivity implements BaseActivity_Zhu {
         switch (view.getId()) {
             case R.id.main_zhu_radio_btn_doctor:
 
+                mainTouLinea.setVisibility(View.VISIBLE);
+                mainTouText.setText("医生在线");
                 mainView.setCurrentItem(0);
 
                 break;
             case R.id.main_zhu_radio_btn_blood:
 
 
+                mainTouLinea.setVisibility(View.VISIBLE);
+                mainTouText.setText("血压管理");
                 mainView.setCurrentItem(1);
 
                 break;
+
             case R.id.main_zhu_radio_btn_persional:
 
                 mainView.setCurrentItem(2);

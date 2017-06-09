@@ -43,7 +43,7 @@ import java.util.List;
 
 
 public class MainAdapter extends FragmentPagerAdapter {
-    private List<Fragment> mFraList = new ArrayList<>();
+    private List<Fragment> mFraList;
 
     public MainAdapter(FragmentManager fm, List<Fragment> mFraList) {
         super(fm);

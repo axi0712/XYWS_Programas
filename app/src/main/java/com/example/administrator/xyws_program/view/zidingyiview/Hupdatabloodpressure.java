@@ -50,6 +50,7 @@ public class Hupdatabloodpressure extends View {
     private Paint paint;
     private Canvas canvas1;
     private Paint painttext;
+    private int pmwidth;
 
 
     //重写三个构造方法
@@ -84,9 +85,15 @@ public class Hupdatabloodpressure extends View {
         super(context, attrs, defStyleAttr);
     }
 
+    @Override
+    protected void onSizeChanged(int w, int h, int oldw, int oldh) {
+        super.onSizeChanged(w, h, oldw, oldh);
+        pmwidth=w/2;
+        x=pmwidth;
+    }
 
-    private float x=160;
-    private float y=160;
+    private float x;
+    private float y=180;
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
@@ -101,30 +108,4 @@ public class Hupdatabloodpressure extends View {
 
     }
 
-
-    //触摸事件的监听
-    @Override
-    public boolean onTouchEvent(MotionEvent event) {
-        switch (event.getAction()){
-            case MotionEvent.ACTION_UP:
-                break;
-
-            case MotionEvent.ACTION_MOVE:
-                //得到焦点的XY
-                x=event.getX();
-                y=event.getY();
-
-                //刷新
-                invalidate();
-
-                break;
-
-            case MotionEvent.ACTION_DOWN:
-                break;
-
-
-
-        }
-        return true;
-    }
 }
