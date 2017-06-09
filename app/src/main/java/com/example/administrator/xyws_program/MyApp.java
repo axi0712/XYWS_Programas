@@ -7,7 +7,7 @@ import com.example.administrator.xyws_program.base.BaseActivity;
 /**
  * /**
  * 项目名称: 血压卫士
- * 类描述:
+ * 类描述: App
  * 创建人: XI
  * 创建时间: 2017/6/9 0009 9:33
  * 修改人:

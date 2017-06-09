@@ -3,7 +3,7 @@ package com.example.administrator.xyws_program.model;
 /**
  * /**
  * 项目名称: 血压卫士
- * 类描述:
+ * 类描述:   接口回调
  * 创建人: XI
  * 创建时间: 2017/6/9 0009 8:40
  * 修改人:
