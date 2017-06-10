@@ -3,19 +3,26 @@ package com.example.administrator.xyws_program.view.fragment.persional;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
+import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.target.BitmapImageViewTarget;
 import com.example.administrator.xyws_program.MyApp;
 import com.example.administrator.xyws_program.R;
 import com.example.administrator.xyws_program.base.BaseFragment;
 import com.example.administrator.xyws_program.presenter.persional.Activity_Persional_Info_Presenter_Imple;
 import com.example.administrator.xyws_program.presenter.persional.inter.Activity_persional_Info_Presenter_Inter;
 import com.example.administrator.xyws_program.view.activity.MainActivity;
+import com.example.administrator.xyws_program.view.activity.persional.Activity_Persional_JiaHao;
 import com.example.administrator.xyws_program.view.activity.persional.Activity_Persional_View_Login;
 
 import butterknife.BindView;
@@ -76,6 +83,8 @@ public class Fragment_Persional extends BaseFragment implements View.OnClickList
     private Activity_persional_Info_Presenter_Inter inter;
     private SharedPreferences mShared;
     private RelativeLayout mRela,mXian;
+    private ImageView mImage;
+    private TextView mName;
     @Override
     protected int layoutId() {
         return R.layout.fragment_persional;
@@ -85,6 +94,8 @@ public class Fragment_Persional extends BaseFragment implements View.OnClickList
     protected void initView(View view) {
         mRela = (RelativeLayout) view.findViewById(R.id.fragment_persional_tou);
         mXian = (RelativeLayout) view.findViewById(R.id.fragment_persional_tou_rela);
+        mImage = (ImageView) view.findViewById(R.id.fragment_persional_tou_image);
+        mName = (TextView) view.findViewById(R.id.fragment_persional_tou_name);
     }
 
     @Override
@@ -98,6 +109,12 @@ public class Fragment_Persional extends BaseFragment implements View.OnClickList
     @Override
     public void onResume() {
         super.onResume();
+        getBtn();
+    }
+
+    @Override
+    public void onshow() {
+        super.onshow();
         getBtn();
     }
 
@@ -154,10 +171,22 @@ public class Fragment_Persional extends BaseFragment implements View.OnClickList
                     Intent in = new Intent(MyApp.activity, Activity_Persional_View_Login.class);
                     startActivity(in);
                 }else {
-
+                    mXian.setVisibility(View.INVISIBLE);
+                    mRela.setVisibility(View.VISIBLE);
+                    Glide.with(getContext()).load(mShared.getString("image","")).asBitmap().centerCrop().into(new BitmapImageViewTarget(mImage) {
+                        @Override
+                        protected void setResource(Bitmap resource) {
+                            RoundedBitmapDrawable ciDrawable = RoundedBitmapDrawableFactory.create(getActivity().getResources(), resource);
+                            ciDrawable.setCircular(true);
+                            mImage.setImageDrawable(ciDrawable);
+                        }
+                    });
+                    mName.setText(mShared.getString("name",""));
                 }
                 break;
             case R.id.persional_btn_jiahao:
+                Intent in = new Intent(MyApp.activity, Activity_Persional_JiaHao.class);
+                startActivity(in);
                 break;
             case R.id.persional_btn_collect:
                 break;
@@ -176,14 +205,24 @@ public class Fragment_Persional extends BaseFragment implements View.OnClickList
         Toast.makeText(MyApp.activity, mShared.getString("userid",""), Toast.LENGTH_SHORT).show();
         if(mShared.getString("userid","").isEmpty()){
             mXian.setVisibility(View.VISIBLE);
-            mRela.setVisibility(View.GONE);
+            mRela.setVisibility(View.INVISIBLE);
             fragmentPersionalBtnLogin.setOnClickListener(this);
         }else {
-            mXian.setVisibility(View.GONE);
+            mXian.setVisibility(View.INVISIBLE);
             mRela.setVisibility(View.VISIBLE);
             inter.info(userId());
+            Glide.with(getContext()).load(mShared.getString("image","")).asBitmap().centerCrop().into(new BitmapImageViewTarget(mImage) {
+                @Override
+                protected void setResource(Bitmap resource) {
+                    RoundedBitmapDrawable ciDrawable = RoundedBitmapDrawableFactory.create(getActivity().getResources(), resource);
+                    ciDrawable.setCircular(true);
+                    mImage.setImageDrawable(ciDrawable);
+                }
+            });
+           mName.setText(mShared.getString("name",""));
 
         }
+        persionalBtnJiahao.setOnClickListener(this);
     }
 
     @Override

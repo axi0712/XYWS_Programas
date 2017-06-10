@@ -35,20 +35,21 @@
         android:id="@+id/fragment_persional_tou"
         android:background="#AAAAAA"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="125dp">
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:src="@mipmap/ic_launcher"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
-            android:id="@+id/fragemnt_persional_tou_image"
+            android:layout_marginTop="30dp"
+            android:id="@+id/fragment_persional_tou_image"
             />
         <TextView
+            android:layout_marginTop="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_below="@id/fragemnt_persional_tou_image"
+            android:layout_below="@id/fragment_persional_tou_image"
             android:text="用户名"
             android:id="@+id/fragment_persional_tou_name"
             android:textColor="#666565"
