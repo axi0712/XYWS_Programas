@@ -1,5 +1,6 @@
 package com.example.administrator.xyws_program.model;
 
+import com.example.administrator.xyws_program.model.callback.ModelInter;
 import com.example.administrator.xyws_program.model.callback.MyCallBack;
 
 import java.util.Map;

@@ -6,9 +6,11 @@
     <com.example.administrator.xyws_program.view.zidingyiview.Hupdatabloodpressure
         android:layout_width="match_parent"
         android:layout_height="140dp"
+        android:layout_marginTop="10dp"
         android:id="@+id/hupdatafloodpressure"
         />
 <TextView
+    android:layout_marginTop="-15dp"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:text="128/80"
@@ -23,7 +25,7 @@
     android:layout_height="wrap_content"
     android:layout_marginLeft="8dp"
     android:text="今天"
-    android:layout_marginTop="8dp"
+    android:layout_marginTop="-8dp"
     android:layout_below="@id/hupdatafloodpressure"
     android:layout_toRightOf="@id/hlatelydata"
     android:id="@+id/hdatatime"
