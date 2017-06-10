@@ -1,14 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
+android:layout_margin="8dp"
     android:layout_height="match_parent">
-
-    <!--<com.example.administrator.xyws_program.view.zidingyiview.Hupdatabloodpressure-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="140dp"-->
-        <!--android:layout_marginTop="10dp"-->
-        <!--android:id="@+id/hupdatafloodpressure"-->
-        <!--/>-->
     <ImageView
         android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
@@ -33,12 +27,14 @@
     android:layout_height="wrap_content"
     android:layout_marginLeft="8dp"
     android:text="今天"
-    android:layout_marginTop="14dp"
+    android:layout_marginTop="18dp"
     android:layout_below="@id/hupdatafloodpressure"
     android:layout_toRightOf="@id/hlatelydata"
     android:id="@+id/hdatatime"
     />
     <RadioGroup
+        android:layout_marginRight="9dp"
+        android:layout_marginLeft="9dp"
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="40dp"
@@ -48,6 +44,7 @@
         android:weightSum="4"
         >
         <RadioButton
+            android:background="@drawable/hselector_flood_radiobutton_background_left"
             android:checked="true"
             android:padding="5dp"
             android:id="@+id/hday"
@@ -56,12 +53,14 @@
             android:layout_weight="1"
             android:button="@null"
             android:gravity="center"
-            android:textColor="@drawable/main_zhu_text"
+            android:textColor="@drawable/hselector_flood_radiobutton"
             android:text="日"
             android:textSize="20dp"
 
+
             />
         <RadioButton
+            android:background="@drawable/hselector_flood_radiobutton_background_center"
             android:padding="5dp"
             android:id="@+id/hweek"
             android:layout_width="wrap_content"
@@ -69,12 +68,12 @@
             android:layout_weight="1"
             android:button="@null"
             android:gravity="center"
-            android:textColor="@drawable/main_zhu_text"
+            android:textColor="@drawable/hselector_flood_radiobutton"
             android:text="周"
             android:textSize="20dp"
             />
         <RadioButton
-
+            android:background="@drawable/hselector_flood_radiobutton_background_center"
             android:padding="5dp"
             android:id="@+id/hmonth"
             android:layout_width="wrap_content"
@@ -82,12 +81,12 @@
             android:layout_weight="1"
             android:button="@null"
             android:gravity="center"
-            android:textColor="@drawable/main_zhu_text"
+            android:textColor="@drawable/hselector_flood_radiobutton"
             android:text="月"
             android:textSize="20dp"
             />
         <RadioButton
-
+            android:background="@drawable/hselector_flood_radiobutton_background_right"
             android:padding="5dp"
             android:id="@+id/hyear"
             android:layout_width="wrap_content"
@@ -95,11 +94,12 @@
             android:layout_weight="1"
             android:button="@null"
             android:gravity="center"
-            android:textColor="@drawable/main_zhu_text"
+            android:textColor="@drawable/hselector_flood_radiobutton"
             android:text="年"
             android:textSize="20dp"
             />
     </RadioGroup>
+
 <android.support.v4.view.ViewPager
     android:layout_width="match_parent"
     android:layout_height="240dp"
@@ -117,31 +117,35 @@
     <TextView
         android:gravity="center"
         android:layout_weight="1"
+        android:drawablePadding="9dp"
+
         android:drawableTop="@drawable/requstionddoctor"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:text="问医生"
-        android:textSize="22dp"
+        android:textSize="18dp"
         android:layout_gravity="center"
         />
     <TextView
         android:gravity="center"
         android:drawableTop="@drawable/information"
+        android:drawablePadding="9dp"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:text="资讯"
-        android:textSize="22dp"
+        android:textSize="18dp"
         android:layout_gravity="center"
         />
     <TextView
         android:gravity="center"
+        android:drawablePadding="9dp"
         android:drawableTop="@drawable/alarmclock"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:text="提醒"
-        android:textSize="22dp"
+        android:textSize="18dp"
         android:layout_gravity="center"
         />
 </LinearLayout>
