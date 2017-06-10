@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+android:shape="rectangle">
+
+<!--设置圆角-->
+<corners android:radius="8dp"></corners>
+<stroke
+    android:width="2dp"
+    android:color="@color/doctor_btn"></stroke>
+<gradient
+    android:centerColor="@color/doctor_btn"
+    android:endColor="@color/doctor_btn"
+    android:startColor="@color/doctor_btn"></gradient>
+
+
+</shape>

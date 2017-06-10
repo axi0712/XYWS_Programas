@@ -14,4 +14,9 @@
     <color name="possible_result_points">#18ACCA</color>
     <color name="hwhite">#fff</color>
     <color name="hfloodmaxmintext">#cccccc</color>
+    <color name="doctor_black">#333333</color>
+    <color name="fengexian">#ECECEC</color>
+    <color name="doctor_btn">#4CBF5B</color>
+    <color name="white">#FFFFFF</color>
+    <color name="doctor_text">#737373</color>
 </resources>
