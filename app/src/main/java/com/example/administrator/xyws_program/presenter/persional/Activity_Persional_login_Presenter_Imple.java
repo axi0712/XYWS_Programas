@@ -2,7 +2,6 @@ package com.example.administrator.xyws_program.presenter.persional;
 
 import android.util.Log;
 
-import com.example.administrator.xyws_program.model.ModelInter;
 import com.example.administrator.xyws_program.model.Modelimple;
 import com.example.administrator.xyws_program.model.callback.MyCallBack;
 import com.example.administrator.xyws_program.presenter.Activity_Persional_Login_Presenter_Inter;
