@@ -1,11 +1,11 @@
-package com.example.administrator.xyws_program.presenter;
+package com.example.administrator.xyws_program.view.fragment.persional;
 
 /**
  * /**
  * 项目名称: 血压卫士
  * 类描述:
  * 创建人: XI
- * 创建时间: 2017/6/9 0009 21:31
+ * 创建时间: 2017/6/10 0010 10:56
  * 修改人:
  * 修改内容:
  * 修改时间:
@@ -35,6 +35,7 @@ package com.example.administrator.xyws_program.presenter;
  */
 
 
-public interface Activity_Persional_Login_Presenter_Inter {
-    void login(String name,String pwd);
+public interface Fragment_Persional_Inter {
+    void getBtn();
+    String userId();
 }

@@ -65,6 +65,7 @@
             android:layout_toRightOf="@id/persional_login_edit_pwd_lock"
             android:textColorHint="#b1b1b1"
             android:hint="密码"
+            android:password="true"
             android:layout_centerVertical="true"
             android:padding="10dp"
             />

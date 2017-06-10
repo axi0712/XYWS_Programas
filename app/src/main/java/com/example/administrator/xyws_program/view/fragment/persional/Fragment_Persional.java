@@ -1,6 +1,9 @@
-package com.example.administrator.xyws_program.view.fragment;
+package com.example.administrator.xyws_program.view.fragment.persional;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -8,11 +11,12 @@ import android.widget.TextView;
 import com.example.administrator.xyws_program.MyApp;
 import com.example.administrator.xyws_program.R;
 import com.example.administrator.xyws_program.base.BaseFragment;
-import com.example.administrator.xyws_program.view.activity.persional.Activity_Persional_View_Login;
+import com.example.administrator.xyws_program.presenter.persional.Activity_Persional_Info_Presenter_Imple;
+import com.example.administrator.xyws_program.presenter.persional.inter.Activity_persional_Info_Presenter_Inter;
 import com.example.administrator.xyws_program.view.activity.MainActivity;
+import com.example.administrator.xyws_program.view.activity.persional.Activity_Persional_View_Login;
 
 import butterknife.BindView;
-import butterknife.OnClick;
 import butterknife.Unbinder;
 
 /**
@@ -50,7 +54,7 @@ import butterknife.Unbinder;
  */
 
 
-public class Fragment_Persional extends BaseFragment {
+public class Fragment_Persional extends BaseFragment implements View.OnClickListener,Fragment_Persional_Inter{
 
     @BindView(R.id.fragment_persional_text)
     TextView fragmentPersionalText;
@@ -67,7 +71,8 @@ public class Fragment_Persional extends BaseFragment {
     @BindView(R.id.persional_btn_Setting)
     Button persionalBtnSetting;
     Unbinder unbinder;
-
+    private Activity_persional_Info_Presenter_Inter inter;
+    private SharedPreferences mShared;
     @Override
     protected int layoutId() {
         return R.layout.fragment_persional;
@@ -80,7 +85,15 @@ public class Fragment_Persional extends BaseFragment {
 
     @Override
     protected void initData() {
+        inter = new Activity_Persional_Info_Presenter_Imple(this);
+        mShared = MyApp.activity.getSharedPreferences("login", Context.MODE_PRIVATE);
+        getBtn();
+    }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        getBtn();
     }
 
     @Override
@@ -124,12 +137,20 @@ public class Fragment_Persional extends BaseFragment {
 
     }
 
-    @OnClick({R.id.fragment_persional_btn_login, R.id.persional_btn_jiahao, R.id.persional_btn_collect, R.id.persional_btn_info, R.id.persional_btn_message, R.id.persional_btn_Setting})
-    public void onViewClicked(View view) {
-        switch (view.getId()) {
+
+
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
             case R.id.fragment_persional_btn_login:
-                Intent in = new Intent(MyApp.activity, Activity_Persional_View_Login.class);
-                startActivity(in);
+                Log.d("Fragment_Persional", mShared.getString("userid", ""));
+                if(mShared.getString("userid","").isEmpty()) {
+                    Intent in = new Intent(MyApp.activity, Activity_Persional_View_Login.class);
+                    startActivity(in);
+                }else {
+
+                }
                 break;
             case R.id.persional_btn_jiahao:
                 break;
@@ -142,5 +163,23 @@ public class Fragment_Persional extends BaseFragment {
             case R.id.persional_btn_Setting:
                 break;
         }
+    }
+
+    @Override
+    public void getBtn() {
+        if(mShared.getString("userid","").isEmpty()){
+            fragmentPersionalBtnLogin.setOnClickListener(this);
+        }else {
+            fragmentPersionalText.setVisibility(View.GONE);
+            fragmentPersionalBtnLogin.setVisibility(View.GONE);
+            inter.info(userId());
+//            ImageView im = new ImageView(MyApp.activity);
+//            Glide.with(MyApp.activity).load().
+        }
+    }
+
+    @Override
+    public String userId() {
+        return mShared.getString("userid","");
     }
 }

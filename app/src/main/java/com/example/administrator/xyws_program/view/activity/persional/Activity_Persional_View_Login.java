@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import com.example.administrator.xyws_program.R;
 import com.example.administrator.xyws_program.base.BaseActivity;
-import com.example.administrator.xyws_program.presenter.Activity_Persional_Login_Presenter_Inter;
+import com.example.administrator.xyws_program.presenter.persional.inter.Activity_Persional_Login_Presenter_Inter;
 import com.example.administrator.xyws_program.presenter.persional.Activity_Persional_login_Presenter_Imple;
 import com.example.administrator.xyws_program.view.activity.persional.inter.Activity_Persional_Login_view_Inter;
 

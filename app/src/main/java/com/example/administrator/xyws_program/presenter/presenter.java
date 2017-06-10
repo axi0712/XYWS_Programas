@@ -1,16 +1,11 @@
-package com.example.administrator.xyws_program.model;
-
-import com.example.administrator.xyws_program.model.callback.ModelInter;
-import com.example.administrator.xyws_program.model.callback.MyCallBack;
-
-import java.util.Map;
+package com.example.administrator.xyws_program.presenter;
 
 /**
  * /**
  * 项目名称: 血压卫士
  * 类描述:
  * 创建人: XI
- * 创建时间: 2017/6/9 0009 23:18
+ * 创建时间: 2017/6/10 0010 10:21
  * 修改人:
  * 修改内容:
  * 修改时间:
@@ -40,10 +35,5 @@ import java.util.Map;
  */
 
 
-public class Modelimple implements ModelInter {
-    //
-    @Override
-     public void get(Map<String, String> map, MyCallBack callBack) {
-        HttpFactory.initParsing().getLogin("http://api.wws.xywy.com/index.php?tag=BloodAndroid&sign=2c19b2821ebc5306c3ac37bac5b4288b&act=kbb&fun=users&type=login", map, callBack);
-    }
+public class presenter {
 }

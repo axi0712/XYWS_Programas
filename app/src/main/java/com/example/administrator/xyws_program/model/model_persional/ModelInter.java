@@ -1,4 +1,6 @@
-package com.example.administrator.xyws_program.model.callback;
+package com.example.administrator.xyws_program.model.model_persional;
+
+import com.example.administrator.xyws_program.model.callback.MyCallBack;
 
 import java.util.Map;
 
@@ -38,5 +40,6 @@ import java.util.Map;
 
 
 public interface ModelInter {
-    void get(Map<String, String> map, MyCallBack callBack);
+    void get(String url,Map<String, String> map, MyCallBack callBack);
+    void post(String url,Map<String, String> map, MyCallBack callBack);
 }

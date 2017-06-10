@@ -7,11 +7,11 @@ import android.widget.Toast;
 
 
 import com.example.administrator.xyws_program.MyApp;
-import com.example.administrator.xyws_program.model.Modelimple;
+import com.example.administrator.xyws_program.model.model_persional.Modelimple;
 import com.example.administrator.xyws_program.model.bean.Persional_Login_Bean;
-import com.example.administrator.xyws_program.model.callback.ModelInter;
+import com.example.administrator.xyws_program.model.model_persional.ModelInter;
 import com.example.administrator.xyws_program.model.callback.MyCallBack;
-import com.example.administrator.xyws_program.presenter.Activity_Persional_Login_Presenter_Inter;
+import com.example.administrator.xyws_program.presenter.persional.inter.Activity_Persional_Login_Presenter_Inter;
 import com.example.administrator.xyws_program.view.activity.persional.inter.Activity_Persional_Login_view_Inter;
 import com.google.gson.Gson;
 
@@ -74,7 +74,7 @@ public class Activity_Persional_login_Presenter_Imple implements Activity_Persio
             Map<String, String> map = new HashMap<>();
             map.put("phonenum", name);
             map.put("password", pwd);
-            inters.get(map, new MyCallBack() {
+            inters.post("http://api.wws.xywy.com/index.php?tag=BloodAndroid&sign=2c19b2821ebc5306c3ac37bac5b4288b&act=kbb&fun=users&type=login",map, new MyCallBack() {
                 @Override
                 public void onSuccess(String strSuccess) {
                     Log.d("Activity_Persional_logi", strSuccess);

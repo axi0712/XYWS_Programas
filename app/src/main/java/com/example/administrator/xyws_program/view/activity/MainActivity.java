@@ -15,7 +15,7 @@ import com.example.administrator.xyws_program.R;
 import com.example.administrator.xyws_program.base.BaseActivity;
 import com.example.administrator.xyws_program.view.fragment.Fragment_Blood;
 import com.example.administrator.xyws_program.view.fragment.Fragment_Doctor;
-import com.example.administrator.xyws_program.view.fragment.Fragment_Persional;
+import com.example.administrator.xyws_program.view.fragment.persional.Fragment_Persional;
 
 import java.util.ArrayList;
 import java.util.List;

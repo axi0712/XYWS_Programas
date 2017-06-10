@@ -73,12 +73,12 @@ public interface RetrofitInter {
     //带cookie值得post请求
     @FormUrlEncoded
     @POST
-    Call<ResponseBody> postCookie(@Header("cookie") String cookie, @Url String url, @QueryMap Map<String, String> map);
+    Call<ResponseBody> postCookie(@Header("cookie") String cookie, @Url String url, @FieldMap Map<String, String> map);
 
     //获取cookie值得post请求
     @FormUrlEncoded
     @POST
-    Call<ResponseBody> postLogin(@Url String url, @QueryMap Map<String, String> map);
+    Call<ResponseBody> postLogin(@Url String url, @FieldMap Map<String, String> map);
 
     //上传文件的post请求
     @Multipart
