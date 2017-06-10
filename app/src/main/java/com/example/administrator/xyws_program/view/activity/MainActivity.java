@@ -1,8 +1,6 @@
 package com.example.administrator.xyws_program.view.activity;
 
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.view.KeyEvent;
 import android.view.View;
@@ -15,7 +13,6 @@ import android.widget.Toast;
 
 import com.example.administrator.xyws_program.R;
 import com.example.administrator.xyws_program.base.BaseActivity;
-
 import com.example.administrator.xyws_program.view.fragment.Fragment_Blood;
 import com.example.administrator.xyws_program.view.fragment.Fragment_Doctor;
 import com.example.administrator.xyws_program.view.fragment.Fragment_Persional;
@@ -108,7 +105,7 @@ public class MainActivity extends BaseActivity implements BaseActivity_Zhu {
 
         return mainZhuRadioBtnDoctor;
     }
-//得到第二个单选框
+//得到第二个单选框 。。
 
     public RadioButton getBloodBtn() {
 
