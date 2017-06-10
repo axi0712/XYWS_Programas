@@ -1,13 +1,19 @@
 package com.example.administrator.xyws_program.presenter.persional;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.util.Log;
+import android.widget.Toast;
 
 
+import com.example.administrator.xyws_program.MyApp;
 import com.example.administrator.xyws_program.model.Modelimple;
+import com.example.administrator.xyws_program.model.bean.Persional_Login_Bean;
 import com.example.administrator.xyws_program.model.callback.ModelInter;
 import com.example.administrator.xyws_program.model.callback.MyCallBack;
 import com.example.administrator.xyws_program.presenter.Activity_Persional_Login_Presenter_Inter;
 import com.example.administrator.xyws_program.view.activity.persional.inter.Activity_Persional_Login_view_Inter;
+import com.google.gson.Gson;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -50,9 +56,13 @@ import java.util.Map;
 public class Activity_Persional_login_Presenter_Imple implements Activity_Persional_Login_Presenter_Inter {
     private Activity_Persional_Login_view_Inter inter;
     private ModelInter inters ;
+    private SharedPreferences mShared;
+    private SharedPreferences.Editor mEditor;
     public Activity_Persional_login_Presenter_Imple(Activity_Persional_Login_view_Inter inter) {
         this.inter = inter;
         inters = new Modelimple();
+        mShared = MyApp.activity.getSharedPreferences("login", Context.MODE_PRIVATE);
+        mEditor = mShared.edit();
     }
 
     @Override
@@ -68,6 +78,13 @@ public class Activity_Persional_login_Presenter_Imple implements Activity_Persio
                 @Override
                 public void onSuccess(String strSuccess) {
                     Log.d("Activity_Persional_logi", strSuccess);
+                    Gson gson = new Gson();
+                    Persional_Login_Bean persional_login_bean = gson.fromJson(strSuccess, Persional_Login_Bean.class);
+                    mEditor.putString("userid",persional_login_bean.getUserid()+"");
+                    mEditor.commit();
+                    Log.d("Activity_Persional_logi", persional_login_bean.getUserid());
+                    Toast.makeText(MyApp.activity, persional_login_bean.getUserid(), Toast.LENGTH_SHORT).show();
+
                 }
 
                 @Override
