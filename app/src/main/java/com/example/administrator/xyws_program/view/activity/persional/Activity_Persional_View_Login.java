@@ -117,6 +117,7 @@ public class Activity_Persional_View_Login extends BaseActivity implements Activ
             case R.id.persional_login_text_pwd:
                 break;
             case R.id.persional_login_btn_login:
+
                 inter.login(getName(),getPwd());
                 finish();
                 break;

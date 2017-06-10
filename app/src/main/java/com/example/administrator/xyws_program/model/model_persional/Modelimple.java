@@ -3,7 +3,10 @@ package com.example.administrator.xyws_program.model.model_persional;
 import com.example.administrator.xyws_program.model.HttpFactory;
 import com.example.administrator.xyws_program.model.callback.MyCallBack;
 
+import java.io.File;
 import java.util.Map;
+
+import okhttp3.RequestBody;
 
 /**
  * /**
@@ -41,14 +44,39 @@ import java.util.Map;
 
 
 public class Modelimple implements ModelInter {
+    @Override
+    public void get(String url, Map<String, String> map, MyCallBack callBack) {
+        HttpFactory.initParsing().get(url, map, callBack);
+    }
+
     //
     @Override
-     public void get(String url,Map<String, String> map, MyCallBack callBack) {
+     public void getLogin(String url,Map<String, String> map, MyCallBack callBack) {
         HttpFactory.initParsing().getLogin(url, map, callBack);
     }
 
     @Override
-    public void post(String url,Map<String, String> map, MyCallBack callBack) {
+    public void getCookie(String url, Map<String, String> map, MyCallBack callBack) {
+        HttpFactory.initParsing().getCookie(url, map, callBack);
+    }
+
+    @Override
+    public void post(String url, Map<String, String> map, MyCallBack callBack) {
+        HttpFactory.initParsing().post(url, map, callBack);
+    }
+
+    @Override
+    public void postLogin(String url,Map<String, String> map, MyCallBack callBack) {
         HttpFactory.initParsing().postLogin(url, map, callBack);
+    }
+
+    @Override
+    public void postCookie(String url, Map<String, String> map, MyCallBack callBack) {
+        HttpFactory.initParsing().postCookie(url, map, callBack);
+    }
+
+    @Override
+    public void postFile(String url, Map<String, RequestBody> map, File file, String filekey, MyCallBack callBack) {
+        HttpFactory.initParsing().postFile(url, map, file,filekey,callBack);
     }
 }

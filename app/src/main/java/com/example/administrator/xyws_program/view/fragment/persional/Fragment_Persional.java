@@ -6,7 +6,9 @@ import android.content.SharedPreferences;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.administrator.xyws_program.MyApp;
 import com.example.administrator.xyws_program.R;
@@ -73,6 +75,7 @@ public class Fragment_Persional extends BaseFragment implements View.OnClickList
     Unbinder unbinder;
     private Activity_persional_Info_Presenter_Inter inter;
     private SharedPreferences mShared;
+    private RelativeLayout mRela,mXian;
     @Override
     protected int layoutId() {
         return R.layout.fragment_persional;
@@ -80,7 +83,8 @@ public class Fragment_Persional extends BaseFragment implements View.OnClickList
 
     @Override
     protected void initView(View view) {
-
+        mRela = (RelativeLayout) view.findViewById(R.id.fragment_persional_tou);
+        mXian = (RelativeLayout) view.findViewById(R.id.fragment_persional_tou_rela);
     }
 
     @Override
@@ -88,6 +92,7 @@ public class Fragment_Persional extends BaseFragment implements View.OnClickList
         inter = new Activity_Persional_Info_Presenter_Imple(this);
         mShared = MyApp.activity.getSharedPreferences("login", Context.MODE_PRIVATE);
         getBtn();
+
     }
 
     @Override
@@ -135,7 +140,7 @@ public class Fragment_Persional extends BaseFragment implements View.OnClickList
     public void onDestroyView() {
         super.onDestroyView();
 
-    }
+    } 
 
 
 
@@ -167,14 +172,17 @@ public class Fragment_Persional extends BaseFragment implements View.OnClickList
 
     @Override
     public void getBtn() {
+        Log.d("Fragment_Persional", mShared.getString("userid", ""));
+        Toast.makeText(MyApp.activity, mShared.getString("userid",""), Toast.LENGTH_SHORT).show();
         if(mShared.getString("userid","").isEmpty()){
+            mXian.setVisibility(View.VISIBLE);
+            mRela.setVisibility(View.GONE);
             fragmentPersionalBtnLogin.setOnClickListener(this);
         }else {
-            fragmentPersionalText.setVisibility(View.GONE);
-            fragmentPersionalBtnLogin.setVisibility(View.GONE);
+            mXian.setVisibility(View.GONE);
+            mRela.setVisibility(View.VISIBLE);
             inter.info(userId());
-//            ImageView im = new ImageView(MyApp.activity);
-//            Glide.with(MyApp.activity).load().
+
         }
     }
 

@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <RelativeLayout
+        android:visibility="visible"
+        android:id="@+id/fragment_persional_tou_rela"
         android:background="#AAAAAA"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -26,8 +28,38 @@
             android:background="@drawable/persional_login"
             android:text="马上登录"
             />
+
     </RelativeLayout>
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/fragment_persional_tou"
+        android:background="#AAAAAA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_launcher"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:id="@+id/fragemnt_persional_tou_image"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/fragemnt_persional_tou_image"
+            android:text="用户名"
+            android:id="@+id/fragment_persional_tou_name"
+            android:textColor="#666565"
+            android:layout_marginBottom="10dp"
+            />
+
+
+    </RelativeLayout>
+
     <Button
+        android:layout_below="@id/fragment_persional_tou_rela"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="我的加号"
@@ -41,11 +73,14 @@
         android:drawableRight="@drawable/ic_diary_forward"
         />
     <TextView
+        android:layout_below="@id/persional_btn_jiahao"
+        android:id="@+id/persional_tou_jiahao_text"
         android:layout_width="match_parent"
         android:layout_height="0.1dp"
         android:background="#d1d0d0"
         />
     <Button
+        android:layout_below="@id/persional_tou_jiahao_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="我的收藏"
@@ -59,11 +94,14 @@
         android:drawableRight="@drawable/ic_diary_forward"
         />
     <TextView
+        android:id="@+id/persional_btn_collect_text"
+        android:layout_below="@id/persional_btn_collect"
         android:layout_width="match_parent"
         android:layout_height="18dp"
         android:background="#F9F9F9"
         />
     <Button
+        android:layout_below="@id/persional_btn_collect_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="个人资料"
@@ -77,11 +115,14 @@
         android:drawableRight="@drawable/ic_diary_forward"
         />
     <TextView
+        android:layout_below="@id/persional_btn_info"
+        android:id="@+id/persional_btn_info_text"
         android:layout_width="match_parent"
         android:layout_height="18dp"
         android:background="#F9F9F9"
         />
     <Button
+        android:layout_below="@id/persional_btn_info_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="消息"
@@ -95,12 +136,15 @@
         android:drawableRight="@drawable/ic_diary_forward"
         />
     <TextView
+        android:layout_below="@id/persional_btn_message"
+        android:id="@+id/persional_btn_message_text"
         android:layout_width="match_parent"
         android:layout_height="0.1dp"
         android:background="#d1d0d0"
         />
 
     <Button
+        android:layout_below="@id/persional_btn_message_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="设置"
@@ -114,8 +158,10 @@
         android:id="@+id/persional_btn_Setting" />
 
     <TextView
+        android:layout_below="@id/persional_btn_Setting"
         android:layout_width="match_parent"
         android:layout_height="165dp"
         android:background="#F9F9F9"
         />
-</LinearLayout>
+
+</RelativeLayout>

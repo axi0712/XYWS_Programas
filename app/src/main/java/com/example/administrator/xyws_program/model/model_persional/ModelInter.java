@@ -2,7 +2,10 @@ package com.example.administrator.xyws_program.model.model_persional;
 
 import com.example.administrator.xyws_program.model.callback.MyCallBack;
 
+import java.io.File;
 import java.util.Map;
+
+import okhttp3.RequestBody;
 
 /**
  * /**
@@ -41,5 +44,10 @@ import java.util.Map;
 
 public interface ModelInter {
     void get(String url,Map<String, String> map, MyCallBack callBack);
+    void getLogin(String url,Map<String, String> map, MyCallBack callBack);
+    void getCookie(String url,Map<String, String> map, MyCallBack callBack);
     void post(String url,Map<String, String> map, MyCallBack callBack);
+    void postLogin(String url,Map<String, String> map, MyCallBack callBack);
+    void postCookie(String url,Map<String, String> map, MyCallBack callBack);
+    void postFile(String url, Map<String, RequestBody> map, File file, String filekey, MyCallBack callBack);
 }

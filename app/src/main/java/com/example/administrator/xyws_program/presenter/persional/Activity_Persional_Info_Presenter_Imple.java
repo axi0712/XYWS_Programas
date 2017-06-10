@@ -68,7 +68,7 @@ public class Activity_Persional_Info_Presenter_Imple implements Activity_persion
     public void info(String userid) {
         Map<String,String> map = new HashMap<>();
         map.put("userid",userid);
-        model.get("/index.php?act=kbb&fun=users&type=pullAccountInfo&tag=wjk&sign=ee3dd4651821d3a45f4329a86d459cb7", map, new MyCallBack() {
+        model.getCookie("http://api.wws.xywy.com/index.php?act=kbb&fun=users&type=pullAccountInfo&tag=wjk&sign=ee3dd4651821d3a45f4329a86d459cb7", map, new MyCallBack() {
             @Override
             public void onSuccess(String strSuccess) {
                 Log.d("Activity_Persional_Info", strSuccess);

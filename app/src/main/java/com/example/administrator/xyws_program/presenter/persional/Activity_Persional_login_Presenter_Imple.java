@@ -89,6 +89,7 @@ public class Activity_Persional_login_Presenter_Imple implements Activity_Persio
 
                 @Override
                 public void onError(String strError) {
+
                     Log.d("Activity_Persional_logi", strError);
                 }
             });
