@@ -13,4 +13,5 @@
     <color name="viewfinder_mask">#60000000</color>
     <color name="possible_result_points">#18ACCA</color>
     <color name="hwhite">#fff</color>
+    <color name="hfloodmaxmintext">#cccccc</color>
 </resources>

@@ -99,11 +99,52 @@ android:layout_margin="8dp"
             android:textSize="20dp"
             />
     </RadioGroup>
+<LinearLayout
 
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:id="@+id/hmaxminrln"
+    android:layout_width="match_parent"
+    android:layout_height="26dp"
+    android:layout_below="@id/hradiogroup"
+    >
+<TextView
+
+    android:textColor="@color/hfloodmaxmintext"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="最大值/最小值:"
+    android:textSize="12dp"
+    />
+    <TextView
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/hfloodmaxmintext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="118/128"
+        android:textSize="12dp"
+        />
+    <TextView
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/hfloodmaxmintext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="最小值/最大值:"
+        android:textSize="12dp"
+        />
+    <TextView
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/hfloodmaxmintext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="90/96"
+        android:textSize="12dp"
+        />
+</LinearLayout>
 <android.support.v4.view.ViewPager
     android:layout_width="match_parent"
     android:layout_height="240dp"
-    android:layout_below="@id/hradiogroup"
+    android:layout_below="@id/hmaxminrln"
     android:id="@+id/hviewpager"
     >
 </android.support.v4.view.ViewPager>
