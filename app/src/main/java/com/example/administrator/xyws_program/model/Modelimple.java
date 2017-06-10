@@ -40,6 +40,7 @@ import java.util.Map;
 
 
 public class Modelimple implements ModelInter {
+    //
     @Override
      public void get(Map<String, String> map, MyCallBack callBack) {
         HttpFactory.initParsing().getLogin("http://api.wws.xywy.com/index.php?tag=BloodAndroid&sign=2c19b2821ebc5306c3ac37bac5b4288b&act=kbb&fun=users&type=login", map, callBack);
