@@ -133,7 +133,7 @@ public class MainActivity extends BaseActivity implements BaseActivity_Zhu {
         mFraList.add(new Fragment_Doctor());
         mFraList.add(new Fragment_Blood());
         mFraList.add(new Fragment_Persional());
-        mainAdapter = new MainAdapter(getSupportFragmentManager(),mFraList);
+        mainAdapter = new MainAdapter(getSupportFragmentManager(), mFraList);
         mainView.setAdapter(mainAdapter);
 
         mainView.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
@@ -144,15 +144,15 @@ public class MainActivity extends BaseActivity implements BaseActivity_Zhu {
 
             @Override
             public void onPageSelected(int position) {
-                  String id=String.valueOf(position);
-                if(id.equals("0")){
-                mainZhuRadioBtnDoctor.setChecked(true);
-            }else if(id.equals("1")){
-                mainZhuRadioBtnBlood.setChecked(true);
-            }else if(id.equals("2")){
-                mainZhuRadioBtnPersional.setChecked(true);
+                String id = String.valueOf(position);
+                if (id.equals("0")) {
+                    mainZhuRadioBtnDoctor.setChecked(true);
+                } else if (id.equals("1")) {
+                    mainZhuRadioBtnBlood.setChecked(true);
+                } else if (id.equals("2")) {
+                    mainZhuRadioBtnPersional.setChecked(true);
+                }
             }
-        }
 
             @Override
             public void onPageScrollStateChanged(int state) {
@@ -169,14 +169,16 @@ public class MainActivity extends BaseActivity implements BaseActivity_Zhu {
 
     @Override
     protected void loadData() {
-        if (!mFraList.equals(new Fragment_Doctor())) {
+
+        if (mainAdapter == null) {
             mFraList.add(new Fragment_Doctor());
             mFraList.add(new Fragment_Blood());
             mFraList.add(new Fragment_Persional());
-            mainView.setAdapter(new MainAdapter(getSupportFragmentManager(), mFraList));
+            mainAdapter = new MainAdapter(getSupportFragmentManager(), mFraList);
+            mainView.setAdapter(mainAdapter);
 
         } else {
-            mainView.setAdapter(new MainAdapter(getSupportFragmentManager(), mFraList));
+            mainView.setAdapter(mainAdapter);
 
         }
 //
