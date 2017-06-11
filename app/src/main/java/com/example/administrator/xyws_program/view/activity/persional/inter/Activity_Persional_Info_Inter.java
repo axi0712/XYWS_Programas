@@ -3,7 +3,7 @@ package com.example.administrator.xyws_program.view.activity.persional.inter;
 /**
  * /**
  * 项目名称: 血压卫士
- * 类描述:
+ * 类描述:  个人信息
  * 创建人: XI
  * 创建时间: 2017/6/11 0011 21:37
  * 修改人:
