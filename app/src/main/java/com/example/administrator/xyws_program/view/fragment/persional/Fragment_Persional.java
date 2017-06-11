@@ -22,6 +22,8 @@ import com.example.administrator.xyws_program.base.BaseFragment;
 import com.example.administrator.xyws_program.presenter.persional.Activity_Persional_Info_Presenter_Imple;
 import com.example.administrator.xyws_program.presenter.persional.inter.Activity_persional_Info_Presenter_Inter;
 import com.example.administrator.xyws_program.view.activity.MainActivity;
+import com.example.administrator.xyws_program.view.activity.persional.Activity_Persional_Collect;
+import com.example.administrator.xyws_program.view.activity.persional.Activity_Persional_Info;
 import com.example.administrator.xyws_program.view.activity.persional.Activity_Persional_JiaHao;
 import com.example.administrator.xyws_program.view.activity.persional.Activity_Persional_View_Login;
 
@@ -63,7 +65,7 @@ import butterknife.Unbinder;
  */
 
 
-public class Fragment_Persional extends BaseFragment implements View.OnClickListener,Fragment_Persional_Inter{
+public class Fragment_Persional extends BaseFragment implements View.OnClickListener,Fragment_Persional_Inter {
 
     @BindView(R.id.fragment_persional_text)
     TextView fragmentPersionalText;
@@ -185,16 +187,52 @@ public class Fragment_Persional extends BaseFragment implements View.OnClickList
                 }
                 break;
             case R.id.persional_btn_jiahao:
-                Intent in = new Intent(MyApp.activity, Activity_Persional_JiaHao.class);
-                startActivity(in);
+                if(mShared.getString("userid","").isEmpty()){
+                    Toast.makeText(MyApp.activity, "请先登录", Toast.LENGTH_SHORT).show();
+                    Intent in = new Intent(MyApp.activity,Activity_Persional_View_Login.class);
+                    startActivity(in);
+                }else {
+                    Intent in = new Intent(MyApp.activity, Activity_Persional_JiaHao.class);
+                    startActivity(in);
+                }
                 break;
             case R.id.persional_btn_collect:
+                if(mShared.getString("userid","").isEmpty()){
+                    Toast.makeText(MyApp.activity, "请先登录", Toast.LENGTH_SHORT).show();
+                    Intent in = new Intent(MyApp.activity,Activity_Persional_View_Login.class);
+                    startActivity(in);
+                }else {
+                    Intent in = new Intent(MyApp.activity,Activity_Persional_Collect.class);
+                    startActivity(in);
+                }
                 break;
             case R.id.persional_btn_info:
+                if(mShared.getString("userid","").isEmpty()){
+                    Toast.makeText(MyApp.activity, "请先登录", Toast.LENGTH_SHORT).show();
+                    Intent in = new Intent(MyApp.activity,Activity_Persional_View_Login.class);
+                    startActivity(in);
+                }else {
+                    Intent in = new Intent(MyApp.activity,Activity_Persional_Info.class);
+                    startActivity(in);
+                }
                 break;
             case R.id.persional_btn_message:
+                if(mShared.getString("userid","").isEmpty()){
+                    Toast.makeText(MyApp.activity, "请先登录", Toast.LENGTH_SHORT).show();
+                    Intent in = new Intent(MyApp.activity,Activity_Persional_View_Login.class);
+                    startActivity(in);
+                }else {
+
+                }
                 break;
             case R.id.persional_btn_Setting:
+                if(mShared.getString("userid","").isEmpty()){
+                    Toast.makeText(MyApp.activity, "请先登录", Toast.LENGTH_SHORT).show();
+                    Intent in = new Intent(MyApp.activity,Activity_Persional_View_Login.class);
+                    startActivity(in);
+                }else {
+
+                }
                 break;
         }
     }
@@ -223,6 +261,10 @@ public class Fragment_Persional extends BaseFragment implements View.OnClickList
 
         }
         persionalBtnJiahao.setOnClickListener(this);
+        persionalBtnCollect.setOnClickListener(this);
+        persionalBtnInfo.setOnClickListener(this);
+        persionalBtnMessage.setOnClickListener(this);
+        persionalBtnSetting.setOnClickListener(this);
     }
 
     @Override
