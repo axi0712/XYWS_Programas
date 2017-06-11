@@ -1,315 +1,314 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="match_parent">
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <!--Title-->
+    <TextView
+        android:id="@+id/doctor_title"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="70px"
+        android:background="#eaeaea"
+        android:gravity="center"
+        android:text="全国有70046位血压专家为您在线治疗"
+        android:textColor="#B4B4B4"
+        android:textSize="15dp" />
 
-        <!--Title-->
-        <TextView
-            android:id="@+id/doctor_title"
-            android:layout_width="match_parent"
-            android:layout_height="70px"
-            android:background="#eaeaea"
-            android:gravity="center"
-            android:text="全国有70046位血压专家为您在线治疗"
-            android:textColor="#B4B4B4"
-            android:textSize="15dp" />
-
-        <!--第一部分-->
-        <ImageView
-            android:id="@+id/doctor_img"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_alignParentRight="true"
-            android:layout_below="@id/doctor_title"
-            android:layout_marginRight="10px"
-            android:layout_marginTop="16px"
-            android:paddingLeft="10px"
-            android:paddingRight="10px"
-            android:src="@drawable/mylocation"
+    <!--第一部分-->
+    <ImageView
+        android:id="@+id/doctor_img"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/doctor_title"
+        android:layout_marginRight="10px"
+        android:layout_marginTop="16px"
+        android:paddingLeft="10px"
+        android:paddingRight="10px"
+        android:src="@drawable/mylocation"
 
 
-            />
+        />
 
-        <TextView
-            android:id="@+id/doctor_province"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_below="@id/doctor_title"
-            android:layout_toLeftOf="@id/doctor_img"
-            android:drawableRight="@drawable/ic_diary_forward"
-            android:gravity="center_vertical"
-            android:paddingLeft="28px"
-            android:paddingTop="27px"
-            android:text="省份"
-            android:textColor="@color/doctor_black"
-            android:textSize="14sp" />
+    <TextView
+        android:id="@+id/doctor_province"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/doctor_title"
+        android:layout_toLeftOf="@id/doctor_img"
+        android:drawableRight="@drawable/ic_diary_forward"
+        android:gravity="center_vertical"
+        android:paddingLeft="28px"
+        android:paddingTop="27px"
+        android:text="省份"
+        android:textColor="@color/doctor_black"
+        android:textSize="14sp" />
 
-        <TextView
-            android:id="@+id/fengexian1"
-            android:layout_width="match_parent"
-            android:layout_height="1px"
-            android:layout_below="@id/doctor_province"
-            android:layout_marginRight="5dp"
-            android:layout_marginTop="3dp"
-            android:layout_toLeftOf="@id/doctor_img"
-            android:background="@color/fengexian" />
+    <TextView
+        android:id="@+id/fengexian1"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_below="@id/doctor_province"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="3dp"
+        android:layout_toLeftOf="@id/doctor_img"
+        android:background="@color/fengexian" />
 
-        <!--第二部分-->
-        <TextView
-            android:id="@+id/doctor_mydoctor"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_alignParentRight="true"
-            android:layout_below="@id/fengexian1"
-            android:drawableRight="@drawable/ic_diary_forward"
-            android:gravity="center_vertical|right"
-            android:paddingLeft="28px"
-            android:paddingRight="5dp"
-            android:paddingTop="27px"
-            android:text="主任医生"
-            android:textColor="@color/doctor_black"
-            android:textSize="14sp" />
+    <!--第二部分-->
+    <TextView
+        android:id="@+id/doctor_mydoctor"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/fengexian1"
+        android:drawableRight="@drawable/ic_diary_forward"
+        android:gravity="center_vertical|right"
+        android:paddingLeft="28px"
+        android:paddingRight="5dp"
+        android:paddingTop="27px"
+        android:text="主任医生"
+        android:textColor="@color/doctor_black"
+        android:textSize="14sp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_below="@id/fengexian1"
-            android:gravity="center"
-            android:paddingLeft="28px"
-            android:paddingTop="27px"
-            android:text="医生职称"
-            android:textColor="@color/doctor_black"
-            android:textSize="14sp"
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_below="@id/fengexian1"
+        android:gravity="center"
+        android:paddingLeft="28px"
+        android:paddingTop="27px"
+        android:text="医生职称"
+        android:textColor="@color/doctor_black"
+        android:textSize="14sp"
 
-            />
+        />
 
-        <TextView
-            android:id="@+id/fengexian2"
-            android:layout_width="match_parent"
-            android:layout_height="1px"
-            android:layout_below="@id/doctor_mydoctor"
-            android:layout_marginRight="5dp"
-            android:layout_marginTop="3dp"
-            android:background="@color/fengexian" />
+    <TextView
+        android:id="@+id/fengexian2"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_below="@id/doctor_mydoctor"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="3dp"
+        android:background="@color/fengexian" />
 
-        <!--第三部分-->
-        <TextView
-            android:id="@+id/doctor_grade"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_alignParentRight="true"
-            android:layout_below="@id/fengexian2"
-            android:drawableRight="@drawable/ic_diary_forward"
-            android:gravity="center_vertical|right"
-            android:paddingLeft="28px"
-            android:paddingRight="5dp"
-            android:paddingTop="27px"
-            android:text="三级乙等"
-            android:textColor="@color/doctor_black"
-            android:textSize="14sp" />
+    <!--第三部分-->
+    <TextView
+        android:id="@+id/doctor_grade"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/fengexian2"
+        android:drawableRight="@drawable/ic_diary_forward"
+        android:gravity="center_vertical|right"
+        android:paddingLeft="28px"
+        android:paddingRight="5dp"
+        android:paddingTop="27px"
+        android:text="三级乙等"
+        android:textColor="@color/doctor_black"
+        android:textSize="14sp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_below="@id/fengexian2"
-            android:gravity="center"
-            android:paddingLeft="28px"
-            android:paddingTop="27px"
-            android:text="医院等级"
-            android:textColor="@color/doctor_black"
-            android:textSize="14sp"
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_below="@id/fengexian2"
+        android:gravity="center"
+        android:paddingLeft="28px"
+        android:paddingTop="27px"
+        android:text="医院等级"
+        android:textColor="@color/doctor_black"
+        android:textSize="14sp"
 
-            />
+        />
 
-        <TextView
-            android:id="@+id/fengexian3"
-            android:layout_width="match_parent"
-            android:layout_height="1px"
-            android:layout_below="@id/doctor_grade"
-            android:layout_marginRight="5dp"
-            android:layout_marginTop="3dp"
-            android:background="@color/fengexian" />
+    <TextView
+        android:id="@+id/fengexian3"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_below="@id/doctor_grade"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="3dp"
+        android:background="@color/fengexian" />
 
-        <!--第四部分-->
-        <TextView
-            android:id="@+id/doctor_guanjianci"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_alignParentRight="true"
-            android:layout_below="@id/fengexian3"
-            android:drawableRight="@drawable/ic_diary_forward"
-            android:gravity="center_vertical|left"
-            android:hint="关键字/专家姓名/医院名称/疾病(拼音)"
-            android:paddingLeft="28px"
-            android:paddingRight="5dp"
-            android:paddingTop="27px"
-            android:textColor="@color/doctor_black"
-            android:textSize="14sp" />
+    <!--第四部分-->
+    <TextView
+        android:id="@+id/doctor_guanjianci"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/fengexian3"
+        android:drawableRight="@drawable/ic_diary_forward"
+        android:gravity="center_vertical|left"
+        android:hint="关键字/专家姓名/医院名称/疾病(拼音)"
+        android:paddingLeft="28px"
+        android:paddingRight="5dp"
+        android:paddingTop="27px"
+        android:textColor="@color/doctor_black"
+        android:textSize="14sp" />
 
-        <TextView
-            android:id="@+id/fengexian4"
-            android:layout_width="match_parent"
-            android:layout_height="1px"
-            android:layout_below="@id/doctor_guanjianci"
-            android:layout_marginRight="5dp"
-            android:layout_marginTop="3dp"
-            android:background="@color/fengexian" />
+    <TextView
+        android:id="@+id/fengexian4"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_below="@id/doctor_guanjianci"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="3dp"
+        android:background="@color/fengexian" />
 
-        <!--第五部分-->
-        <CheckBox
-            android:id="@+id/doctor_checkbox"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_below="@id/doctor_guanjianci"
-            android:layout_marginBottom="36px"
-            android:layout_marginTop="36px"
-            android:text="免费加号" />
+    <!--第五部分-->
+    <CheckBox
+        android:id="@+id/doctor_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_below="@id/doctor_guanjianci"
+        android:layout_marginBottom="36px"
+        android:layout_marginTop="36px"
+        android:text="免费加号" />
+
+    <Button
+        android:id="@+id/doctor_select"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fengexian4"
+        android:layout_margin="10dp"
+        android:layout_marginBottom="18px"
+        android:layout_marginTop="18px"
+        android:layout_toRightOf="@id/doctor_checkbox"
+        android:background="@drawable/yuanjiao"
+        android:gravity="center"
+        android:text="查询专家"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/fengexian5"
+        android:layout_width="match_parent"
+        android:layout_height="13dp"
+        android:layout_below="@id/doctor_select"
+        android:background="#eaeaea" />
+
+    <LinearLayout
+        android:id="@+id/doctor_linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fengexian5"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        android:paddingTop="13dp">
 
         <Button
-            android:id="@+id/doctor_select"
-            android:layout_width="match_parent"
+            android:id="@+id/doctor_question"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_below="@id/fengexian4"
-            android:layout_margin="10dp"
-            android:layout_marginBottom="18px"
-            android:layout_marginTop="18px"
-            android:layout_toRightOf="@id/doctor_checkbox"
-            android:background="@drawable/yuanjiao"
-            android:gravity="center"
-            android:text="查询专家"
-            android:textColor="@color/white" />
+            android:layout_weight="1"
+            android:background="@null"
+            android:drawableTop="@drawable/doctor_mydoctor"
+            android:text="免费问医生"
+            android:textColor="@color/doctor_text"
+            android:textSize="30px" />
 
         <TextView
-            android:id="@+id/fengexian5"
-            android:layout_width="match_parent"
-            android:layout_height="13dp"
-            android:layout_below="@id/doctor_select"
-            android:background="#eaeaea" />
+            android:layout_width="3px"
+            android:layout_height="match_parent"
+            android:background="#e7e6e6" />
 
-        <LinearLayout
-            android:id="@+id/doctor_linear"
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/doctor_phone"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_below="@id/fengexian5"
-            android:orientation="horizontal"
-            android:paddingBottom="10dp"
-            android:paddingTop="13dp">
+            android:layout_weight="1"
+            android:background="@null"
+            android:drawableTop="@drawable/doctor_mydoctor2"
+            android:text="健康顾问"
+            android:textColor="@color/doctor_text"
+            android:textSize="30px" />
 
-            <Button
-                android:id="@+id/doctor_question"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@null"
-                android:drawableTop="@drawable/doctor_mydoctor"
-                android:text="免费问医生"
-                android:textColor="@color/doctor_text"
-                android:textSize="30px" />
+    </LinearLayout>
 
-            <TextView
-                android:layout_width="3px"
-                android:layout_height="match_parent"
-                android:background="#e7e6e6" />
 
-            <Button
-                android:id="@+id/doctor_phone"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@null"
-                android:drawableTop="@drawable/doctor_mydoctor2"
-                android:text="健康顾问"
-                android:textColor="@color/doctor_text"
-                android:textSize="30px" />
+    <TextView
+        android:id="@+id/fengexian6"
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:layout_below="@id/doctor_linear"
+        android:background="#eaeaea" />
 
-        </LinearLayout>
-
+    <RelativeLayout
+        android:id="@+id/doctor_relative2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fengexian6">
 
         <TextView
-            android:id="@+id/fengexian6"
-            android:layout_width="match_parent"
-            android:layout_height="15dp"
-            android:layout_below="@id/doctor_linear"
-            android:background="#eaeaea" />
-
-        <RelativeLayout
-            android:id="@+id/doctor_relative2"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/fengexian6">
+            android:layout_alignParentLeft="true"
+            android:layout_margin="22px"
+            android:text="热门医生"
+            android:textSize="30px" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_margin="22px"
-                android:text="热门医生"
-                android:textSize="30px" />
-
-            <TextView
-                android:id="@+id/doctor_trade"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_margin="22px"
-                android:text="换一组"
-                android:textColor="@color/doctor_btn"
-                android:textSize="30px" />
-
-        </RelativeLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/doctor_trade"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/doctor_relative2"
-            android:paddingTop="20px">
-
-            <Button
-                android:id="@+id/doctor_btn_doctor1"
-                android:layout_width="0dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:background="@null"
-                android:drawableTop="@drawable/doctor_head_press"
-                android:text="什么医生"
-                android:textColor="#737373" />
-
-            <Button
-                android:id="@+id/doctor_btn_doctor2"
-                android:layout_width="0dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:background="@null"
-                android:drawableTop="@drawable/doctor_head_press"
-                android:text="什么医生"
-                android:textColor="#737373" />
-
-            <Button
-                android:id="@+id/doctor_btn_doctor3"
-                android:layout_width="0dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:background="@null"
-                android:drawableTop="@drawable/doctor_head_press"
-                android:text="什么医生"
-                android:textColor="#737373" />
-
-            <Button
-                android:id="@+id/doctor_btn_doctor4"
-                android:layout_width="0dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:background="@null"
-                android:drawableTop="@drawable/doctor_head_press"
-                android:text="什么医生"
-                android:textColor="#737373" />
-
-        </LinearLayout>
-
+            android:layout_alignParentRight="true"
+            android:layout_margin="22px"
+            android:text="换一组"
+            android:textColor="@color/doctor_btn"
+            android:textSize="30px" />
 
     </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/doctor_relative2"
+        android:paddingTop="20px">
+
+        <Button
+            android:id="@+id/doctor_btn_doctor1"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:drawableTop="@drawable/doctor_head_press"
+            android:text="什么医生"
+            android:textColor="#737373" />
+
+        <Button
+            android:id="@+id/doctor_btn_doctor2"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:drawableTop="@drawable/doctor_head_press"
+            android:text="什么医生"
+            android:textColor="#737373" />
+
+        <Button
+            android:id="@+id/doctor_btn_doctor3"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:drawableTop="@drawable/doctor_head_press"
+            android:text="什么医生"
+            android:textColor="#737373" />
+
+        <Button
+            android:id="@+id/doctor_btn_doctor4"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:drawableTop="@drawable/doctor_head_press"
+            android:text="什么医生"
+            android:textColor="#737373" />
+
+    </LinearLayout>
+
+</RelativeLayout>
 </ScrollView>

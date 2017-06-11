@@ -18,6 +18,8 @@
         </activity>
         <activity android:name=".view.activity.persional.Activity_Persional_View_Login"/>
         <activity android:name=".view.activity.persional.Activity_Persional_JiaHao"/>
+        <activity android:name=".view.activity.doctor.Doctor_QuestionActivity"/>
+        <activity android:name=".view.activity.doctor.Doctor_ProvinceActivity"/>
     </application>
 
 
