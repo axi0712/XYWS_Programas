@@ -2,6 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
 android:layout_margin="8dp"
+    android:scrollbars="none"
     android:layout_height="match_parent">
     <RelativeLayout
         android:layout_width="match_parent"
@@ -147,26 +148,34 @@ android:layout_margin="8dp"
         android:textSize="12dp"
         />
 </LinearLayout>
-<android.support.v4.view.ViewPager
-    android:layout_width="match_parent"
-    android:layout_height="240dp"
-    android:layout_below="@id/hmaxminrln"
-    android:id="@+id/hviewpager"
-    >
-</android.support.v4.view.ViewPager>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:id="@+id/viewpageronclick"
+            android:layout_below="@id/hmaxminrln"
+            >
+            <android.support.v4.view.ViewPager
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+
+                android:id="@+id/hviewpager"
+                >
+            </android.support.v4.view.ViewPager>
+        </RelativeLayout>
+
 <LinearLayout
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_below="@id/hviewpager"
+    android:layout_below="@id/viewpageronclick"
     >
     <!---->
     <TextView
+        android:id="@+id/requstionddoctor"
         android:gravity="center"
         android:layout_weight="1"
         android:drawablePadding="9dp"
-
-        android:drawableTop="@drawable/requstionddoctor"
+        android:drawableTop="@drawable/requestionddoctor"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:text="问医生"
@@ -174,6 +183,7 @@ android:layout_margin="8dp"
         android:layout_gravity="center"
         />
     <TextView
+        android:id="@+id/information"
         android:gravity="center"
         android:drawableTop="@drawable/information"
         android:drawablePadding="9dp"
@@ -185,6 +195,7 @@ android:layout_margin="8dp"
         android:layout_gravity="center"
         />
     <TextView
+        android:id="@+id/alarmclock"
         android:gravity="center"
         android:drawablePadding="9dp"
         android:drawableTop="@drawable/alarmclock"

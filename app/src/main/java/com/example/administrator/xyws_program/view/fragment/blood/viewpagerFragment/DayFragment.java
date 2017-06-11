@@ -1,20 +1,16 @@
-package com.example.administrator.xyws_program.view.fragment;
+package com.example.administrator.xyws_program.view.fragment.blood.viewpagerFragment;
 
-import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.LinearLayout;
 
-import com.example.administrator.xyws_program.MyApp;
 import com.example.administrator.xyws_program.R;
 import com.example.administrator.xyws_program.base.BaseFragment;
-import com.example.administrator.xyws_program.view.activity.MainActivity;
 
 /**
  * /**
  * 项目名称: 血压卫士
  * 类描述:
- * 创建人: XI
- * 创建时间: 2017/6/9 0009 16:05
+ * 创建人: 黑明阳
+ * 创建时间: 2017/6/11 20:38
  * 修改人:
  * 修改内容:
  * 修改时间:
@@ -44,16 +40,14 @@ import com.example.administrator.xyws_program.view.activity.MainActivity;
  */
 
 
-public class Fragment_Blood extends BaseFragment {
-
+public class DayFragment extends BaseFragment {
     @Override
     protected int layoutId() {
-        return R.layout.fragment_blood;
+        return R.layout.flood_viewpager_day;
     }
 
     @Override
     protected void initView(View view) {
-
 
     }
 
@@ -74,21 +68,6 @@ public class Fragment_Blood extends BaseFragment {
 
     @Override
     protected void updateTitleBar() {
-    }
 
-    @Override
-    public void setUserVisibleHint(boolean isVisibleToUser) {
-        super.setUserVisibleHint(isVisibleToUser);
-        if (isVisibleToUser) {
-            ((MainActivity) MyApp.activity).getMainTouLinea().setVisibility(View.VISIBLE);
-            ((MainActivity) MyApp.activity).getMainTouText().setText("血压管理");
-            ((MainActivity) MyApp.activity).getBloodBtn().setChecked(true);
-
-        }else {
-            ((MainActivity) MyApp.activity).getMainTouLinea().setVisibility(View.GONE);
-            ((MainActivity) MyApp.activity).getBloodBtn().setChecked(true);
-
-        }
-        //
     }
 }

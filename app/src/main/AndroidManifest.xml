@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.administrator.xyws_program">
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".MyApp"
         android:allowBackup="true"
@@ -16,11 +18,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".view.activity.persional.Activity_Persional_View_Login" />
+        <activity android:name=".view.activity.persional.Activity_Persional_JiaHao" />
+        <activity android:name=".view.fragment.blood.childactivity.DatarecordActivity" />
+        <activity android:name=".view.fragment.blood.childactivity.AllrecoredataActivity" />
+        <activity android:name=".view.fragment.blood.childactivity.RequstdoctorActivity" />
+        <activity android:name=".view.fragment.blood.childactivity.InformationActivity" />
+        <activity android:name=".view.fragment.blood.childactivity.AlarmclickActivity"></activity>
         <activity android:name=".view.activity.persional.Activity_Persional_View_Login"/>
         <activity android:name=".view.activity.persional.Activity_Persional_JiaHao"/>
         <activity android:name=".view.activity.doctor.Doctor_QuestionActivity"/>
         <activity android:name=".view.activity.doctor.Doctor_ProvinceActivity"/>
     </application>
-
 
 </manifest>
