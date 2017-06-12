@@ -35,6 +35,13 @@
         <activity android:name=".view.fragment.blood.childactivity.informationInter.TreatmentActivity" />
         <activity android:name=".view.fragment.blood.childactivity.informationInter.RecipesActivity" />
         <activity android:name=".view.fragment.blood.childactivity.informationInter.Blood_information_ItemActivity"></activity>
+        <activity android:name=".view.fragment.blood.childactivity.AlarmclickActivity" />
+        <activity android:name=".view.activity.persional.Activity_Persional_Info" />
+        <activity android:name=".view.activity.persional.Activity_Persional_Collect" />
+        <activity android:name=".view.activity.doctor.Doctor_QuestionActivity" />
+        <activity android:name=".view.activity.doctor.Doctor_ProvinceActivity" />
+        <activity android:name=".view.activity.persional.Activity_Persional_Info_Name"></activity>
+        <activity android:name=".view.activity.persional.Activity_Persional_Collect_Detail"/>
     </application>
 
 </manifest>

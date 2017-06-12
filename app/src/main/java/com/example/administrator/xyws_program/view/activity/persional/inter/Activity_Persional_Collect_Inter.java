@@ -1,11 +1,15 @@
-package com.example.administrator.xyws_program.presenter.persional.inter;
+package com.example.administrator.xyws_program.view.activity.persional.inter;
+
+import com.example.administrator.xyws_program.model.bean.Persional_Collect_Bean;
+
+import java.util.List;
 
 /**
  * /**
  * 项目名称: 血压卫士
  * 类描述:
  * 创建人: XI
- * 创建时间: 2017/6/10 0010 10:24
+ * 创建时间: 2017/6/10 0010 18:36
  * 修改人:
  * 修改内容:
  * 修改时间:
@@ -35,7 +39,9 @@ package com.example.administrator.xyws_program.presenter.persional.inter;
  */
 
 
-public interface Activity_persional_Info_Presenter_Inter {
-    //参数的ID
-    void info(String userid);
+public interface Activity_Persional_Collect_Inter {
+    //返回
+    void getCancel();
+    //加载数据
+    void loadData(List<Persional_Collect_Bean.Data> mList);
 }

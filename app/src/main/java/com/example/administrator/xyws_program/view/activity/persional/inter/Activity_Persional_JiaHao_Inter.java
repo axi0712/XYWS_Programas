@@ -40,6 +40,8 @@ import java.util.List;
 
 
 public interface Activity_Persional_JiaHao_Inter {
+    //返回
     void getCancel();
+    //加载数据
     void loadData(List<Persional_JiaHao_Bean.DataBeanX.DataBean> mList);
 }

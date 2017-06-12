@@ -5,7 +5,7 @@ package com.example.administrator.xyws_program.presenter.persional.inter;
  * 项目名称: 血压卫士
  * 类描述:
  * 创建人: XI
- * 创建时间: 2017/6/10 0010 10:24
+ * 创建时间: 2017/6/12 0012 14:13
  * 修改人:
  * 修改内容:
  * 修改时间:
@@ -35,7 +35,6 @@ package com.example.administrator.xyws_program.presenter.persional.inter;
  */
 
 
-public interface Activity_persional_Info_Presenter_Inter {
-    //参数的ID
-    void info(String userid);
+public interface Activity_Persional_Collect_Presenter_Inter {
+    void collect(String xywy_userid,String app_id,String sign,String tag);
 }

@@ -1,17 +1,13 @@
 package com.example.administrator.xyws_program.presenter.persional;
 
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.util.Log;
 
-import com.example.administrator.xyws_program.MyApp;
-import com.example.administrator.xyws_program.model.bean.Persional_Info_Bean;
 import com.example.administrator.xyws_program.model.callback.MyCallBack;
 import com.example.administrator.xyws_program.model.model_persional.ModelInter;
 import com.example.administrator.xyws_program.model.model_persional.Modelimple;
-import com.example.administrator.xyws_program.presenter.persional.inter.Activity_persional_Info_Presenter_Inter;
-import com.example.administrator.xyws_program.view.fragment.persional.Fragment_Persional_Inter;
-import com.google.gson.Gson;
+import com.example.administrator.xyws_program.presenter.persional.inter.Activity_Persional_Info_ZiLiao_Presenter_Inter;
+import com.example.administrator.xyws_program.view.activity.persional.inter.Activity_Persional_Info_Inter;
+import com.example.administrator.xyws_program.view.activity.persional.inter.Activity_Persional_Info_Name_Inter;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -21,7 +17,7 @@ import java.util.Map;
  * 项目名称: 血压卫士
  * 类描述:
  * 创建人: XI
- * 创建时间: 2017/6/10 0010 10:26
+ * 创建时间: 2017/6/12 0012 8:51
  * 修改人:
  * 修改内容:
  * 修改时间:
@@ -51,38 +47,34 @@ import java.util.Map;
  */
 
 
-public class Activity_Persional_Info_Presenter_Imple implements Activity_persional_Info_Presenter_Inter {
+public class Activity_Persional_Info_ZiLiao_Presenter_Imple implements Activity_Persional_Info_ZiLiao_Presenter_Inter {
     private ModelInter model;
-    private Fragment_Persional_Inter inter;
+    private Activity_Persional_Info_Inter inter;
+    private Activity_Persional_Info_Name_Inter ziliao;
 
-    private SharedPreferences mShared;
-    private SharedPreferences.Editor mEditor;
+    public Activity_Persional_Info_ZiLiao_Presenter_Imple(Activity_Persional_Info_Name_Inter ziliao) {
+        this.ziliao = ziliao;
+        model = new Modelimple();
+    }
 
-    public Activity_Persional_Info_Presenter_Imple(Fragment_Persional_Inter inter) {
+    public Activity_Persional_Info_ZiLiao_Presenter_Imple(Activity_Persional_Info_Inter inter) {
         this.inter = inter;
         model = new Modelimple();
-        mShared = MyApp.activity.getSharedPreferences("login", Context.MODE_PRIVATE);
-        mEditor = mShared.edit();
-
     }
 
     @Override
-    public void info(String userid) {
+    public void ziLiao(String userid, String height, String app_id, String sex, String birthday, String keyword, String accountstr) {
         Map<String,String> map = new HashMap<>();
         map.put("userid",userid);
-        model.getCookie("http://api.wws.xywy.com/index.php?act=kbb&fun=users&type=pullAccountInfo&tag=wjk&sign=ee3dd4651821d3a45f4329a86d459cb7", map, new MyCallBack() {
+        map.put("height",height);
+        map.put("app_id",app_id);
+        map.put("sex",sex);
+        map.put("birthday",birthday);
+        map.put("keyword",keyword);
+        model.postCookie("http://api.wws.xywy.com/index.php?act=kbb&fun=resetProperty&tag=BloodAndroid&sign=2c19b2821ebc5306c3ac37bac5b4288b", map, new MyCallBack() {
             @Override
             public void onSuccess(String strSuccess) {
-                Log.d("Activity_Persional_Info", strSuccess);
-                Gson gson = new Gson();
-                Persional_Info_Bean persional_info_bean = gson.fromJson(strSuccess, Persional_Info_Bean.class);
-                mEditor.putString("image",persional_info_bean.getAvatar());
-                mEditor.putString("name",persional_info_bean.getAccounts().get(0).getAccountstr());
-                mEditor.putString("sex",persional_info_bean.getAccounts().get(0).getSex());
-                mEditor.putString("height",persional_info_bean.getAccounts().get(0).getHeight());
-                mEditor.putString("birthday",persional_info_bean.getAccounts().get(0).getBirthday());
-
-                mEditor.commit();
+                Log.d("Actiional_ZiLiao", strSuccess);
             }
 
             @Override
@@ -90,8 +82,5 @@ public class Activity_Persional_Info_Presenter_Imple implements Activity_persion
 
             }
         });
-
     }
-
-
 }
