@@ -2,6 +2,7 @@ package com.example.administrator.xyws_program.presenter.persional;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.util.Log;
 
 import com.example.administrator.xyws_program.MyApp;
 import com.example.administrator.xyws_program.model.bean.Persional_Collect_Bean;
@@ -73,13 +74,14 @@ public class Activity_Persional_Collect_Presenter_Imple implements Activity_Pers
         model.postCookie("http://api.yun.xywy.com/index.php/app/collect/list_data/111", map, new MyCallBack() {
             @Override
             public void onSuccess(String strSuccess) {
+                Log.e("kankanjson",strSuccess);
                 Gson gson = new Gson();
                 Persional_Collect_Bean persional_collect_bean = gson.fromJson(strSuccess, Persional_Collect_Bean.class);
                 List<Persional_Collect_Bean.Data> mList = persional_collect_bean.getData();
                 inter.loadData(mList);
-                mEditor.putString("id",persional_collect_bean.getData().get(0).getCategoryid());
-                mEditor.putString("meta",persional_collect_bean.getData().get(0).getMeta());
-                mEditor.commit();
+//                mEditor.putString("id",persional_collect_bean.getData().get(0).getCategoryid());
+//                mEditor.putString("meta",persional_collect_bean.getData().get(0).getMeta());
+//                mEditor.commit();
             }
 
             @Override
