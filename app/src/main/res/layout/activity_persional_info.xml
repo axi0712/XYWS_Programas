@@ -38,11 +38,21 @@
             android:textColor="#cdcdcd"
             />
         <ImageView
+            android:id="@+id/activity_persional_info_name_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:src="@drawable/ic_diary_forward"
             android:layout_centerInParent="true"
+            />
+        <TextView
+            android:padding="5dp"
+            android:layout_centerInParent="true"
+            android:textSize="18sp"
+            android:layout_toLeftOf="@id/activity_persional_info_name_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/activity_persional_info_name_text"
             />
     </RelativeLayout>
     <TextView

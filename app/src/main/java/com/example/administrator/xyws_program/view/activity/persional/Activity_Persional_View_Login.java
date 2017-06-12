@@ -95,20 +95,7 @@ public class Activity_Persional_View_Login extends BaseActivity implements Activ
         return persionalLoginEditPwd.getText().toString().trim();
     }
 
-    @Override
-    public void login() {
 
-    }
-
-    @Override
-    public void loginPwd() {
-
-    }
-
-    @Override
-    public String doToast(String toast) {
-        return null;
-    }
 
 
     @OnClick({R.id.persional_login_text_pwd, R.id.persional_login_btn_login})
