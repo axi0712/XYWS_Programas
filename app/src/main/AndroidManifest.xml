@@ -24,11 +24,17 @@
         <activity android:name=".view.fragment.blood.childactivity.AllrecoredataActivity" />
         <activity android:name=".view.fragment.blood.childactivity.RequstdoctorActivity" />
         <activity android:name=".view.fragment.blood.childactivity.InformationActivity" />
-        <activity android:name=".view.fragment.blood.childactivity.AlarmclickActivity"></activity>
-        <activity android:name=".view.activity.persional.Activity_Persional_View_Login"/>
-        <activity android:name=".view.activity.persional.Activity_Persional_JiaHao"/>
-        <activity android:name=".view.activity.doctor.Doctor_QuestionActivity"/>
-        <activity android:name=".view.activity.doctor.Doctor_ProvinceActivity"/>
+        <activity android:name=".view.fragment.blood.childactivity.AlarmclickActivity" />
+        <activity android:name=".view.activity.persional.Activity_Persional_View_Login" />
+        <activity android:name=".view.activity.persional.Activity_Persional_JiaHao" />
+        <activity android:name=".view.activity.doctor.Doctor_QuestionActivity" />
+        <activity android:name=".view.activity.doctor.Doctor_ProvinceActivity" />
+        <activity android:name=".view.fragment.blood.childactivity.informationInter.Informationcommensence" />
+        <activity android:name=".view.fragment.blood.childactivity.informationInter.InspectActivity" />
+        <activity android:name=".view.fragment.blood.childactivity.informationInter.PreventionActivity" />
+        <activity android:name=".view.fragment.blood.childactivity.informationInter.TreatmentActivity" />
+        <activity android:name=".view.fragment.blood.childactivity.informationInter.RecipesActivity" />
+        <activity android:name=".view.fragment.blood.childactivity.informationInter.Blood_information_ItemActivity"></activity>
     </application>
 
 </manifest>

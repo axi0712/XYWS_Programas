@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_alarmclick"
+    android:id="@+id/activity_infortiondetils"
     android:layout_width="match_parent"
+    android:scrollbars="none"
     android:layout_height="match_parent"
-    tools:context="com.example.administrator.xyws_program.view.fragment.blood.childactivity.AlarmclickActivity">
+    tools:context="com.example.administrator.xyws_program.view.fragment.blood.childactivity.informationInter.Informationcommensence">
 <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <android.support.v7.widget.Toolbar
         android:layout_width="match_parent"
-        android:id="@+id/information_toolbar"
+        android:id="@+id/informationdatils_toolbar"
         android:background="@color/colorGreen"
         android:layout_height="60dp">
         <RelativeLayout
@@ -22,27 +24,27 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/back_img"
                 android:scaleType="fitCenter"
-                android:id="@+id/alarmclock_toolbar_backimg"
+                android:id="@+id/informationdatils_toolbar_backimg"
                 />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="用药提醒"
+                android:text="血压资讯"
                 android:textSize="20dp"
                 android:textColor="@color/colorlightwhite"
                 android:gravity="center"
                 />
-            <ImageView
-                android:layout_marginRight="20dp"
-                android:layout_alignParentRight="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/requst_jia"
-                android:scaleType="fitCenter"
-                android:id="@+id/alarmclock_toolbar_add"
-                />
         </RelativeLayout>
     </android.support.v7.widget.Toolbar>
+    <com.androidkun.PullToRefreshRecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/commonsencerecyclerview"
+        android:layout_below="@id/informationdatils_toolbar"
+        >
 
+    </com.androidkun.PullToRefreshRecyclerView>
 </RelativeLayout>
+
+
 </ScrollView>

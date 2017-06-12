@@ -1,16 +1,16 @@
-package com.example.administrator.xyws_program.view.activity.flood;
+package com.example.administrator.xyws_program.view.fragment.blood.childactivity.informationInter;
 
-import android.widget.ImageView;
+import com.example.administrator.xyws_program.model.bean.BloodBean.Blood_commensence_Bean;
+import com.example.administrator.xyws_program.model.bean.BloodBean.Blood_information_item_Bean;
 
-import com.example.administrator.xyws_program.view.activity.flood.inter.Activity_Blood_updatabloodpressyre_inter;
-import com.example.administrator.xyws_program.view.fragment.blood.fragment_Blood_Inter;
+import java.util.List;
 
 /**
  * /**
  * 项目名称: 血压卫士
  * 类描述:
  * 创建人: 黑明阳
- * 创建时间: 2017/6/11 20:14
+ * 创建时间: 2017/6/12 13:59
  * 修改人:
  * 修改内容:
  * 修改时间:
@@ -40,11 +40,7 @@ import com.example.administrator.xyws_program.view.fragment.blood.fragment_Blood
  */
 
 
-public class Activity_Blood_updatabloodpressyre {
-private fragment_Blood_Inter inter;
-     public Activity_Blood_updatabloodpressyre(fragment_Blood_Inter inter){
-      this.inter=inter;
-
-     }
-
+public interface Blood_information_Item_Inter {
+    //数据加载显示
+    void showdata(Blood_information_item_Bean bean);
 }

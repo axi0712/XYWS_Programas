@@ -1,18 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_requstdoctor"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:scrollbars="none"
     tools:context="com.example.administrator.xyws_program.view.fragment.blood.childactivity.RequstdoctorActivity">
-    <TextView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:gravity="center"
-    android:text="requstdoctor"
-    />
-</RelativeLayout>
+
+   <RelativeLayout
+       android:id="@+id/activity_requstdoctor"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       >
+       <android.support.v7.widget.Toolbar
+           android:layout_width="match_parent"
+           android:id="@+id/requstdoctor_toolbar"
+           android:background="@color/colorGreen"
+           android:layout_height="60dp">
+           <RelativeLayout
+               android:gravity="center_vertical"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent">
+               <ImageView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:src="@drawable/back_img"
+                   android:scaleType="fitCenter"
+                   android:id="@+id/requstdoctor_toolbar_backimg"
+                   />
+               <TextView
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:text="向医生提问"
+                   android:textSize="20dp"
+                   android:textColor="@color/colorlightwhite"
+                   android:gravity="center"
+                   />
+           </RelativeLayout>
+
+       </android.support.v7.widget.Toolbar>
+       <RelativeLayout
+           android:id="@+id/requstdoctor"
+           android:layout_width="match_parent"
+           android:layout_height="56dp"
+           android:background="@color/hwhite"
+           android:layout_below="@id/requstdoctor_toolbar"
+           android:gravity="center"
+           >
+           <ImageView
+               android:layout_width="wrap_content"
+               android:layout_height="match_parent"
+               android:src="@drawable/requst_jia"
+               android:scaleType="fitCenter"
+               />
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="match_parent"
+               android:gravity="center"
+               android:textSize="20dp"
+               android:drawableLeft="@drawable/requst_jia"
+               android:text="问医生"
+               />
+       </RelativeLayout>
+       <com.androidkun.PullToRefreshRecyclerView
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:layout_below="@id/requstdoctor"
+           android:id="@+id/requst"
+           >
+       </com.androidkun.PullToRefreshRecyclerView>
+
+   </RelativeLayout>
+
+</ScrollView>

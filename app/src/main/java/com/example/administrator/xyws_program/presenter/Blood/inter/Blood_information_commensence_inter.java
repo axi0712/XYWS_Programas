@@ -1,11 +1,11 @@
-package com.example.administrator.xyws_program.view.activity.flood.inter;
+package com.example.administrator.xyws_program.presenter.Blood.inter;
 
 /**
  * /**
  * 项目名称: 血压卫士
  * 类描述:
  * 创建人: 黑明阳
- * 创建时间: 2017/6/11 20:16
+ * 创建时间: 2017/6/12 14:26
  * 修改人:
  * 修改内容:
  * 修改时间:
@@ -35,7 +35,6 @@ package com.example.administrator.xyws_program.view.activity.flood.inter;
  */
 
 
-public interface Activity_Blood_updatabloodpressyre_inter {
-
-
+public interface Blood_information_commensence_inter {
+    void showcommonsencedata();
 }

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_infortiondetils"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none"
+    tools:context="com.example.administrator.xyws_program.view.fragment.blood.childactivity.informationInter.Informationcommensence">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:id="@+id/blood_information_item_toolbar"
+        android:background="@color/colorGreen"
+        android:layout_height="60dp">
+        <RelativeLayout
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/back_img"
+                android:scaleType="fitCenter"
+                android:id="@+id/blood_information_item_toolbar_backimg"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="文章"
+                android:textSize="20dp"
+                android:textColor="@color/colorlightwhite"
+                android:gravity="center"
+                />
+            <TextView
+                android:layout_marginTop="8dp"
+                android:background="@drawable/hcollection"
+                android:layout_marginRight="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/blood_information_item_toolbar_collection"
+                />
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+<RelativeLayout
+    android:layout_below="@id/blood_information_item_toolbar"
+    android:layout_margin="3dp"
+    android:background="@drawable/hblood_commonsence"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:id="@+id/blood_information_item_rln1"
+        android:layout_marginTop="7dp"
+        android:layout_width="match_parent"
+        android:layout_height="51dp">
+        <TextView
+            android:id="@+id/blood_information_item_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:layout_margin="13dp"
+            android:text="高压患者的饮食要点是什么？"
+            android:textStyle="bold"
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/blood_information_item_rln2"
+        android:layout_below="@id/blood_information_item_rln1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/blood_information_item_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textColor="@color/colorGreen"
+            android:layout_marginLeft="13dp"
+            android:text="2017-06-12"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_below="@id/blood_information_item_rln2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/blood_information_item_rln3"
+        >
+        <TextView
+            android:id="@+id/blood_information_item_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="20dp"
+            android:layout_marginLeft="13dp"
+            android:text="2017-06-12"
+            android:maxLines="1000"
+            />
+    </RelativeLayout>
+
+</RelativeLayout>
+
+</RelativeLayout>
+
+
+</ScrollView>
