@@ -9,6 +9,7 @@ import com.example.administrator.xyws_program.base.BaseActivity;
 import com.example.administrator.xyws_program.model.bean.Persional_Collect_Detail_Bean;
 import com.example.administrator.xyws_program.presenter.persional.Activity_Persional_Collect_Dtail_Presenter_Imple;
 import com.example.administrator.xyws_program.presenter.persional.inter.Activity_Persional_Collect_Detail_Presenter_Inter;
+import com.example.administrator.xyws_program.util.DateTimeUils;
 import com.example.administrator.xyws_program.view.activity.persional.inter.Activity_Persional_Collect_Detail_Inter;
 
 import butterknife.BindView;
@@ -83,14 +84,16 @@ public class Activity_Persional_Collect_Detail extends BaseActivity implements A
 
     @Override
     protected void loadData() {
-        inter.detail("","");
+
+        inter.detail(mShared.getString("id",""));
     }
 
     @Override
     public void loadD(Persional_Collect_Detail_Bean.DataBean mList) {
         activityPersionalCollectDetailTitle.setText(mList.getTitle());
 //        String date = Dates.getDate(mList.getPubdate()+"");
-         activityPersionalCollectDetailTime.setText(mList.getPubdate());
+        String date = DateTimeUils.getDateday(mList.getPubdate() + "");
+        activityPersionalCollectDetailTime.setText(date);
         activityPersionalCollectDetailBody.setText(mList.getBody());
     }
 

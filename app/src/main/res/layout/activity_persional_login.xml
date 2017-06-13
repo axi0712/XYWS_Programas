@@ -58,6 +58,7 @@
             android:layout_margin="12dp"
             />
         <EditText
+
             android:background="@null"
             android:id="@+id/persional_login_edit_pwd"
             android:layout_width="match_parent"

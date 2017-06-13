@@ -25,6 +25,8 @@ import com.example.administrator.xyws_program.view.activity.MainActivity;
 import com.example.administrator.xyws_program.view.activity.persional.Activity_Persional_Collect;
 import com.example.administrator.xyws_program.view.activity.persional.Activity_Persional_Info;
 import com.example.administrator.xyws_program.view.activity.persional.Activity_Persional_JiaHao;
+import com.example.administrator.xyws_program.view.activity.persional.Activity_Persional_Setting;
+import com.example.administrator.xyws_program.view.activity.persional.Activity_Persional_TouXiang;
 import com.example.administrator.xyws_program.view.activity.persional.Activity_Persional_View_Login;
 
 import butterknife.BindView;
@@ -65,7 +67,7 @@ import butterknife.Unbinder;
  */
 
 
-public class Fragment_Persional extends BaseFragment implements View.OnClickListener,Fragment_Persional_Inter {
+public class Fragment_Persional extends BaseFragment implements View.OnClickListener, Fragment_Persional_Inter {
 
     @BindView(R.id.fragment_persional_text)
     TextView fragmentPersionalText;
@@ -84,9 +86,10 @@ public class Fragment_Persional extends BaseFragment implements View.OnClickList
     Unbinder unbinder;
     private Activity_persional_Info_Presenter_Inter inter;
     private SharedPreferences mShared;
-    private RelativeLayout mRela,mXian;
+    private RelativeLayout mRela, mXian;
     private ImageView mImage;
     private TextView mName;
+
     @Override
     protected int layoutId() {
         return R.layout.fragment_persional;
@@ -122,12 +125,27 @@ public class Fragment_Persional extends BaseFragment implements View.OnClickList
 
     @Override
     protected void initListener() {
-
+        //点击头像
+        mImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), Activity_Persional_TouXiang.class);
+                startActivity(intent);
+                Glide.with(getContext()).load(mShared.getString("url", "")).asBitmap().centerCrop().into(new BitmapImageViewTarget(mImage) {
+                    @Override
+                    protected void setResource(Bitmap resource) {
+                        RoundedBitmapDrawable ciDrawable = RoundedBitmapDrawableFactory.create(getActivity().getResources(), resource);
+                        ciDrawable.setCircular(true);
+                        mImage.setImageDrawable(ciDrawable);
+                    }
+                });
+            }
+        });
     }
 
     @Override
     protected void loadData() {
-
+        getBtn();
     }
 
     @Override
@@ -154,14 +172,11 @@ public class Fragment_Persional extends BaseFragment implements View.OnClickList
     }
 
 
-
     @Override
     public void onDestroyView() {
         super.onDestroyView();
 
-    } 
-
-
+    }
 
 
     @Override
@@ -169,13 +184,13 @@ public class Fragment_Persional extends BaseFragment implements View.OnClickList
         switch (v.getId()) {
             case R.id.fragment_persional_btn_login:
                 Log.d("Fragment_Persional", mShared.getString("userid", ""));
-                if(mShared.getString("userid","").isEmpty()) {
+                if (mShared.getString("userid", "").isEmpty()) {
                     Intent in = new Intent(MyApp.activity, Activity_Persional_View_Login.class);
                     startActivity(in);
-                }else {
+                } else {
                     mXian.setVisibility(View.INVISIBLE);
                     mRela.setVisibility(View.VISIBLE);
-                    Glide.with(getContext()).load(mShared.getString("image","")).asBitmap().centerCrop().into(new BitmapImageViewTarget(mImage) {
+                    Glide.with(getContext()).load(mShared.getString("image", "")).asBitmap().centerCrop().into(new BitmapImageViewTarget(mImage) {
                         @Override
                         protected void setResource(Bitmap resource) {
                             RoundedBitmapDrawable ciDrawable = RoundedBitmapDrawableFactory.create(getActivity().getResources(), resource);
@@ -183,55 +198,58 @@ public class Fragment_Persional extends BaseFragment implements View.OnClickList
                             mImage.setImageDrawable(ciDrawable);
                         }
                     });
-                    mName.setText(mShared.getString("name",""));
+
+
+                    mName.setText(mShared.getString("name", ""));
                 }
                 break;
             case R.id.persional_btn_jiahao:
-                if(mShared.getString("userid","").isEmpty()){
+                if (mShared.getString("userid", "").isEmpty()) {
                     Toast.makeText(MyApp.activity, "请先登录", Toast.LENGTH_SHORT).show();
-                    Intent in = new Intent(MyApp.activity,Activity_Persional_View_Login.class);
+                    Intent in = new Intent(MyApp.activity, Activity_Persional_View_Login.class);
                     startActivity(in);
-                }else {
+                } else {
                     Intent in = new Intent(MyApp.activity, Activity_Persional_JiaHao.class);
                     startActivity(in);
                 }
                 break;
             case R.id.persional_btn_collect:
-                if(mShared.getString("userid","").isEmpty()){
+                if (mShared.getString("userid", "").isEmpty()) {
                     Toast.makeText(MyApp.activity, "请先登录", Toast.LENGTH_SHORT).show();
-                    Intent in = new Intent(MyApp.activity,Activity_Persional_View_Login.class);
+                    Intent in = new Intent(MyApp.activity, Activity_Persional_View_Login.class);
                     startActivity(in);
-                }else {
-                    Intent in = new Intent(MyApp.activity,Activity_Persional_Collect.class);
+                } else {
+                    Intent in = new Intent(MyApp.activity, Activity_Persional_Collect.class);
                     startActivity(in);
                 }
                 break;
             case R.id.persional_btn_info:
-                if(mShared.getString("userid","").isEmpty()){
+                if (mShared.getString("userid", "").isEmpty()) {
                     Toast.makeText(MyApp.activity, "请先登录", Toast.LENGTH_SHORT).show();
-                    Intent in = new Intent(MyApp.activity,Activity_Persional_View_Login.class);
+                    Intent in = new Intent(MyApp.activity, Activity_Persional_View_Login.class);
                     startActivity(in);
-                }else {
-                    Intent in = new Intent(MyApp.activity,Activity_Persional_Info.class);
+                } else {
+                    Intent in = new Intent(MyApp.activity, Activity_Persional_Info.class);
                     startActivity(in);
                 }
                 break;
             case R.id.persional_btn_message:
-                if(mShared.getString("userid","").isEmpty()){
+                if (mShared.getString("userid", "").isEmpty()) {
                     Toast.makeText(MyApp.activity, "请先登录", Toast.LENGTH_SHORT).show();
-                    Intent in = new Intent(MyApp.activity,Activity_Persional_View_Login.class);
+                    Intent in = new Intent(MyApp.activity, Activity_Persional_View_Login.class);
                     startActivity(in);
-                }else {
+                } else {
 
                 }
                 break;
             case R.id.persional_btn_Setting:
-                if(mShared.getString("userid","").isEmpty()){
+                if (mShared.getString("userid", "").isEmpty()) {
                     Toast.makeText(MyApp.activity, "请先登录", Toast.LENGTH_SHORT).show();
-                    Intent in = new Intent(MyApp.activity,Activity_Persional_View_Login.class);
+                    Intent in = new Intent(MyApp.activity, Activity_Persional_View_Login.class);
                     startActivity(in);
-                }else {
-
+                } else {
+                    Intent in = new Intent(MyApp.activity, Activity_Persional_Setting.class);
+                    startActivity(in);
                 }
                 break;
         }
@@ -240,16 +258,15 @@ public class Fragment_Persional extends BaseFragment implements View.OnClickList
     @Override
     public void getBtn() {
         Log.d("Fragment_Persional", mShared.getString("userid", ""));
-        Toast.makeText(MyApp.activity, mShared.getString("userid",""), Toast.LENGTH_SHORT).show();
-        if(mShared.getString("userid","").isEmpty()){
+        if (mShared.getString("userid", "").isEmpty()) {
             mXian.setVisibility(View.VISIBLE);
             mRela.setVisibility(View.INVISIBLE);
             fragmentPersionalBtnLogin.setOnClickListener(this);
-        }else {
+        } else {
             mXian.setVisibility(View.INVISIBLE);
             mRela.setVisibility(View.VISIBLE);
             inter.info(userId());
-            Glide.with(getContext()).load(mShared.getString("image","")).asBitmap().centerCrop().into(new BitmapImageViewTarget(mImage) {
+            Glide.with(getContext()).load(mShared.getString("image", "")).asBitmap().centerCrop().into(new BitmapImageViewTarget(mImage) {
                 @Override
                 protected void setResource(Bitmap resource) {
                     RoundedBitmapDrawable ciDrawable = RoundedBitmapDrawableFactory.create(getActivity().getResources(), resource);
@@ -257,7 +274,7 @@ public class Fragment_Persional extends BaseFragment implements View.OnClickList
                     mImage.setImageDrawable(ciDrawable);
                 }
             });
-           mName.setText(mShared.getString("name",""));
+            mName.setText(mShared.getString("name", ""));
 
         }
         persionalBtnJiahao.setOnClickListener(this);
@@ -269,6 +286,10 @@ public class Fragment_Persional extends BaseFragment implements View.OnClickList
 
     @Override
     public String userId() {
-        return mShared.getString("userid","");
+        return mShared.getString("userid", "");
     }
+
+
 }
+
+

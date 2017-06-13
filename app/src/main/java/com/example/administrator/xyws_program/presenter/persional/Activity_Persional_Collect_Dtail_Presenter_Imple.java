@@ -59,12 +59,11 @@ public class Activity_Persional_Collect_Dtail_Presenter_Imple implements Activit
 
 
     @Override
-    public void detail(String id, String dir) {
+    public void detail(String id) {
         Map<String,String> map = new HashMap<>();
-//        map.put("id",id);
-//        map.put("dir",dir);
+        map.put("id",id);
         Log.d("Activity_Persional_Coll", map.toString());
-        model.getCookie("http://api.wws.xywy.com/index.php?act=zixun&fun=getHealthPlazeDetail&version=version2&tag=zj&sign=2e0d0887581be1c35794ee4c13b00cae&id=1494642&dir=zhuanti_nk", map, new MyCallBack() {
+        model.getCookie("http://api.wws.xywy.com/index.php?act=zixun&fun=getHealthPlazeDetail&version=version2&tag=zj&sign=2e0d0887581be1c35794ee4c13b00cae&dir=zhuanti_nk", map, new MyCallBack() {
             @Override
             public void onSuccess(String strSuccess) {
                 Log.d("Activity_Persional_Coll", strSuccess);

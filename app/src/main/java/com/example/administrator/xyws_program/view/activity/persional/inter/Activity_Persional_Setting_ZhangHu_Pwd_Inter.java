@@ -1,11 +1,11 @@
-package com.example.administrator.xyws_program.presenter.persional.inter;
+package com.example.administrator.xyws_program.view.activity.persional.inter;
 
 /**
  * /**
  * 项目名称: 血压卫士
  * 类描述:
  * 创建人: XI
- * 创建时间: 2017/6/12 0012 15:34
+ * 创建时间: 2017/6/13 0013 23:32
  * 修改人:
  * 修改内容:
  * 修改时间:
@@ -35,6 +35,7 @@ package com.example.administrator.xyws_program.presenter.persional.inter;
  */
 
 
-public interface Activity_Persional_Collect_Detail_Presenter_Inter {
-    void detail(String id);
+public interface Activity_Persional_Setting_ZhangHu_Pwd_Inter {
+    String getPwd();
+    String getPwdTwo();
 }

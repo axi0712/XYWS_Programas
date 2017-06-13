@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity__persional__tou_xiang"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.administrator.xyws_program.view.activity.persional.Activity_Persional_TouXiang">
+
+    <LinearLayout
+        android:background="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/Touxiang_paizhao"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:text="拍照" />
+
+        <TextView
+            android:layout_width="180dp"
+            android:layout_height="1sp"
+            android:layout_gravity="center"
+            android:background="@color/fengexian" />
+
+        <Button
+            android:id="@+id/Touxiang_xiangce"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:text="从相册选择" />
+
+        <TextView
+            android:layout_width="180dp"
+            android:layout_height="1sp"
+            android:layout_gravity="center"
+            android:background="@color/fengexian" />
+
+        <Button
+            android:id="@+id/Touxiang_quxiao"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:text="取消" />
+    </LinearLayout>
+</RelativeLayout>

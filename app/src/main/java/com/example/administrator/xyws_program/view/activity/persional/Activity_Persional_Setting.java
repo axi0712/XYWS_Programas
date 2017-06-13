@@ -1,16 +1,12 @@
 package com.example.administrator.xyws_program.view.activity.persional;
 
+import android.content.Intent;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
+import android.widget.RelativeLayout;
 
 import com.example.administrator.xyws_program.R;
 import com.example.administrator.xyws_program.base.BaseActivity;
-import com.example.administrator.xyws_program.presenter.persional.Activity_Persional_login_Presenter_Imple;
-import com.example.administrator.xyws_program.presenter.persional.inter.Activity_Persional_Login_Presenter_Inter;
-import com.example.administrator.xyws_program.view.activity.persional.inter.Activity_Persional_Login_view_Inter;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -20,7 +16,7 @@ import butterknife.OnClick;
  * 项目名称: 血压卫士
  * 类描述:
  * 创建人: XI
- * 创建时间: 2017/6/9 0009 20:30
+ * 创建时间: 2017/6/13 0013 7:55
  * 修改人:
  * 修改内容:
  * 修改时间:
@@ -50,31 +46,24 @@ import butterknife.OnClick;
  */
 
 
-public class Activity_Persional_View_Login extends BaseActivity implements Activity_Persional_Login_view_Inter {
+public class Activity_Persional_Setting extends BaseActivity {
 
-
-    @BindView(R.id.persional_login_edit_name_phone)
-    ImageView persionalLoginEditNamePhone;
-    @BindView(R.id.persional_login_edit_name)
-    EditText persionalLoginEditName;
-    @BindView(R.id.persional_login_edit_pwd_lock)
-    ImageView persionalLoginEditPwdLock;
-    @BindView(R.id.persional_login_edit_pwd)
-    EditText persionalLoginEditPwd;
-    @BindView(R.id.persional_login_text_pwd)
-    TextView persionalLoginTextPwd;
-    @BindView(R.id.persional_login_btn_login)
-    Button persionalLoginBtnLogin;
-    private Activity_Persional_Login_Presenter_Inter inter;
+    @BindView(R.id.activity_persional_setting_cancel)
+    ImageView activityPersionalSettingCancel;
+    @BindView(R.id.activity_persional_setting_zhanghu)
+    RelativeLayout activityPersionalSettingZhanghu;
+    @BindView(R.id.activity_persional_setting_clear)
+    RelativeLayout activityPersionalSettingClear;
+    @BindView(R.id.activity_persional_setting_about)
+    RelativeLayout activityPersionalSettingAbout;
 
     @Override
     protected int getLayout() {
-        return R.layout.activity_persional_login;
+        return R.layout.activity_persional_setting;
     }
 
     @Override
     protected void init() {
-        inter = new Activity_Persional_login_Presenter_Imple(this);
 
     }
 
@@ -88,29 +77,24 @@ public class Activity_Persional_View_Login extends BaseActivity implements Activ
 
     }
 
-    @Override
-    public String getName() {
-        return persionalLoginEditName.getText().toString().trim();
-    }
 
-    @Override
-    public String getPwd() {
-        return persionalLoginEditPwd.getText().toString().trim();
-    }
-
-
-
-
-
-
-    @OnClick({R.id.persional_login_edit_name_phone, R.id.persional_login_btn_login})
+    @OnClick({R.id.activity_persional_setting_cancel, R.id.activity_persional_setting_zhanghu, R.id.activity_persional_setting_clear, R.id.activity_persional_setting_about})
     public void onViewClicked(View view) {
         switch (view.getId()) {
-            case R.id.persional_login_edit_name_phone:
-                break;
-            case R.id.persional_login_btn_login:
-                inter.login(getName(), getPwd());
+            case R.id.activity_persional_setting_cancel:
                 finish();
+                break;
+            case R.id.activity_persional_setting_zhanghu:
+                Intent in = new Intent(Activity_Persional_Setting.this,Activity_persional_Setting_ZhangHu.class);
+                startActivity(in);
+                break;
+            case R.id.activity_persional_setting_clear:
+                Intent is = new Intent(Activity_Persional_Setting.this,Activity_Persional_Clear.class);
+                startActivity(is);
+                break;
+            case R.id.activity_persional_setting_about:
+                Intent ia = new Intent(Activity_Persional_Setting.this,Activity_Persional_Setting_About.class);
+                startActivity(ia);
                 break;
         }
     }

@@ -365,7 +365,7 @@ public class WheelView extends ScrollView {
         }
 
     }
-
+    // 选中设置
     public void setSeletion(int position) {
         final int p = position;
         selectedIndex = p + offset;

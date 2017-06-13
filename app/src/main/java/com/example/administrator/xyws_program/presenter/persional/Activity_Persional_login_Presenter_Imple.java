@@ -81,6 +81,7 @@ public class Activity_Persional_login_Presenter_Imple implements Activity_Persio
                     Gson gson = new Gson();
                     Persional_Login_Bean persional_login_bean = gson.fromJson(strSuccess, Persional_Login_Bean.class);
                     mEditor.putString("userid",persional_login_bean.getUserid()+"");
+                    mEditor.putString("phonenum",persional_login_bean.getPhonenum()+"");
                     mEditor.commit();
                     Log.d("Activity_Persional_logi", persional_login_bean.getUserid());
                     Toast.makeText(MyApp.activity, persional_login_bean.getUserid(), Toast.LENGTH_SHORT).show();

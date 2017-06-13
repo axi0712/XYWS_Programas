@@ -1,20 +1,14 @@
 package com.example.administrator.xyws_program.presenter.persional;
 
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.util.Log;
 
-import com.example.administrator.xyws_program.MyApp;
-import com.example.administrator.xyws_program.model.bean.Persional_Collect_Bean;
 import com.example.administrator.xyws_program.model.callback.MyCallBack;
 import com.example.administrator.xyws_program.model.model_persional.ModelInter;
 import com.example.administrator.xyws_program.model.model_persional.Modelimple;
-import com.example.administrator.xyws_program.presenter.persional.inter.Activity_Persional_Collect_Presenter_Inter;
-import com.example.administrator.xyws_program.view.activity.persional.inter.Activity_Persional_Collect_Inter;
-import com.google.gson.Gson;
+import com.example.administrator.xyws_program.presenter.persional.inter.Activity_Persional_Setting_ZhangHu_Phone_YanZheng_Presenter_Inter;
+import com.example.administrator.xyws_program.view.activity.persional.inter.Activity_Persional_Setting_ZhangHu_Phone_YanZheng_Inter;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -22,7 +16,7 @@ import java.util.Map;
  * 项目名称: 血压卫士
  * 类描述:
  * 创建人: XI
- * 创建时间: 2017/6/12 0012 14:18
+ * 创建时间: 2017/6/13 0013 9:58
  * 修改人:
  * 修改内容:
  * 修改时间:
@@ -52,37 +46,24 @@ import java.util.Map;
  */
 
 
-public class Activity_Persional_Collect_Presenter_Imple implements Activity_Persional_Collect_Presenter_Inter {
-    private ModelInter model;
-    private Activity_Persional_Collect_Inter inter;
-    private SharedPreferences mShared;
-    private SharedPreferences.Editor mEditor;
-    public Activity_Persional_Collect_Presenter_Imple(Activity_Persional_Collect_Inter inter) {
+public class Activity_Persional_Setting_ZhangHu_Phone_YanZheng_Presenter_Imple implements Activity_Persional_Setting_ZhangHu_Phone_YanZheng_Presenter_Inter {
+    private ModelInter model ;
+    private Activity_Persional_Setting_ZhangHu_Phone_YanZheng_Inter inter;
+
+    public Activity_Persional_Setting_ZhangHu_Phone_YanZheng_Presenter_Imple(Activity_Persional_Setting_ZhangHu_Phone_YanZheng_Inter inter) {
         this.inter = inter;
         model = new Modelimple();
-        mShared = MyApp.activity.getSharedPreferences("collects", Context.MODE_PRIVATE);
-        mEditor = mShared.edit();
     }
 
     @Override
-    public void collect(String xywy_userid, String app_id, String sign, String tag) {
+    public void yangzheng(String target) {
         Map<String,String> map = new HashMap<>();
-        map.put("xywy_userid",xywy_userid);
-        map.put("app_id",app_id);
-        map.put("sign",sign);
-        map.put("tag",tag);
-        model.postCookie("http://api.yun.xywy.com/index.php/app/collect/list_data/111", map, new MyCallBack() {
+        map.put("target",target);
+        model.getCookie("http://api.wws.xywy.com/index.php?act=sms&fun=sendCode&tag=BloodAndroid&sign=2c19b2821ebc5306c3ac37bac5b4288b&type=3", map, new MyCallBack() {
             @Override
             public void onSuccess(String strSuccess) {
-                Log.e("kankanjson",strSuccess);
-                Gson gson = new Gson();
-                Persional_Collect_Bean persional_collect_bean = gson.fromJson(strSuccess, Persional_Collect_Bean.class);
-                List<Persional_Collect_Bean.Data> mList = persional_collect_bean.getData();
-                inter.loadData(mList);
-                mEditor.putString("id",persional_collect_bean.getData().get(0).getCategoryid());
-//                mEditor.putString("meta",persional_collect_bean.getData().get(0).getMeta());
-                Log.d("Activity_Persional_Coll", "mEditor.putString(\"id\",persional_collect_bean.getData().get(0).getCategoryid()):" + mEditor.putString("id", persional_collect_bean.getData().get(0).getCategoryid()));
-                mEditor.commit();
+                Log.d("Activity_Persional_Sett", strSuccess);
+
             }
 
             @Override
