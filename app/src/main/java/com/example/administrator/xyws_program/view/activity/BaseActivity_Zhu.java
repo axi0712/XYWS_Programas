@@ -39,7 +39,7 @@ import android.view.View;
 
 public interface BaseActivity_Zhu {
     //中间的FrameLayout
-    void mFrame();
+    void mFrame();//
     //LinearLayout的TextView
       void getText(String str);
     //RadioButton的点击事件
