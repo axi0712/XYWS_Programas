@@ -12,7 +12,7 @@ import com.example.administrator.xyws_program.base.BaseActivity;
 import com.example.administrator.xyws_program.model.db.updatabloodpressure;
 import com.example.administrator.xyws_program.util.hgetdb;
 import com.example.administrator.xyws_program.view.fragment.blood.adpter.AllrecoredataAdapter;
-
+///
 import java.util.List;
 
 import butterknife.BindView;
