@@ -18,8 +18,6 @@ import android.widget.TextView;
 import com.example.administrator.xyws_program.MyApp;
 import com.example.administrator.xyws_program.R;
 import com.example.administrator.xyws_program.base.BaseFragment;
-import com.example.administrator.xyws_program.model.db.updatabloodpressure;
-import com.example.administrator.xyws_program.util.hgetdb;
 import com.example.administrator.xyws_program.view.activity.MainActivity;
 import com.example.administrator.xyws_program.view.fragment.blood.adpter.FloodViewpageAdapter;
 import com.example.administrator.xyws_program.view.fragment.blood.childactivity.AlarmclickActivity;
@@ -33,8 +31,6 @@ import com.example.administrator.xyws_program.view.fragment.blood.viewpagerFragm
 import com.example.administrator.xyws_program.view.fragment.blood.viewpagerFragment.YearFragment;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -263,14 +259,5 @@ public class Fragment_Blood extends BaseFragment implements fragment_Blood_Inter
                 break;
 
         }
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        List<updatabloodpressure> list=  hgetdb.getlist(getActivity());
-        updatabloodpressure bean= list.get(list.size()-1);
-        hlatelydata.setText(bean.getHignpressure()+"/"+bean.getLowpressure());
-        hdatatime.setText(bean.getTime());
     }
 }

@@ -1,16 +1,16 @@
-package com.example.administrator.xyws_program.view.fragment.blood.viewpagerFragment;
+package com.example.administrator.xyws_program.view.fragment.doctor.detalis;
 
-import android.view.View;
+import com.example.administrator.xyws_program.model.bean.doctor.Detalis_Bean;
+import com.example.administrator.xyws_program.model.bean.doctor.HuiFu_XiangQing_Bean;
 
-import com.example.administrator.xyws_program.R;
-import com.example.administrator.xyws_program.base.BaseFragment;
+import java.util.List;
 
 /**
  * /**
  * 项目名称: 血压卫士
  * 类描述:
- * 创建人: 黑明阳
- * 创建时间: 2017/6/11 20:38
+ * 创建人: Administrator
+ * 创建时间: 2017/6/12 0012 19:40
  * 修改人:
  * 修改内容:
  * 修改时间:
@@ -39,35 +39,7 @@ import com.example.administrator.xyws_program.base.BaseFragment;
  * #                                                   #
  */
 
-
-public class DayFragment extends BaseFragment {
-    @Override
-    protected int layoutId() {
-        return R.layout.flood_viewpager_day;
-    }
-
-    @Override
-    protected void initView(View view) {
-
-    }
-
-    @Override
-    protected void initData() {
-
-    }
-
-    @Override
-    protected void initListener() {
-
-    }
-
-    @Override
-    protected void loadData() {
-
-    }
-
-    @Override
-    protected void updateTitleBar() {
-
-    }
+public interface HuiFu_Inter {
+    void getHuiFuInfo(List<Detalis_Bean.DataBean> data);
+    void getXQ(HuiFu_XiangQing_Bean.DataBean data);
 }

@@ -6,6 +6,7 @@ import android.util.Log;
 
 import com.example.administrator.xyws_program.MyApp;
 import com.example.administrator.xyws_program.model.callback.MyCallBack;
+import com.example.administrator.xyws_program.util.AppUtils;
 
 import java.io.File;
 import java.io.IOException;
@@ -62,55 +63,58 @@ public class RetrofitDemo implements IHttp {
     private Retrofit re;
     private RetrofitInter inter;
     private static SharedPreferences share;
-    protected RetrofitDemo(){
+
+    protected RetrofitDemo() {
         re = new Retrofit.Builder().baseUrl("http://www.baidu.com/").build();
-        inter =  re.create(RetrofitInter.class);
+        inter = re.create(RetrofitInter.class);
 
     }
-    public synchronized static RetrofitDemo getInstance(){
-        if(demo == null){
+
+    public synchronized static RetrofitDemo getInstance() {
+        if (demo == null) {
             demo = new RetrofitDemo();
             return demo;
         }
         return demo;
     }
+
     @Override
     public void get(String url, Map<String, String> map, MyCallBack callBack) {
         Call<ResponseBody> call = inter.get(url, map);
-        initCall(callBack,call);
+        initCall(callBack, call);
     }
-
 
 
     @Override
     public void getCookie(String url, Map<String, String> map, MyCallBack callBack) {
         SharedPreferences sha = MyApp.activity.getSharedPreferences("data", Context.MODE_PRIVATE);
-        Call<ResponseBody> call = inter.getCookie(sha.getString("cookie",""),url, map);
-        initCalls(callBack,call);
+        Call<ResponseBody> call = inter.getCookie(sha.getString("cookie", ""), url, map);
+        initCalls(callBack, call);
     }
 
     @Override
     public void getLogin(String url, Map<String, String> map, MyCallBack callBack) {
         Call<ResponseBody> call = inter.getLogin(url, map);
-        initCall(callBack,call);
+        initCall(callBack, call);
     }
+
     @Override
     public void post(String url, Map<String, String> map, MyCallBack callBack) {
         Call<ResponseBody> call = inter.post(url, map);
-        initCalls(callBack,call);
+        initCalls(callBack, call);
     }
 
     @Override
     public void postCookie(String url, Map<String, String> map, MyCallBack callBack) {
         SharedPreferences sha = MyApp.activity.getSharedPreferences("data", Context.MODE_PRIVATE);
-        Call<ResponseBody> call = inter.postCookie(sha.getString("cookie",""),url, map);
-        initCalls(callBack,call);
+        Call<ResponseBody> call = inter.postCookie(sha.getString("cookie", ""), url, map);
+        initCalls(callBack, call);
     }
 
     @Override
     public void postLogin(String url, Map<String, String> map, MyCallBack callBack) {
         Call<ResponseBody> call = inter.postLogin(url, map);
-        initCall(callBack,call);
+        initCall(callBack, call);
     }
 
     @Override
@@ -118,22 +122,25 @@ public class RetrofitDemo implements IHttp {
         RequestBody fileRequest = RequestBody.create(MediaType.parse("multipart/form-data"), file);
 
         MultipartBody.Part part = MultipartBody.Part.createFormData(filekey, file.getName(), fileRequest);
-        SharedPreferences sha = MyApp.activity.getSharedPreferences("data",Context.MODE_PRIVATE);
-        Call<ResponseBody> call = inter.postFiled(sha.getString("cookie",""),url, map,part);
-        initCalls(callBack,call);
+        SharedPreferences sha = MyApp.activity.getSharedPreferences("data", Context.MODE_PRIVATE);
+        Call<ResponseBody> call = inter.postFiled(sha.getString("cookie", ""), url, map, part);
+        initCalls(callBack, call);
     }
+
     private void initCall(final MyCallBack callBack, Call<ResponseBody> call) {
+        AppUtils.dialog();
         call.enqueue(new retrofit2.Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                if(response.isSuccessful()){
+                if (response.isSuccessful()) {
                     saveCookie(response);
                     try {
+                        AppUtils.dismiss();
                         callBack.onSuccess(response.body().string());
                     } catch (IOException e) {
                         callBack.onError(e.getMessage());
                     }
-                }else{
+                } else {
                     try {
                         callBack.onError(response.body().string());
                     } catch (IOException e) {
@@ -151,17 +158,20 @@ public class RetrofitDemo implements IHttp {
 
 
     private void initCalls(final MyCallBack callBack, Call<ResponseBody> call) {
+        AppUtils.dialog();
         call.enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                if(response!=null&&callBack!=null){
-                    if(response.isSuccessful()){
+                if (response != null && callBack != null) {
+                    if (response.isSuccessful()) {
                         try {
+                            AppUtils.dismiss();
+
                             callBack.onSuccess(response.body().string());
                         } catch (IOException e) {
                             callBack.onError(e.getMessage());
                         }
-                    }else{
+                    } else {
                         try {
                             callBack.onError(response.body().string());
                         } catch (IOException e) {
@@ -170,16 +180,14 @@ public class RetrofitDemo implements IHttp {
                     }
                 }
             }
+
             @Override
             public void onFailure(Call<ResponseBody> call, Throwable t) {
-
-
 
 
             }
 
         });
-
 
 
     }

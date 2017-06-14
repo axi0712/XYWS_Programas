@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/select_img"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/details_linlayout"
+        android:layout_margin="5dp" />
+
+
+    <TextView
+        android:id="@+id/select_tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:layout_toRightOf="@id/select_img"
+        android:text="李明"
+        android:textSize="18dp" />
+
+    <TextView
+        android:id="@+id/select_hostial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="12dp"
+        android:layout_toRightOf="@id/select_tv_name"
+        android:text="上海长海医院" />
+
+    <TextView
+        android:id="@+id/select_yisheng"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/select_tv_name"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_toRightOf="@id/select_img"
+        android:text="主任医师" />
+
+    <TextView
+        android:id="@+id/select_yike"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/select_tv_name"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="8dp"
+        android:layout_toRightOf="@id/select_yisheng"
+        android:text="骨科" />
+
+    <TextView
+        android:id="@+id/select_xueli"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/select_tv_name"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="8dp"
+        android:layout_toRightOf="@id/select_yike"
+        android:text="教授" />
+
+    <TextView
+        android:id="@+id/select_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/select_yike"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="6dp"
+        android:layout_toRightOf="@id/select_img"
+        android:maxLines="3"
+        android:text="教授"
+        android:textColor="@color/result_view" />
+
+</RelativeLayout>

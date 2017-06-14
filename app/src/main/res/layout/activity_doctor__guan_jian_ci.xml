@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.administrator.xyws_program.view.activity.Doctor_GuanJianCiActivity">
+
+    <LinearLayout
+        android:id="@+id/gjc_linlayout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#24CE5E">
+
+        <ImageView
+            android:id="@+id/Details_back"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="15dp"
+            android:src="@drawable/btn_back_normal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="关键字" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/gjc_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/gjc_linlayout"
+        android:text="确定" />
+
+    <EditText
+        android:id="@+id/gjc_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/gjc_linlayout"
+        android:layout_toLeftOf="@id/gjc_btn"
+        android:hint="关键词/专家姓名/医院名称/疾病"
+        android:maxLines="1" />
+
+    <ListView
+        android:id="@+id/gjc_listview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/gjc_edit" />
+
+</RelativeLayout>

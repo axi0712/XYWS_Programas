@@ -1,25 +1,23 @@
-package com.example.administrator.xyws_program.view.activity.doctor;
+package com.example.administrator.xyws_program.view.fragment.doctor.adapter;
 
+import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.TextView;
 
 import com.example.administrator.xyws_program.R;
-import com.example.administrator.xyws_program.base.BaseActivity;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
+import java.util.List;
 
 /**
  * /**
  * 项目名称: 血压卫士
  * 类描述:
  * 创建人: Administrator
- * 创建时间: 2017/6/9 0009 20:39
+ * 创建时间: 2017/6/14 0014 17:17
  * 修改人:
  * 修改内容:
  * 修改时间:
@@ -48,51 +46,61 @@ import butterknife.OnClick;
  * #                                                   #
  */
 
-public class Doctor_QuestionActivity extends BaseActivity {
-    @BindView(R.id.Details_back)
-    ImageView DetailsBack;
-    @BindView(R.id.question_linlayout)
-    LinearLayout questionLinlayout;
-    @BindView(R.id.question_btn)
-    Button questionBtn;
+public class ChuZhenAdapter extends BaseAdapter {
+    private String str;
+    private List<Integer> mlist;
+    private Context context;
 
-    @Override
-    protected int getLayout() {
-        return R.layout.doctor_questionactivity;
+    public ChuZhenAdapter(String str, List<Integer> mlist, Context context) {
+        this.str = str;
+        this.mlist = mlist;
+        this.context = context;
     }
 
     @Override
-    protected void init() {
-
+    public int getCount() {
+        return 21;
     }
 
     @Override
-    protected void initListener() {
-
+    public Object getItem(int position) {
+        return null;
     }
 
     @Override
-    protected void loadData() {
-
+    public long getItemId(int position) {
+        return 0;
     }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // TODO: add setContentView(...) invocation
-        ButterKnife.bind(this);
-    }
+    public View getView(int position, View convertView, ViewGroup parent) {
+        Holder holder;
+        if (convertView == null) {
+            holder = new Holder();
+            convertView = LayoutInflater.from(context).inflate(R.layout.chuzhen_item, null);
+            holder.textView = (TextView) convertView.findViewById(R.id.chuzhen_text);
 
-    @OnClick({R.id.Details_back, R.id.question_btn})
-    public void onViewClicked(View view) {
-        switch (view.getId()) {
-            case R.id.Details_back:
-                finish();
-                break;
-            case R.id.question_btn:
-                Intent intent = new Intent(this, Doctor_Quesption_XQActivity.class);
-                startActivity(intent);
-                break;
+            convertView.setTag(holder);
+
+
+        } else {
+            holder = (Holder) convertView.getTag();
         }
+
+        for (Integer integer : mlist) {
+            if (integer == position) {
+                holder.textView.setText(str);
+                holder.textView.setBackground(context.getResources().getDrawable(R.drawable.radio_selector));
+
+
+            }
+        }
+
+
+        return convertView;
+    }
+
+    class Holder {
+        private TextView textView;
     }
 }

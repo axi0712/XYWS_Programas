@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.administrator.xyws_program.view.activity.doctor.Doctor_DetailsActivity">
+
+
+    <LinearLayout
+        android:id="@+id/details_linlayout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#24CE5E">
+
+        <ImageView
+            android:id="@+id/Details_back"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="15dp"
+            android:src="@drawable/btn_back_normal" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/details_img"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/details_linlayout"
+        android:layout_margin="5dp" />
+
+    <TextView
+        android:id="@+id/details_tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/details_linlayout"
+        android:layout_margin="8dp"
+        android:layout_toRightOf="@id/details_img"
+        android:text="李明"
+        android:textSize="18dp" />
+
+    <TextView
+        android:id="@+id/details_hostial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/details_linlayout"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="12dp"
+        android:layout_toRightOf="@id/details_tv_name"
+        android:text="上海长海医院" />
+
+    <TextView
+        android:id="@+id/details_yisheng"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/details_tv_name"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_toRightOf="@id/details_img"
+        android:text="主任医师" />
+
+    <TextView
+        android:id="@+id/details_yike"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/details_tv_name"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="8dp"
+        android:layout_toRightOf="@id/details_yisheng"
+        android:text="骨科" />
+
+    <TextView
+        android:id="@+id/details_xueli"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/details_tv_name"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="8dp"
+        android:layout_toRightOf="@id/details_yike"
+        android:text="教授" />
+
+    <TextView
+        android:id="@+id/details_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/details_yike"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="6dp"
+        android:layout_toRightOf="@id/details_img"
+        android:maxLines="3"
+        android:text="教授"
+        android:textColor="@color/result_view" />
+
+    <RadioGroup
+        android:id="@+id/details_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/details_img"
+        android:layout_marginTop="25dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/details_huifu"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:text="专家回复" />
+
+        <TextView
+            android:layout_width="1px"
+            android:layout_height="30dp"
+            android:background="@color/doctor_text" />
+
+        <RadioButton
+            android:id="@+id/details_time"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:text="出诊时间表" />
+
+        <TextView
+            android:layout_width="1px"
+            android:layout_height="30dp"
+            android:background="@color/doctor_text" />
+
+        <RadioButton
+            android:id="@+id/details_jingyan"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:text="专家经验分享" />
+
+    </RadioGroup>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/details_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/details_group" />
+</RelativeLayout>

@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="20dp"
+    android:layout_margin="12dp"
     android:background="@null">
 
     <Button
@@ -11,18 +11,17 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_below="@id/btn_name_ok"
-        android:background="@color/white"
-
-        android:text="确定" />
-
+        android:background="@drawable/persional_login_name"
+        android:text="确定"
+        android:textColor="@color/doctor_black" />
 
     <GridView
-        android:id="@+id/doctor_gridview"
+        android:id="@+id/name_gridview"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_above="@id/btn_name_ok"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="30dp"
+        android:background="@color/white"
         android:numColumns="3" />
-
 
 </RelativeLayout>

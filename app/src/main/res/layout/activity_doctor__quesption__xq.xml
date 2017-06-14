@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fffbf1"
+    tools:context="com.example.administrator.xyws_program.view.activity.doctor.Doctor_Quesption_XQActivity">
+
+    <LinearLayout
+        android:id="@+id/question_linlayout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="#24CE5E">
+
+        <ImageView
+            android:id="@+id/Details_back"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="15dp"
+            android:src="@drawable/btn_back_normal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="79dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="免费提问"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/question_xq_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/question_linlayout"
+        android:padding="20dp"
+        android:text="请简单描述您的病情并提交给我们的客服，客服人员会安排专业的健康顾问向您致电，为阁下进行专业的电话健康指导"
+        android:textSize="16dp" />
+
+    <EditText
+        android:id="@+id/question_edtext"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@id/question_xq_content"
+        android:layout_margin="20dp"
+        android:background="@color/white"
+        android:gravity="start"
+        android:hint="请尽量详细描述，描述字数不得少于10个字" />
+
+    <RadioGroup
+        android:id="@+id/question_group"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_below="@id/question_edtext"
+        android:layout_marginBottom="20dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="1dp"
+            android:layout_height="42dp"
+            android:background="@color/doctor_text" />
+
+        <RadioButton
+            android:id="@+id/Btn_nan"
+            android:layout_width="0dp"
+            android:layout_height="42dp"
+            android:layout_weight="1"
+            android:background="@drawable/radio_selector"
+            android:button="@null"
+            android:checked="true"
+            android:gravity="center"
+            android:text="男" />
+
+        <TextView
+            android:layout_width="1dp"
+            android:layout_height="42dp"
+            android:background="@color/doctor_text" />
+
+        <RadioButton
+            android:id="@+id/Btn_nv"
+            android:layout_width="0dp"
+            android:layout_height="42dp"
+            android:layout_weight="1"
+            android:background="@drawable/radio_selector"
+            android:button="@null"
+            android:gravity="center"
+            android:text="女" />
+
+        <TextView
+            android:layout_width="1dp"
+            android:layout_height="42dp"
+            android:background="@color/doctor_text" />
+
+        <EditText
+            android:id="@+id/quetion_ed_age"
+            android:layout_width="0dp"
+            android:layout_height="42dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:hint="年龄"
+            android:numeric="integer" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/quetion_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/question_group"
+        android:background="@color/doctor_btn"
+        android:text="提交给医生"
+        android:textColor="@color/white"
+        android:textSize="20dp" />
+
+</RelativeLayout>
