@@ -1,20 +1,26 @@
-package com.example.administrator.xyws_program.view.fragment.blood.viewpagerFragment;
+package com.example.administrator.xyws_program.view.fragment.blood.adpter;
 
+import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.View;
-import android.widget.RelativeLayout;
-import android.widget.Toast;
 
+import com.androidkun.adapter.BaseAdapter;
+import com.androidkun.adapter.ViewHolder;
 import com.example.administrator.xyws_program.R;
-import com.example.administrator.xyws_program.base.BaseFragment;
-import com.example.administrator.xyws_program.view.fragment.blood.childactivity.AllrecoredataActivity;
+import com.example.administrator.xyws_program.model.db.alarmclickitem;
+import com.example.administrator.xyws_program.model.db.updatabloodpressure;
+import com.example.administrator.xyws_program.view.fragment.blood.childactivity.DeleteAlarmclickActivity;
+import com.example.administrator.xyws_program.view.fragment.blood.childactivity.UpdataItemActivity;
+
+import java.util.List;
 
 /**
  * /**
  * 项目名称: 血压卫士
  * 类描述:
  * 创建人: 黑明阳
- * 创建时间: 2017/6/11 20:38
+ * 创建时间: 2017/6/12 14:52
  * 修改人:
  * 修改内容:
  * 修改时间:
@@ -44,43 +50,24 @@ import com.example.administrator.xyws_program.view.fragment.blood.childactivity.
  */
 
 
-public class WeekFragment extends BaseFragment {
-
-    private RelativeLayout relativeLayout;
-
-    @Override
-    protected int layoutId() {
-        return R.layout.flood_viewpager_week;
+public class AllrecoredataAdapter extends BaseAdapter<updatabloodpressure> {
+    public AllrecoredataAdapter(Context context, List<updatabloodpressure> datas) {
+        super(context, R.layout.allrecordata_item, datas);
     }
 
     @Override
-    protected void initView(View view) {
-        relativeLayout = (RelativeLayout) view.findViewById(R.id.weekfragment);
-    }
-
-    @Override
-    protected void initData() {
-
-    }
-
-    @Override
-    protected void initListener() {
-        relativeLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(getActivity(), AllrecoredataActivity.class);
-                getActivity().startActivity(intent);
-            }
-        });
-    }
-
-    @Override
-    protected void loadData() {
-
-    }
-
-    @Override
-    protected void updateTitleBar() {
-
+    public void convert(ViewHolder holder, final updatabloodpressure dataBean) {
+         if(!dataBean.equals("")){
+             holder.setText(R.id.bloodpressuretv,dataBean.getHignpressure()+"/"+dataBean.getLowpressure());
+             holder.setText(R.id.bloodpressuretime,dataBean.getTime());
+             holder.setOnclickListener(R.id.bloodpressureonclick, new View.OnClickListener() {
+                 @Override
+                 public void onClick(View v) {
+                Intent intent=new Intent(context, UpdataItemActivity.class);
+                     intent.putExtra("bean",dataBean);
+                     context.startActivity(intent);
+                 }
+             });
+         }
     }
 }

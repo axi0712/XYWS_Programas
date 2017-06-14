@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:scrollbars="none"
-    tools:context="com.example.administrator.xyws_program.view.fragment.blood.childactivity.informationInter.Informationcommensence">
+    tools:context="com.example.administrator.xyws_program.view.fragment.blood.childactivity.information.Informationcommensence">
 
 <RelativeLayout
     android:layout_width="match_parent"
@@ -57,12 +57,13 @@
         android:layout_width="match_parent"
         android:layout_height="51dp">
         <TextView
+            android:textColor="@color/colorGreen"
             android:id="@+id/blood_information_item_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="20dp"
             android:layout_margin="13dp"
-            android:text="高压患者的饮食要点是什么？"
+            android:text=""
             android:textStyle="bold"
             />
     </RelativeLayout>
@@ -78,7 +79,7 @@
             android:textSize="20dp"
             android:textColor="@color/colorGreen"
             android:layout_marginLeft="13dp"
-            android:text="2017-06-12"
+            android:text=""
             />
     </RelativeLayout>
 
@@ -94,7 +95,7 @@
             android:layout_height="match_parent"
             android:textSize="20dp"
             android:layout_marginLeft="13dp"
-            android:text="2017-06-12"
+            android:text=""
             android:maxLines="1000"
             />
     </RelativeLayout>

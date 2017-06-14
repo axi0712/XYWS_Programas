@@ -5,7 +5,7 @@ import com.example.administrator.xyws_program.model.callback.MyCallBack;
 import com.example.administrator.xyws_program.model.model_persional.ModelInter;
 import com.example.administrator.xyws_program.model.model_persional.Modelimple;
 import com.example.administrator.xyws_program.presenter.Blood.inter.Blood_information_commensence_inter;
-import com.example.administrator.xyws_program.view.fragment.blood.childactivity.informationInter.Informationcommensence_Inter;
+import com.example.administrator.xyws_program.view.fragment.blood.childactivity.information.Informationcommensence_Inter;
 import com.google.gson.Gson;
 
 import java.util.HashMap;

@@ -1,9 +1,8 @@
-package com.example.administrator.xyws_program.view.fragment.blood.childactivity.informationInter;
+package com.example.administrator.xyws_program.view.fragment.blood.childactivity.information;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.text.format.DateUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -15,12 +14,11 @@ import com.example.administrator.xyws_program.R;
 import com.example.administrator.xyws_program.base.BaseActivity;
 import com.example.administrator.xyws_program.model.bean.BloodBean.Blood_information_item_Bean;
 import com.example.administrator.xyws_program.presenter.Blood.inter.Blood_information_commensence_item_inter;
-import com.example.administrator.xyws_program.presenter.Blood.inter.Blood_information_commonsence_Item_Imple;
+import com.example.administrator.xyws_program.presenter.Blood.Blood_information_commonsence_Item_Imple;
 import com.example.administrator.xyws_program.util.DateTimeUils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 public class Blood_information_ItemActivity extends BaseActivity implements Blood_information_Item_Inter {
 

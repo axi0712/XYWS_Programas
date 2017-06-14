@@ -8,7 +8,9 @@ import com.androidkun.adapter.BaseAdapter;
 import com.androidkun.adapter.ViewHolder;
 import com.example.administrator.xyws_program.R;
 import com.example.administrator.xyws_program.model.bean.BloodBean.Blood_commensence_Bean;
+import com.example.administrator.xyws_program.model.db.alarmclickitem;
 import com.example.administrator.xyws_program.util.DateTimeUils;
+import com.example.administrator.xyws_program.view.fragment.blood.childactivity.DeleteAlarmclickActivity;
 import com.example.administrator.xyws_program.view.fragment.blood.childactivity.information.Blood_information_ItemActivity;
 
 import java.util.List;
@@ -48,29 +50,25 @@ import java.util.List;
  */
 
 
-public class MyBloodcommmensenceAdapter extends BaseAdapter<Blood_commensence_Bean.DataBean> {
-    public MyBloodcommmensenceAdapter(Context context, List<Blood_commensence_Bean.DataBean> datas) {
-        super(context, R.layout.bloodcommensence_item, datas);
+public class AlarmclickAdapter extends BaseAdapter<alarmclickitem> {
+    public AlarmclickAdapter(Context context, List<alarmclickitem> datas) {
+        super(context, R.layout.alarmclick_item, datas);
     }
 
     @Override
-    public void convert(ViewHolder holder, final Blood_commensence_Bean.DataBean dataBean) {
+    public void convert(ViewHolder holder, final alarmclickitem dataBean) {
          if(!dataBean.equals("")){
-
-             holder.setText(R.id.bloodcommensence_item_title,dataBean.getTitle());
-             holder.setText(R.id.bloodcommensence_item_time,DateTimeUils.getDate(dataBean.getPubdate()));
-             holder.setText(R.id.bloodcommensence_item_content,dataBean.getDescription());
-
-             holder.setOnclickListener(R.id.bloodcommensence_item_onclick, new View.OnClickListener() {
+             holder.setText(R.id.time,dataBean.getTime());
+             holder.setText(R.id.name,dataBean.getName());
+             holder.setText(R.id.number,dataBean.getNumber());
+             holder.setOnclickListener(R.id.alarmclickonclick, new View.OnClickListener() {
                  @Override
                  public void onClick(View v) {
-
-                     Intent intent=new Intent(context, Blood_information_ItemActivity.class);
-                     intent.putExtra("id",dataBean.getId());
+                Intent intent=new Intent(context, DeleteAlarmclickActivity.class);
+                     intent.putExtra("bean",dataBean);
                      context.startActivity(intent);
                  }
              });
-
          }
     }
 }

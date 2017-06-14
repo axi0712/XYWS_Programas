@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/alarmclickonclick"
+    >
+   <LinearLayout
+       android:id="@+id/lin1"
+       android:layout_marginTop="12dp"
+       android:layout_marginLeft="17dp"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+       <TextView
+           android:id="@+id/time"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:text="9:30"
+           android:textSize="22dp"
+           android:textColor="#343434"
+           />
+   </LinearLayout>
+  <LinearLayout
+      android:id="@+id/lin2"
+      android:layout_below="@id/lin1"
+      android:layout_marginTop="9dp"
+      android:layout_marginLeft="17dp"
+      android:orientation="horizontal"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+
+      <TextView
+
+          android:id="@+id/name"
+          android:textColor="#999999"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="富兰克林"
+          />
+      <TextView
+          android:layout_marginLeft="40dp"
+          android:id="@+id/number"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="1片一次"
+          />
+
+  </LinearLayout>
+    <ImageView
+    android:layout_margin="13dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/ic_diary_forward"
+    android:layout_alignParentRight="true"
+    />
+</RelativeLayout>

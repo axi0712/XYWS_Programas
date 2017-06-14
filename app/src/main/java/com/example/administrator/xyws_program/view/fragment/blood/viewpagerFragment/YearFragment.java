@@ -1,9 +1,13 @@
 package com.example.administrator.xyws_program.view.fragment.blood.viewpagerFragment;
 
+import android.content.Intent;
 import android.view.View;
+import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.example.administrator.xyws_program.R;
 import com.example.administrator.xyws_program.base.BaseFragment;
+import com.example.administrator.xyws_program.view.fragment.blood.childactivity.AllrecoredataActivity;
 
 /**
  * /**
@@ -41,6 +45,9 @@ import com.example.administrator.xyws_program.base.BaseFragment;
 
 
 public class YearFragment extends BaseFragment {
+
+    private RelativeLayout relativeLayout;
+
     @Override
     protected int layoutId() {
         return R.layout.flood_viewpager_year;
@@ -48,7 +55,7 @@ public class YearFragment extends BaseFragment {
 
     @Override
     protected void initView(View view) {
-
+        relativeLayout = (RelativeLayout) view.findViewById(R.id.yearfragment);
     }
 
     @Override
@@ -58,7 +65,13 @@ public class YearFragment extends BaseFragment {
 
     @Override
     protected void initListener() {
-
+        relativeLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getActivity(), AllrecoredataActivity.class);
+                getActivity().startActivity(intent);
+            }
+        });
     }
 
     @Override

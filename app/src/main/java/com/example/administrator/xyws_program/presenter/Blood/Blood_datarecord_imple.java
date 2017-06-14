@@ -1,16 +1,19 @@
-package com.example.administrator.xyws_program.view.fragment.blood.childactivity.informationInter;
+package com.example.administrator.xyws_program.presenter.Blood;
 
-import com.example.administrator.xyws_program.model.bean.BloodBean.Blood_commensence_Bean;
-import com.example.administrator.xyws_program.model.bean.BloodBean.Blood_information_item_Bean;
+import android.content.Context;
+import android.util.Log;
 
-import java.util.List;
+import com.example.administrator.xyws_program.model.db.updatabloodpressure;
+import com.example.administrator.xyws_program.presenter.Blood.inter.Blood_datarecord_Inter;
+import com.example.administrator.xyws_program.util.hgetdb;
+import com.example.administrator.xyws_program.view.fragment.blood.childactivity.Inter.Datarecord_Inter;
 
 /**
  * /**
  * 项目名称: 血压卫士
  * 类描述:
  * 创建人: 黑明阳
- * 创建时间: 2017/6/12 13:59
+ * 创建时间: 2017/6/12 14:26
  * 修改人:
  * 修改内容:
  * 修改时间:
@@ -40,7 +43,28 @@ import java.util.List;
  */
 
 
-public interface Blood_information_Item_Inter {
-    //数据加载显示
-    void showdata(Blood_information_item_Bean bean);
+public class Blood_datarecord_imple implements Blood_datarecord_Inter{
+    private Datarecord_Inter datarecord_inter;
+
+    public Blood_datarecord_imple(Datarecord_Inter datarecord_inter){
+        this.datarecord_inter=datarecord_inter;
+    }
+
+    @Override
+    public void updatadb(Context context,String time,String hour,String equipment, String hignpressure, String lowpressure) {
+
+
+        //创建对象，并添加到数据库
+        updatabloodpressure updatabloodpressure=new updatabloodpressure();
+        updatabloodpressure.setEquipment(equipment);
+        updatabloodpressure.setTime(time+"  "+hour);
+        updatabloodpressure.setHignpressure(hignpressure);
+        updatabloodpressure.setLowpressure(lowpressure);
+        hgetdb.getdao(context).insert(updatabloodpressure);
+
+        datarecord_inter.getdata();
+
+        //Log.e("LIST", hgetdb.getlist(context).size()+""+hgetdb.getlist(context));
+
+    }
 }

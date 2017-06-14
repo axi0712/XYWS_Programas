@@ -43,6 +43,13 @@
                 />
         </RelativeLayout>
     </android.support.v7.widget.Toolbar>
+<com.androidkun.PullToRefreshRecyclerView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/clickrecyclerview"
+    android:layout_below="@id/information_toolbar"
+    >
 
+</com.androidkun.PullToRefreshRecyclerView>
 </RelativeLayout>
 </ScrollView>

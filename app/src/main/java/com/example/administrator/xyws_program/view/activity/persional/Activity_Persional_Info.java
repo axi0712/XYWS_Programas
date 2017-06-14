@@ -176,7 +176,8 @@ public class Activity_Persional_Info extends BaseActivity implements Activity_Pe
                 // 展示弹出框
                 new AlertDialog.Builder(Activity_Persional_Info.this)
                         .setTitle("设置性别").setView(outerView)
-                        .setPositiveButton("OK", null).show();
+                        .setPositiveButton("OK", null)
+                        .show();
 
 
                 break;

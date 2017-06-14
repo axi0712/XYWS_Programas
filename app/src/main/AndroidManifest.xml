@@ -27,6 +27,13 @@
         <activity android:name=".view.fragment.blood.childactivity.AlarmclickActivity" />
         <activity android:name=".view.activity.doctor.Doctor_QuestionActivity" />
         <activity android:name=".view.activity.doctor.Doctor_ProvinceActivity" />
+        <activity android:name=".view.fragment.blood.childactivity.information.Informationcommensence" />
+        <activity android:name=".view.fragment.blood.childactivity.information.InspectActivity" />
+        <activity android:name=".view.fragment.blood.childactivity.information.PreventionActivity" />
+        <activity android:name=".view.fragment.blood.childactivity.information.TreatmentActivity" />
+        <activity android:name=".view.fragment.blood.childactivity.information.RecipesActivity" />
+        <activity android:name=".view.fragment.blood.childactivity.information.Blood_information_ItemActivity" />
+        <activity android:name=".view.fragment.blood.childactivity.AlarmclickActivity" />
         <activity android:name=".view.fragment.blood.childactivity.informationInter.Informationcommensence" />
         <activity android:name=".view.fragment.blood.childactivity.informationInter.InspectActivity" />
         <activity android:name=".view.fragment.blood.childactivity.informationInter.PreventionActivity" />
@@ -35,6 +42,13 @@
         <activity android:name=".view.fragment.blood.childactivity.informationInter.Blood_information_ItemActivity" />
         <activity android:name=".view.activity.persional.Activity_Persional_Info" />
         <activity android:name=".view.activity.persional.Activity_Persional_Collect" />
+        <activity android:name=".view.activity.doctor.Doctor_QuestionActivity" />
+        <activity android:name=".view.activity.doctor.Doctor_ProvinceActivity" />
+        <activity android:name=".view.activity.persional.Activity_Persional_Info_Name" />
+        <activity android:name=".view.activity.persional.Activity_Persional_Collect_Detail" />
+        <activity android:name=".view.fragment.blood.childactivity.AlarmcliickItemActivity" />
+        <activity android:name=".view.fragment.blood.childactivity.DeleteAlarmclickActivity" />
+        <activity android:name=".view.fragment.blood.childactivity.UpdataItemActivity"></activity>
         <activity android:name=".view.activity.persional.Activity_Persional_Info_Name" />
         <activity android:name=".view.activity.persional.Activity_Persional_Collect_Detail" />
         <activity android:name=".view.activity.persional.Activity_Persional_Setting" />

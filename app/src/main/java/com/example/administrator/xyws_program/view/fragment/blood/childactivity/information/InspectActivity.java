@@ -1,4 +1,4 @@
-package com.example.administrator.xyws_program.view.fragment.blood.childactivity.informationInter;
+package com.example.administrator.xyws_program.view.fragment.blood.childactivity.information;
 
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -10,9 +10,7 @@ import com.androidkun.PullToRefreshRecyclerView;
 import com.example.administrator.xyws_program.R;
 import com.example.administrator.xyws_program.base.BaseActivity;
 import com.example.administrator.xyws_program.model.bean.BloodBean.Blood_commensence_Bean;
-import com.example.administrator.xyws_program.presenter.Blood.Blood_information_commonsence_Imple;
 import com.example.administrator.xyws_program.presenter.Blood.Blood_information_inspect_Imple;
-import com.example.administrator.xyws_program.presenter.Blood.Blood_information_recipes_Imple;
 import com.example.administrator.xyws_program.presenter.Blood.inter.Blood_information_commensence_inter;
 import com.example.administrator.xyws_program.view.fragment.blood.adpter.MyBloodcommmensenceAdapter;
 

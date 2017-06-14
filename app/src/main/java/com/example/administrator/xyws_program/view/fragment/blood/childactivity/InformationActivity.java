@@ -11,11 +11,11 @@ import android.widget.TextView;
 
 import com.example.administrator.xyws_program.R;
 import com.example.administrator.xyws_program.base.BaseActivity;
-import com.example.administrator.xyws_program.view.fragment.blood.childactivity.informationInter.Informationcommensence;
-import com.example.administrator.xyws_program.view.fragment.blood.childactivity.informationInter.InspectActivity;
-import com.example.administrator.xyws_program.view.fragment.blood.childactivity.informationInter.PreventionActivity;
-import com.example.administrator.xyws_program.view.fragment.blood.childactivity.informationInter.RecipesActivity;
-import com.example.administrator.xyws_program.view.fragment.blood.childactivity.informationInter.TreatmentActivity;
+import com.example.administrator.xyws_program.view.fragment.blood.childactivity.information.Informationcommensence;
+import com.example.administrator.xyws_program.view.fragment.blood.childactivity.information.InspectActivity;
+import com.example.administrator.xyws_program.view.fragment.blood.childactivity.information.PreventionActivity;
+import com.example.administrator.xyws_program.view.fragment.blood.childactivity.information.RecipesActivity;
+import com.example.administrator.xyws_program.view.fragment.blood.childactivity.information.TreatmentActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

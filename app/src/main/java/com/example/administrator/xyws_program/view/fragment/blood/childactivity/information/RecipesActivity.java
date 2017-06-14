@@ -1,5 +1,6 @@
-package com.example.administrator.xyws_program.view.fragment.blood.childactivity.informationInter;
+package com.example.administrator.xyws_program.view.fragment.blood.childactivity.information;
 
+import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.Toolbar;
 import android.widget.ImageView;
@@ -9,35 +10,34 @@ import com.androidkun.PullToRefreshRecyclerView;
 import com.example.administrator.xyws_program.R;
 import com.example.administrator.xyws_program.base.BaseActivity;
 import com.example.administrator.xyws_program.model.bean.BloodBean.Blood_commensence_Bean;
-import com.example.administrator.xyws_program.presenter.Blood.Blood_information_commonsence_Imple;
+import com.example.administrator.xyws_program.presenter.Blood.Blood_information_recipes_Imple;
 import com.example.administrator.xyws_program.presenter.Blood.inter.Blood_information_commensence_inter;
 import com.example.administrator.xyws_program.view.fragment.blood.adpter.MyBloodcommmensenceAdapter;
-import com.example.administrator.xyws_program.view.fragment.blood.childactivity.informationInter.Informationcommensence_Inter;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class Informationcommensence extends BaseActivity implements Informationcommensence_Inter {
+public class RecipesActivity extends BaseActivity  implements Informationcommensence_Inter{
 
 
-    @BindView(R.id.informationdatils_toolbar_backimg)
-    ImageView informationdatilsToolbarBackimg;
-    @BindView(R.id.informationdatils_toolbar)
-    Toolbar informationdatilsToolbar;
-    @BindView(R.id.commonsencerecyclerview)
-    PullToRefreshRecyclerView commonsencerecyclerview;
+    @BindView(R.id.recipes_toolbar_backimg)
+    ImageView recipesToolbarBackimg;
+    @BindView(R.id.recipes_toolbar)
+    Toolbar recipesToolbar;
+    @BindView(R.id.recipesrecyclerview)
+    PullToRefreshRecyclerView recipesrecyclerview;
     @BindView(R.id.activity_infortiondetils)
     ScrollView activityInfortiondetils;
     private MyBloodcommmensenceAdapter adapter;
     private ArrayList<Blood_commensence_Bean.DataBean> arrayList;
     private Blood_information_commensence_inter inter;
-
     @Override
     protected int getLayout() {
-        return R.layout.activity_infortiondetils;
+        return R.layout.activity_recipes;
     }
 
     @Override
@@ -52,33 +52,35 @@ public class Informationcommensence extends BaseActivity implements Informationc
 
     @Override
     protected void loadData() {
-        inter = new Blood_information_commonsence_Imple(this);
-        inter.showcommonsencedata();
+        inter = new Blood_information_recipes_Imple(this);
 
+        inter.showcommonsencedata();
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // TODO: add setContentView(...) invocation
+        ButterKnife.bind(this);
+    }
+
+    @OnClick(R.id.recipes_toolbar_backimg)
+    public void onViewClicked() {
+        finish();
     }
 
     @Override
     public void showdata(List<Blood_commensence_Bean.DataBean> list) {
-
         adapter = new MyBloodcommmensenceAdapter(this, list);
-        commonsencerecyclerview.setAdapter(adapter);
+        recipesrecyclerview.setAdapter(adapter);
         adapter.notifyDataSetChanged();
-
         LinearLayoutManager manager = new LinearLayoutManager(this);
         manager.setOrientation(LinearLayoutManager.VERTICAL);
-        commonsencerecyclerview.setLayoutManager(manager);
-        commonsencerecyclerview.setPullRefreshEnabled(false);
+        recipesrecyclerview.setLayoutManager(manager);
+        recipesrecyclerview.setPullRefreshEnabled(false);
         //设置下拉刷新下拉加载
-        commonsencerecyclerview.setLoadingMoreEnabled(false);
-        commonsencerecyclerview.setPullRefreshEnabled(false);
-        commonsencerecyclerview.displayLastRefreshTime(false);
-
-    }
-
-
-
-    @OnClick(R.id.informationdatils_toolbar_backimg)
-    public void onViewClicked() {
-        finish();
+        recipesrecyclerview.setLoadingMoreEnabled(false);
+        recipesrecyclerview.setPullRefreshEnabled(false);
+        recipesrecyclerview.displayLastRefreshTime(false);
     }
 }

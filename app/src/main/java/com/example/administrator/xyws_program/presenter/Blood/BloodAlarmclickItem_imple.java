@@ -1,20 +1,22 @@
-package com.example.administrator.xyws_program.view.fragment.blood.viewpagerFragment;
+package com.example.administrator.xyws_program.presenter.Blood;
 
-import android.content.Intent;
-import android.view.View;
-import android.widget.RelativeLayout;
-import android.widget.Toast;
+import android.content.Context;
+import android.util.Log;
 
-import com.example.administrator.xyws_program.R;
-import com.example.administrator.xyws_program.base.BaseFragment;
-import com.example.administrator.xyws_program.view.fragment.blood.childactivity.AllrecoredataActivity;
+import com.example.administrator.xyws_program.model.db.alarmclickitem;
+import com.example.administrator.xyws_program.model.db.updatabloodpressure;
+import com.example.administrator.xyws_program.presenter.Blood.inter.BloodAlarmclickItem_Inter;
+import com.example.administrator.xyws_program.presenter.Blood.inter.Blood_datarecord_Inter;
+import com.example.administrator.xyws_program.util.hgetdb;
+import com.example.administrator.xyws_program.view.fragment.blood.childactivity.Inter.AlarmclickItem_Inter;
+import com.example.administrator.xyws_program.view.fragment.blood.childactivity.Inter.Datarecord_Inter;
 
 /**
  * /**
  * 项目名称: 血压卫士
  * 类描述:
  * 创建人: 黑明阳
- * 创建时间: 2017/6/11 20:38
+ * 创建时间: 2017/6/12 14:26
  * 修改人:
  * 修改内容:
  * 修改时间:
@@ -44,43 +46,25 @@ import com.example.administrator.xyws_program.view.fragment.blood.childactivity.
  */
 
 
-public class WeekFragment extends BaseFragment {
+public class BloodAlarmclickItem_imple implements BloodAlarmclickItem_Inter {
+    private AlarmclickItem_Inter datarecord_inter;
 
-    private RelativeLayout relativeLayout;
-
-    @Override
-    protected int layoutId() {
-        return R.layout.flood_viewpager_week;
+    public BloodAlarmclickItem_imple(AlarmclickItem_Inter datarecord_inter){
+        this.datarecord_inter=datarecord_inter;
     }
 
-    @Override
-    protected void initView(View view) {
-        relativeLayout = (RelativeLayout) view.findViewById(R.id.weekfragment);
-    }
 
     @Override
-    protected void initData() {
+    public void updatadb(Context context, String time, String name, String number) {
+        alarmclickitem alarmclickitem=new alarmclickitem();
+        alarmclickitem.setName(name);
+        alarmclickitem.setTime(time);
+        alarmclickitem.setNumber(number);
 
-    }
+        hgetdb.gettwodao(context).insert(alarmclickitem);
 
-    @Override
-    protected void initListener() {
-        relativeLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(getActivity(), AllrecoredataActivity.class);
-                getActivity().startActivity(intent);
-            }
-        });
-    }
-
-    @Override
-    protected void loadData() {
-
-    }
-
-    @Override
-    protected void updateTitleBar() {
+        datarecord_inter.getdata();
+        //Log.e("LIST", hgetdb.getlist(context).size()+""+hgetdb.gettwolist(context));
 
     }
 }

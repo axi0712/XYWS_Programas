@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content">
+        <com.example.administrator.xyws_program.view.zidingyiview.WheelView
+            android:layout_width="match_parent"
+            android:id="@+id/updatwheel_year"
+            android:layout_height="wrap_content">
+
+        </com.example.administrator.xyws_program.view.zidingyiview.WheelView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content">
+        <com.example.administrator.xyws_program.view.zidingyiview.WheelView
+            android:layout_width="match_parent"
+            android:id="@+id/updatwheel_month"
+            android:layout_height="wrap_content">
+
+        </com.example.administrator.xyws_program.view.zidingyiview.WheelView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content">
+        <com.example.administrator.xyws_program.view.zidingyiview.WheelView
+            android:layout_width="match_parent"
+            android:id="@+id/updatwheel_day"
+            android:layout_height="wrap_content">
+
+        </com.example.administrator.xyws_program.view.zidingyiview.WheelView>
+    </LinearLayout>
+
+
+
+
+</LinearLayout>
