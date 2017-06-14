@@ -48,6 +48,7 @@ public class UpdataItemActivity extends BaseActivity {
 
     @Override
     protected void init() {
+        ///
         Intent intent = getIntent();
         bean = (updatabloodpressure) intent.getSerializableExtra("bean");
 
