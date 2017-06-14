@@ -135,6 +135,7 @@ public class Details_Fragment_Huifu extends BaseFragment implements HuiFu_Inter 
 
         huiFuAdapter = new HuiFuAdapter(data, getContext());
         huifuListview.setAdapter(huiFuAdapter);
+        //
 
 
     }
