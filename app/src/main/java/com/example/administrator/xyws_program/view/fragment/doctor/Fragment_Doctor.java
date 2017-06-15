@@ -42,6 +42,7 @@ import com.example.administrator.xyws_program.base.BaseFragment;
 import com.example.administrator.xyws_program.model.bean.doctor.HotDoctor_Bean;
 import com.example.administrator.xyws_program.presenter.doctor.GetHotDoctors;
 import com.example.administrator.xyws_program.presenter.doctor.HotDoctor;
+import com.example.administrator.xyws_program.util.AppUtils;
 import com.example.administrator.xyws_program.util.MyRunable;
 import com.example.administrator.xyws_program.view.activity.Doctor_GuanJianCiActivity;
 import com.example.administrator.xyws_program.view.activity.MainActivity;
@@ -298,6 +299,7 @@ public class Fragment_Doctor extends BaseFragment implements Fragment_Doctor_Int
         switch (view.getId()) {
             //定位
             case R.id.doctor_img:
+                AppUtils.dialog();
                 Toast.makeText(getContext(), "开始定位", Toast.LENGTH_SHORT).show();
 
                 initLocation();
@@ -416,6 +418,7 @@ public class Fragment_Doctor extends BaseFragment implements Fragment_Doctor_Int
                 //内容
                 String goodat = dataBean.getGoodat();
                 String menzhen = dataBean.getMenzhen();
+
                 intent2.putExtra("menzhen", menzhen);
 
                 intent2.putExtra("app_image", app_image);

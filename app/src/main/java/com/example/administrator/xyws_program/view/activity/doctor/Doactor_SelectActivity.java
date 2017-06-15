@@ -102,7 +102,6 @@ public class Doactor_SelectActivity extends BaseActivity implements Ac_Select_In
     @Override
     protected void loadData() {
 
-
         my_select_inter.getInfo("10", "1", province, title, keyword, illid, isPlus, level);
 
     }

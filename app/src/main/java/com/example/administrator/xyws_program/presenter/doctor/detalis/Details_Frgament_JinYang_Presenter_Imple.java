@@ -8,6 +8,7 @@ import com.example.administrator.xyws_program.model.model_persional.ModelInter;
 import com.example.administrator.xyws_program.model.model_persional.Modelimple;
 import com.example.administrator.xyws_program.view.fragment.doctor.detalis.Details_Fragment_JinYang_Inter;
 import com.google.gson.Gson;
+import com.google.gson.JsonSyntaxException;
 
 import java.util.HashMap;
 import java.util.List;
@@ -67,9 +68,15 @@ public class Details_Frgament_JinYang_Presenter_Imple implements Details_Fragmen
             public void onSuccess(String strSuccess) {
                 Log.i("kankan_jy",strSuccess);
                 Gson gson = new Gson();
-                Details_Share details_share = gson.fromJson(strSuccess, Details_Share.class);
-                List<Details_Share.DataBean> data = details_share.getData();
-                inter.load(data);
+                Details_Share details_share = null;
+
+                try {
+                    details_share = gson.fromJson(strSuccess, Details_Share.class);
+                    List<Details_Share.DataBean> data = details_share.getData();
+                    inter.load(data);
+                } catch (JsonSyntaxException e) {
+                    e.printStackTrace();
+                }
 
             }
 
