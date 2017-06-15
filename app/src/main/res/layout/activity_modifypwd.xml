@@ -47,8 +47,6 @@
         android:textColor="#ffffff"
         android:textSize="25dp"
         android:layout_below="@+id/modify_pwdOne"
-        android:layout_alignLeft="@+id/password"
-        android:layout_alignStart="@+id/password"
         android:layout_marginTop="20dp"/>
 
 </RelativeLayout>
