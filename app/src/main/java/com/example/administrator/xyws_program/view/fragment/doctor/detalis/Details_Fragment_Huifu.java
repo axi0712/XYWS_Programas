@@ -97,7 +97,6 @@ public class Details_Fragment_Huifu extends BaseFragment implements HuiFu_Inter 
         Log.i("expertid", expertid);
         detalisHuifu.getHuifu(expertid, "1", "10");
 
-
     }
 
     @Override
@@ -136,7 +135,6 @@ public class Details_Fragment_Huifu extends BaseFragment implements HuiFu_Inter 
         huiFuAdapter = new HuiFuAdapter(data, getContext());
         huifuListview.setAdapter(huiFuAdapter);
         //
-
 
     }
 
