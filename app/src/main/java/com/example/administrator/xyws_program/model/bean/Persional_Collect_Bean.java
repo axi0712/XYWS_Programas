@@ -71,6 +71,7 @@ public class Persional_Collect_Bean {
         private String document_id;
         private String meta;
         private String title;
+        ////
 
         public String getCategoryid() {
             return categoryid;
