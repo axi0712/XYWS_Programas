@@ -45,7 +45,7 @@ public class UpdataItemActivity extends BaseActivity {
     protected int getLayout() {
         return R.layout.activity_updata_item;
     }
-//
+
     @Override
     protected void init() {
         ///

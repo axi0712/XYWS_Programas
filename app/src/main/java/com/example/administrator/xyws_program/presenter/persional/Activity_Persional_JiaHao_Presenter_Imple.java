@@ -12,6 +12,7 @@ import com.example.administrator.xyws_program.model.model_persional.Modelimple;
 import com.example.administrator.xyws_program.presenter.persional.inter.Activity_Persional_JiaHao_Presenter_Inter;
 import com.example.administrator.xyws_program.view.activity.persional.inter.Activity_Persional_JiaHao_Inter;
 import com.google.gson.Gson;
+import com.google.gson.JsonSyntaxException;
 
 import org.greenrobot.eventbus.EventBus;
 
@@ -78,15 +79,21 @@ public class Activity_Persional_JiaHao_Presenter_Imple implements Activity_Persi
             public void onSuccess(String strSuccess) {
                 Log.d("Activity_Persional_JiaH", strSuccess);
                 Gson gson = new Gson();
-                Persional_JiaHao_Bean bean = gson.fromJson(strSuccess, Persional_JiaHao_Bean.class);
-                List<Persional_JiaHao_Bean.DataBeanX.DataBean> mList = bean.getData().getData();
-                mEditor.putString("hos",mList.get(0).getHopital());
-                mEditor.putString("name",mList.get(0).getExpert());
-                mEditor.putString("time",bean.getData().getData().get(0).getTodate()+bean.getData().getData().get(0).getPlus_day());
-                mEditor.putString("type",bean.getData().getData().get(0).getDepart());
-                mEditor.putString("address",bean.getData().getData().get(0).getHopital());
-                EventBus.getDefault().postSticky(Persional_JiaHao_Bean.DataBeanX.DataBean.class);
-                inter.loadData(mList);
+                Persional_JiaHao_Bean bean = null;
+                try {
+                    bean = gson.fromJson(strSuccess, Persional_JiaHao_Bean.class);
+                    List<Persional_JiaHao_Bean.DataBeanX.DataBean> mList = bean.getData().getData();
+                    mEditor.putString("hos",mList.get(0).getHopital());
+                    mEditor.putString("name",mList.get(0).getExpert());
+                    mEditor.putString("time",bean.getData().getData().get(0).getTodate()+bean.getData().getData().get(0).getPlus_day());
+                    mEditor.putString("type",bean.getData().getData().get(0).getDepart());
+                    mEditor.putString("address",bean.getData().getData().get(0).getHopital());
+                    EventBus.getDefault().postSticky(Persional_JiaHao_Bean.DataBeanX.DataBean.class);
+                    inter.loadData(mList);
+                } catch (JsonSyntaxException e) {
+                    e.printStackTrace();
+                }
+
             }
 //
             @Override

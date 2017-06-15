@@ -22,6 +22,25 @@ public class DateTimeUils {
         String fa = dateFormat.format(new Date(newtime*1000));
         return fa;
     }
+    public static String getDatehour(String date) {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm");
+        long newtime = Long.parseLong(date);
+        String fa = dateFormat.format(new Date(newtime*1000));
+        return fa;
+    }
+
+    public static long gethaomiaoDate(String date) {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm");
+        long newtime = 0;
+        try {
+            newtime = dateFormat.parse(date).getTime();
+            return newtime;
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
+
 
 
 }

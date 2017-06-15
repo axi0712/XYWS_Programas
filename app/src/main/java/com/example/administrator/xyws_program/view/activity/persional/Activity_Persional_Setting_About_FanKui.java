@@ -5,6 +5,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.administrator.xyws_program.R;
 import com.example.administrator.xyws_program.base.BaseActivity;
@@ -88,6 +89,12 @@ public class Activity_Persional_Setting_About_FanKui extends BaseActivity implem
                 finish();
                 break;
             case R.id.feed_fasong:
+                if(getEdit().length()<5){
+                    Toast.makeText(this, "您没有输入够5个字", Toast.LENGTH_SHORT).show();
+                }else {
+                    Toast.makeText(this, "提交成功", Toast.LENGTH_SHORT).show();
+                    finish();
+                }
                 break;
             case R.id.feed_back_edit:
                 break;

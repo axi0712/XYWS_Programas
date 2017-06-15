@@ -26,6 +26,10 @@ android {
         schemaVersion 1
         targetGenDir 'src/main/java'
     }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
 }
 
 

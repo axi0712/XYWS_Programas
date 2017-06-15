@@ -8,12 +8,9 @@
         android:id="@+id/monthfragmnet"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <TextView
-            android:gravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="month"
-            />
+       <com.example.administrator.xyws_program.view.zidingyiview.Hmonth
+           android:layout_width="match_parent"
+           android:layout_height="match_parent" />
     </RelativeLayout>
 
 </RelativeLayout>

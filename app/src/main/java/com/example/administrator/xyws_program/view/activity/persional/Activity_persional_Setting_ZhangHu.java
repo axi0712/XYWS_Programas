@@ -103,7 +103,8 @@ public class Activity_persional_Setting_ZhangHu extends BaseActivity {
                 startActivity(in);
                 break;
             case R.id.activity_persional_setting_zhanghu_pwd:
-
+                Intent in1 = new Intent(Activity_persional_Setting_ZhangHu.this,Activity_Persional_Setting_Zhnaghu_Pwd.class);
+                startActivity(in1);
                 break;
         }
     }

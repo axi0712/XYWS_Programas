@@ -23,6 +23,7 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/back_img"
                 android:scaleType="fitCenter"
+                android:padding="5dp"
                 android:id="@+id/alarmclock_toolbar_backimg"
                 />
             <TextView

@@ -265,27 +265,31 @@ public class Fragment_Doctor extends BaseFragment implements Fragment_Doctor_Int
     }
 
     @Override
-    public void getInfo(List<HotDoctor_Bean.DataBean> list) {
+    public void getInfo(HotDoctor_Bean bean) {
+        int total = bean.getTotal();
+        doctorTitle.setText("全国有"+total+"位血压专家为您在线治疗！");
+
+
         //第一个
-        dataBean = list.get(0);
+        dataBean = bean.getData().get(0);
         String name = dataBean.getName();
         final String app_image = dataBean.getApp_image();
         doctorTv1.setText(name);
         Glide.with(getContext()).load(app_image).into(doctorImg1);
         //第二个
-        dataBean1 = list.get(1);
+        dataBean1 = bean.getData().get(1);
         String name1 = dataBean1.getName();
         final String app_image1 = dataBean1.getApp_image();
         doctorTv2.setText(name1);
         Glide.with(getContext()).load(app_image1).into(doctorImg2);
         //第三个
-        dataBean2 = list.get(2);
+        dataBean2 = bean.getData().get(2);
         String name2 = dataBean2.getName();
         final String app_image2 = dataBean2.getApp_image();
         doctorTv3.setText(name2);
         Glide.with(getContext()).load(app_image2).into(doctorImg3);
         //第四个
-        dataBean3 = list.get(3);
+        dataBean3 = bean.getData().get(3);
         String name3 = dataBean3.getName();
         final String app_image3 = dataBean3.getApp_image();
         doctorTv4.setText(name3);
@@ -299,7 +303,7 @@ public class Fragment_Doctor extends BaseFragment implements Fragment_Doctor_Int
         switch (view.getId()) {
             //定位
             case R.id.doctor_img:
-                AppUtils.dialog();
+
                 Toast.makeText(getContext(), "开始定位", Toast.LENGTH_SHORT).show();
                 initLocation();
                 mLocationClient.start();

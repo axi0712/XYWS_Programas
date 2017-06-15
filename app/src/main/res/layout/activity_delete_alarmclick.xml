@@ -19,6 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <ImageView
+                android:padding="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/back_img"
@@ -49,7 +50,20 @@
             android:textColor="#999999"
             android:layout_marginLeft="30dp"
             />
-
+        <RadioButton
+            android:checked="true"
+            android:background="@null"
+            android:id="@+id/service"
+            android:layout_marginRight="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="开启"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="30dp"
+            />
     </RelativeLayout>
     <LinearLayout
         android:layout_marginTop="14dp"

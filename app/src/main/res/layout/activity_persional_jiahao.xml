@@ -8,6 +8,7 @@
         android:background="#24CE5E"
         >
         <ImageView
+            android:padding="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/btn_back_normal"

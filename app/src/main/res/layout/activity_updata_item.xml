@@ -16,6 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <ImageView
+                android:padding="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/back_img"
@@ -76,7 +77,7 @@
             android:textColor="#999999"
             android:layout_marginLeft="12dp"
             android:drawablePadding="10dp"
-            android:drawableLeft="@drawable/pressure"
+            android:drawableLeft="@drawable/data"
             />
         <TextView
             android:id="@+id/updataitem_tv2"
@@ -104,7 +105,7 @@
             android:textColor="#999999"
             android:layout_marginLeft="12dp"
             android:drawablePadding="10dp"
-            android:drawableLeft="@drawable/pressure"
+            android:drawableLeft="@drawable/time"
             />
         <TextView
             android:id="@+id/updataitem_tv3"
@@ -132,7 +133,7 @@
             android:textColor="#999999"
             android:layout_marginLeft="12dp"
             android:drawablePadding="10dp"
-            android:drawableLeft="@drawable/pressure"
+            android:drawableLeft="@drawable/isyonghu"
             />
         <TextView
             android:id="@+id/updataitem_tv4"

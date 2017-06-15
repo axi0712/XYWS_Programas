@@ -68,7 +68,7 @@ public class GetHotDoctors implements HotDoctor {
                 Gson gson = new Gson();
                 HotDoctor_Bean hotDoctor_bean = gson.fromJson(strSuccess, HotDoctor_Bean.class);
                 List<HotDoctor_Bean.DataBean> data = hotDoctor_bean.getData();
-                fragment_doctor_inter.getInfo(data);
+                fragment_doctor_inter.getInfo(hotDoctor_bean);
 
 
             }

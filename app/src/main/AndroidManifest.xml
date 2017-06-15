@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.administrator.xyws_program">
-
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.INTERNET" />
     <!-- 拨打电话的权限 -->
     <uses-permission android:name="android.permission.CALL_PHONE" />
@@ -37,13 +37,14 @@
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="gfjCIpKn69acKNWC26GeBsnZOQhbe8Eo" />
 
-        <activity android:name=".view.activity.MainActivity">
+        <activity android:name=".view.activity.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".view.activity.MainActivity"/>
         <activity android:name=".view.activity.persional.Activity_Persional_View_Login" />
         <activity android:name=".view.activity.persional.Activity_Persional_JiaHao" />
         <activity android:name=".view.fragment.blood.childactivity.DatarecordActivity" />
@@ -59,6 +60,7 @@
         <activity android:name=".view.fragment.blood.childactivity.information.TreatmentActivity" />
         <activity android:name=".view.fragment.blood.childactivity.information.RecipesActivity" />
         <activity android:name=".view.fragment.blood.childactivity.information.Blood_information_ItemActivity" />
+        <activity android:name=".view.fragment.blood.childactivity.AlarmclickActivity" />
 
         <activity android:name=".view.activity.persional.Activity_Persional_Info" />
         <activity android:name=".view.activity.persional.Activity_Persional_Collect" />
@@ -75,6 +77,16 @@
         <activity android:name=".view.activity.persional.Activity_Persional_Setting_Zhanghu_Phone" />
         <activity android:name=".view.activity.persional.Activity_Persional_Setting_ZhangHu_Phone_Yanheng" />
         <activity android:name=".view.activity.persional.Activity_Persional_Setting_ZhangHu_Phone_YanZheng_QueDing" />
+        <activity android:name=".view.activity.persional.Activity_Persional_TouXiang"
+            android:theme="@style/Theme.Design.Light.BottomSheetDialog"
+            ></activity>
+        <activity android:name=".view.activity.persional.Activity_Persional_Clear"/>
+        <activity android:name=".view.activity.persional.Activity_Persional_Setting_About"/>
+        <activity android:name=".view.activity.persional.Activity_Persional_Setting_About_FanKui"/>
+         <service android:name=".view.fragment.blood.service.MyService"/>
+        <receiver
+            android:name=".view.fragment.blood.childactivity.OneShotAlarm"
+            android:process=":remote" />
         <activity
             android:name=".view.activity.persional.Activity_Persional_TouXiang"
             android:theme="@style/Theme.Design.Light.BottomSheetDialog"></activity>

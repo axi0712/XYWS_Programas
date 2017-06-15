@@ -43,5 +43,5 @@ import static android.icu.lang.UCharacter.GraphemeClusterBreak.T;
 public interface Fragment_Doctor_Inter {
     void getBtn();
     String userId();
-    void getInfo(List<HotDoctor_Bean.DataBean> list);
+    void getInfo(HotDoctor_Bean bean);
 }

@@ -98,9 +98,11 @@ public class Activity_Persional_View_Login extends BaseActivity implements Activ
         return persionalLoginEditPwd.getText().toString().trim();
     }
 
-
-
-
+    @Override
+    public void getimg() {
+        setResult(301);
+        onBackPressed();
+    }
 
 
     @OnClick({R.id.persional_login_edit_name_phone, R.id.persional_login_btn_login})
@@ -110,7 +112,6 @@ public class Activity_Persional_View_Login extends BaseActivity implements Activ
                 break;
             case R.id.persional_login_btn_login:
                 inter.login(getName(), getPwd());
-                finish();
                 break;
         }
     }

@@ -128,14 +128,14 @@ public class RetrofitDemo implements IHttp {
     }
 
     private void initCall(final MyCallBack callBack, Call<ResponseBody> call) {
-        AppUtils.dialog();
+        //AppUtils.dialog();
         call.enqueue(new retrofit2.Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 if (response.isSuccessful()) {
                     saveCookie(response);
                     try {
-                        AppUtils.dismiss();
+                        //AppUtils.dismiss();
                         callBack.onSuccess(response.body().string());
                     } catch (IOException e) {
                         callBack.onError(e.getMessage());
@@ -158,14 +158,14 @@ public class RetrofitDemo implements IHttp {
 
 
     private void initCalls(final MyCallBack callBack, Call<ResponseBody> call) {
-        AppUtils.dialog();
+        //AppUtils.dialog();
         call.enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 if (response != null && callBack != null) {
                     if (response.isSuccessful()) {
                         try {
-                            AppUtils.dismiss();
+                            //AppUtils.dismiss();
 
                             callBack.onSuccess(response.body().string());
                         } catch (IOException e) {

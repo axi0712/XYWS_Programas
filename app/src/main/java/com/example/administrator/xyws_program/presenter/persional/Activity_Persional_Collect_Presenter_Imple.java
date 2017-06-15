@@ -82,10 +82,10 @@ public class Activity_Persional_Collect_Presenter_Imple implements Activity_Pers
                     persional_collect_bean = gson.fromJson(strSuccess, Persional_Collect_Bean.class);
                     List<Persional_Collect_Bean.Data> mList = persional_collect_bean.getData();
                     inter.loadData(mList);
-//                    mEditor.putString("id",persional_collect_bean.getData().get(0).getCategoryid());
+                    mEditor.putString("id",persional_collect_bean.getData().get(0).getCategoryid());
 //                mEditor.putString("meta",persional_collect_bean.getData().get(0).getMeta());
-//                    Log.d("Activity_Persional_Coll", "mEditor.putString(\"id\",persional_collect_bean.getData().get(0).getCategoryid()):" + mEditor.putString("id", persional_collect_bean.getData().get(0).getCategoryid()));
-//                    mEditor.commit();
+                    Log.d("Activity_Persional_Coll", "mEditor.putString(\"id\",persional_collect_bean.getData().get(0).getCategoryid()):" + mEditor.putString("id", persional_collect_bean.getData().get(0).getCategoryid()));
+                    mEditor.commit();
                 } catch (JsonSyntaxException e) {
                     e.printStackTrace();
                 }

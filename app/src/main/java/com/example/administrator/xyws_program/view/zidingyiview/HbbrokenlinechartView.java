@@ -5,8 +5,12 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Rect;
+import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
 import android.view.View;
+
+import com.example.administrator.xyws_program.R;
+import com.example.administrator.xyws_program.util.DateTimeUils;
 
 /**
  * /**
@@ -44,32 +48,43 @@ import android.view.View;
 
 
 public class HbbrokenlinechartView extends View {
+
+
+
+
     //-------------View相关-------------
+
+
     //View自身的宽和高
     private int mHeight;
     private int mWidth;
 
     //-------------统计图相关-------------
     //x轴的条目
-    private int xNum = 6;
+    private int xNum = 4;
     //y轴的条目
-    private int yNum = 11;
+    private int yNum = 3;
     //y轴条目之间的距离
-    private int ySize = 60;
+    private int ySize = 250;
     //x轴条目之间的距离
-    private int xSize = 100;
-    //y轴的长度,11个条目只有10段距离
+    private int xSize = 220;
+    //x y轴的长度,11个条目只有10段距离
     private int yLastSize = (yNum - 1) * ySize;
-
+    private int xLastSize = xNum  * xSize;
     //-------------必须给的资源相关-------------
-    private String[] xStr = new String[]{"星期一", "星期二", "星期三", "星期四", "星期五", "星期六", "星期天"};
-    private String[] yStr = new String[]{"0", "10", "20", "30", "40", "50", "60", "70", "80", "90", "100"};
-    private String str = "项目完成的进度（单位%）";
+    private String[] xStr = new String[]{"凌晨0点", "6", "中午12点", "18", "24"};
+    private String[] yStr = new String[]{ "零点","100","120"};
+    private String str = "血压值（mmHg）";
     //折线表示的最大值,取yStr的最大值
     private int yMaxValue = Integer.parseInt(yStr[yStr.length - 1]);
+    private int xMaxValue = Integer.parseInt(xStr[xStr.length - 1]);
     //折线真实值
-    private int[] yValue = new int[]{8, 15, 33, 48, 77, 80, 95};
+    private int[] yValue = new int[]{100,150};
+    private long s =DateTimeUils.gethaomiaoDate("12:00");
+    private long[] xValue = new long[]{s};
 
+
+    private int my=(120-100)*ySize;
     //-------------画笔相关-------------
     //边框的画笔
     private Paint borderPaint;
@@ -77,6 +92,8 @@ public class HbbrokenlinechartView extends View {
     private Paint textPaint;
     //折线的画笔
     private Paint linePaint;
+    //折线点画笔
+    private Paint dianPaint;
     //黑点的画笔
     private Paint pointPaint;
 
@@ -91,8 +108,9 @@ public class HbbrokenlinechartView extends View {
     private int pointColor = 0xFF000000;
 
 
-    public HbbrokenlinechartView(Context context) {
+    public HbbrokenlinechartView(Context context,String[] yStr) {
         super(context);
+        this.yStr=yStr;
     }
 
     public HbbrokenlinechartView(Context context, AttributeSet attrs) {
@@ -142,12 +160,18 @@ public class HbbrokenlinechartView extends View {
         textPaint.setTextSize(30);
         textPaint.setColor(textColor);
         textPaint.setAntiAlias(true);
-        //区域画笔
+        //折线点画笔
         linePaint = new Paint();
-        linePaint.setColor(lineColor);
+        linePaint.setColor(ContextCompat.getColor(getContext(), R.color.colorRed));
         linePaint.setAntiAlias(true);
-        linePaint.setStyle(Paint.Style.STROKE);
-        linePaint.setStrokeWidth(2);
+
+        //折线画笔
+        dianPaint = new Paint();
+        dianPaint.setColor(ContextCompat.getColor(getContext(), R.color.colorRed));
+        dianPaint.setAntiAlias(true);
+        dianPaint.setStyle(Paint.Style.STROKE);
+        dianPaint.setStrokeWidth(2);
+
         //黑点画笔
         pointPaint = new Paint();
         pointPaint.setAntiAlias(true);
@@ -165,8 +189,8 @@ public class HbbrokenlinechartView extends View {
         for (int i = 0; i < yNum; i++) {
             //一条竖直的线
             if (i == 0) {
-                path.moveTo(0, -i * ySize);
-                path.lineTo(0, -(yNum - 1) * ySize);
+                //path.moveTo(0, -i * ySize);
+                //path.lineTo(0, -(yNum - 1) * ySize);
             }
             //循环水平的线
             path.moveTo(0, -i * ySize);
@@ -212,7 +236,7 @@ public class HbbrokenlinechartView extends View {
             canvas.drawText(yStr[i], -textWidth - 20, i * (-ySize) + (textHeight / 2), textPaint);
         }
         //顶部文字
-        canvas.drawText(str, 0, (-ySize) * (yStr.length - 1) - 20, textPaint);
+       canvas.drawText(str, 0, (-ySize) * (yStr.length - 1) - 20, textPaint);
     }
 
     /**
@@ -222,21 +246,30 @@ public class HbbrokenlinechartView extends View {
      */
     private void drawLine(Canvas canvas) {
         Path path = new Path();
-        for (int i = 0; i < yValue.length; i++) {
+
+        //画折线点
+        canvas.drawCircle(440,-250, 9, linePaint);
+        //画折线点
+        canvas.drawCircle(440,-500, 9, linePaint);
+    /*    for (int i = 0; i < yValue.length; i++) {
             //计算折线的位置：（当前点的值/最大值）拿到百分比percent
             //用百分比percent乘与y轴总长，就获得了折线的位置
             //这里拿到的百分比一直为0，所以换一种方法，先乘与总长再除与最大值，而且记得加上负号
-            float position = -(yValue[i] * yLastSize / yMaxValue);
+            float position = -(yValue[i] * my / yMaxValue);
+            float position1 = (DateTimeUils.gethaomiaoDate("12:00") * xLastSize / 1000*60*60*24);
+
+            canvas.drawCircle(position1,-250, 9, linePaint);
             if (i == 0) {
                 //第一个点需要移动
-                path.moveTo(i * xSize, position);
+                path.moveTo(i  * xSize, position);
+
             } else {
                 //其余的点直接画线
                 path.lineTo(i * xSize, position);
+
+                canvas.drawPath(path, dianPaint);
             }
-            canvas.drawPath(path, linePaint);
-            //画黑点
-            canvas.drawCircle(i * xSize, position, 5, pointPaint);
-        }
+
+        }*/
     }
 }

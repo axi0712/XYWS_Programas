@@ -1,16 +1,13 @@
-package com.example.administrator.xyws_program.view.activity.flood;
+package com.example.administrator.xyws_program.view.activity.persional.inter;
 
-import android.widget.ImageView;
-
-import com.example.administrator.xyws_program.view.activity.flood.inter.Activity_Blood_updatabloodpressyre_inter;
-import com.example.administrator.xyws_program.view.fragment.blood.fragment_Blood_Inter;
+import java.io.File;
 
 /**
  * /**
  * 项目名称: 血压卫士
  * 类描述:
- * 创建人: 黑明阳
- * 创建时间: 2017/6/11 20:14
+ * 创建人: XI
+ * 创建时间: 2017/6/14 0014 14:01
  * 修改人:
  * 修改内容:
  * 修改时间:
@@ -40,11 +37,14 @@ import com.example.administrator.xyws_program.view.fragment.blood.fragment_Blood
  */
 
 
-public class Activity_Blood_updatabloodpressyre {
-private fragment_Blood_Inter inter;
-     public Activity_Blood_updatabloodpressyre(fragment_Blood_Inter inter){
-      this.inter=inter;
+public interface Activity_Persional_TouXiang_Inter {
+    void loadImage(File file);
+    //上传图片
+    void upLoadImage(String msg, String name);
 
-     }
+    //弹出dialog
+    void dialog();
+
+    void getPerson();
 
 }

@@ -1,5 +1,6 @@
 package com.example.administrator.xyws_program.view.activity;
 
+import android.content.Intent;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -16,6 +17,8 @@ import com.example.administrator.xyws_program.R;
 import com.example.administrator.xyws_program.base.BaseActivity;
 import com.example.administrator.xyws_program.view.fragment.blood.Fragment_Blood;
 import com.example.administrator.xyws_program.view.fragment.doctor.Fragment_Doctor;
+//import com.example.administrator.xyws_program.view.fragment.Fragment_Doctor;
+import com.example.administrator.xyws_program.view.fragment.blood.service.MyService;
 import com.example.administrator.xyws_program.view.fragment.persional.Fragment_Persional;
 
 import java.util.ArrayList;
@@ -170,6 +173,7 @@ public class MainActivity extends BaseActivity implements BaseActivity_Zhu {
 
     @Override
     protected void loadData() {
+
 
         if (mainAdapter == null) {
             mFraList.add(new Fragment_Doctor());

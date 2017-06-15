@@ -91,7 +91,9 @@ public class Activity_Persional_JiaHao extends BaseActivity implements Activity_
     @Override
     protected void loadData() {
         LinearLayoutManager man = new LinearLayoutManager(Activity_Persional_JiaHao.this);
-        getJia();
+        if(mLists.isEmpty()) {
+            getJia();
+        }
 
         activityPersionalJiahaoRecycle.setLayoutManager(man);
     }
@@ -115,7 +117,8 @@ public class Activity_Persional_JiaHao extends BaseActivity implements Activity_
 
     @Override
     public void loadData(List<Persional_JiaHao_Bean.DataBeanX.DataBean> mList) {
-        Log.d("Activity_Persional_JiaH", "mList:" + mList);
+        this.mLists= mList;
+        Log.d("Activity_Persional_JiaH", "mList:" + mLists);
         activityPersionalJiahaoRecycle.setAdapter(new MyApdater(mList));
 
     }

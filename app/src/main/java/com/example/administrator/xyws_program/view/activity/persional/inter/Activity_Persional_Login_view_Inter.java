@@ -38,6 +38,6 @@ package com.example.administrator.xyws_program.view.activity.persional.inter;
 public interface Activity_Persional_Login_view_Inter {
     String getName();
     String getPwd();
-
+    void getimg();
 
 }

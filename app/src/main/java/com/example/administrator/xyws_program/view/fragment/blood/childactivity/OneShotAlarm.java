@@ -1,11 +1,16 @@
-package com.example.administrator.xyws_program.view.activity.flood.inter;
+package com.example.administrator.xyws_program.view.fragment.blood.childactivity;
+
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
 
 /**
  * /**
  * 项目名称: 血压卫士
  * 类描述:
  * 创建人: 黑明阳
- * 创建时间: 2017/6/11 20:16
+ * 创建时间: 2017/6/14 22:51
  * 修改人:
  * 修改内容:
  * 修改时间:
@@ -34,8 +39,10 @@ package com.example.administrator.xyws_program.view.activity.flood.inter;
  * #                                                   #
  */
 
+public class OneShotAlarm extends BroadcastReceiver {
+    @Override
+    public void onReceive(Context context, Intent intent) {
 
-public interface Activity_Blood_updatabloodpressyre_inter {
-
-
+        Log.e("TAG","你好");
+    }
 }

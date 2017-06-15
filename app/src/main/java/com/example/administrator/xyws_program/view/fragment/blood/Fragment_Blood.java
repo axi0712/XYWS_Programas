@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,11 +15,17 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.administrator.xyws_program.MyApp;
 import com.example.administrator.xyws_program.R;
 import com.example.administrator.xyws_program.base.BaseFragment;
+import com.example.administrator.xyws_program.model.db.updatabloodpressure;
+import com.example.administrator.xyws_program.util.hgetdb;
+import com.example.administrator.xyws_program.util.hgetuid;
 import com.example.administrator.xyws_program.view.activity.MainActivity;
+import com.example.administrator.xyws_program.view.activity.doctor.Doctor_QuestionActivity;
+import com.example.administrator.xyws_program.view.activity.persional.Activity_Persional_View_Login;
 import com.example.administrator.xyws_program.view.fragment.blood.adpter.FloodViewpageAdapter;
 import com.example.administrator.xyws_program.view.fragment.blood.childactivity.AlarmclickActivity;
 import com.example.administrator.xyws_program.view.fragment.blood.childactivity.AllrecoredataActivity;
@@ -31,6 +38,7 @@ import com.example.administrator.xyws_program.view.fragment.blood.viewpagerFragm
 import com.example.administrator.xyws_program.view.fragment.blood.viewpagerFragment.YearFragment;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -171,6 +179,7 @@ public class Fragment_Blood extends BaseFragment implements fragment_Blood_Inter
 
     @Override
     protected void loadData() {
+
     }
 
     @Override
@@ -244,20 +253,40 @@ public class Fragment_Blood extends BaseFragment implements fragment_Blood_Inter
                 break;
             //问医生跳转页面
             case R.id.requstionddoctor:
-                Intent intent2=new Intent(getActivity(),RequstdoctorActivity.class);
-                getActivity().startActivity(intent2);
+                if(!hgetuid.getid().equals("")){
+                    Intent intentq = new Intent(getActivity(), Doctor_QuestionActivity.class);
+                    startActivity(intentq);
+                }else {
+                    Toast.makeText(getActivity(),"请先登录！",Toast.LENGTH_SHORT).show();
+                    Intent intent11=new Intent(getActivity(),Activity_Persional_View_Login.class);
+                    startActivity(intent11);
+                }
                 break;
             //资讯跳转页面
             case R.id.information:
+
                 Intent intent3=new Intent(getActivity(),InformationActivity.class);
                 getActivity().startActivity(intent3);
                 break;
             //提醒跳转页面
             case R.id.alarmclock:
-                Intent intent4=new Intent(getActivity(),AlarmclickActivity.class);
-                getActivity().startActivity(intent4);
+
+                    Intent intent4=new Intent(MyApp.activity,AlarmclickActivity.class);
+                     MyApp.activity.startActivity(intent4);
+
                 break;
 
+        }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        List<updatabloodpressure> list=  hgetdb.getlist(getActivity());
+        if(!list.isEmpty()){
+            updatabloodpressure bean= list.get(list.size()-1);
+            hlatelydata.setText(bean.getHignpressure()+"/"+bean.getLowpressure());
+            hdatatime.setText(bean.getTime());
         }
     }
 }

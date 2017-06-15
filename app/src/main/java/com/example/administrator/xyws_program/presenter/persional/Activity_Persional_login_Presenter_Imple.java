@@ -83,9 +83,9 @@ public class Activity_Persional_login_Presenter_Imple implements Activity_Persio
                     mEditor.putString("userid",persional_login_bean.getUserid()+"");
                     mEditor.putString("phonenum",persional_login_bean.getPhonenum()+"");
                     mEditor.commit();
-                    Log.d("Activity_Persional_logi", persional_login_bean.getUserid());
+//                    Log.d("Activity_Persional_logi", persional_login_bean.getUserid());
                     Toast.makeText(MyApp.activity, persional_login_bean.getUserid(), Toast.LENGTH_SHORT).show();
-
+                    inter.getimg();
                 }
 
                 @Override
