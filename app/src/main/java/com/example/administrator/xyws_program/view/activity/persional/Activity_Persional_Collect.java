@@ -88,7 +88,9 @@ public class Activity_Persional_Collect extends BaseActivity implements Activity
     @Override
     protected void loadData() {
         LinearLayoutManager lin = new LinearLayoutManager(Activity_Persional_Collect.this);
-        inter.collect(mShared.getString("userid",""),"2","2c19b2821ebc5306c3ac37bac5b4288b","BloodAndroid");
+        if(mList.isEmpty()) {
+            inter.collect(mShared.getString("userid", ""), "2", "2c19b2821ebc5306c3ac37bac5b4288b", "BloodAndroid");
+        }
         activityPersionalCollectRecycle.setLayoutManager(lin);
     }
 
@@ -98,7 +100,8 @@ public class Activity_Persional_Collect extends BaseActivity implements Activity
     }
 
     @Override
-    public void loadData(List<Persional_Collect_Bean.Data> mList) {
+    public void loadData(List<Persional_Collect_Bean.Data> mlist) {
+        this.mList = mlist;
         activityPersionalCollectRecycle.setAdapter(new MyAdapter(mList));
         Log.d("Activity_Persional_Coll", "mList:" + mList);
     }

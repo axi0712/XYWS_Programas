@@ -12,6 +12,7 @@ import com.example.administrator.xyws_program.model.model_persional.Modelimple;
 import com.example.administrator.xyws_program.presenter.persional.inter.Activity_Persional_Collect_Presenter_Inter;
 import com.example.administrator.xyws_program.view.activity.persional.inter.Activity_Persional_Collect_Inter;
 import com.google.gson.Gson;
+import com.google.gson.JsonSyntaxException;
 
 import java.util.HashMap;
 import java.util.List;
@@ -76,13 +77,19 @@ public class Activity_Persional_Collect_Presenter_Imple implements Activity_Pers
             public void onSuccess(String strSuccess) {
                 Log.e("kankanjson",strSuccess);
                 Gson gson = new Gson();
-                Persional_Collect_Bean persional_collect_bean = gson.fromJson(strSuccess, Persional_Collect_Bean.class);
-                List<Persional_Collect_Bean.Data> mList = persional_collect_bean.getData();
-                inter.loadData(mList);
-                mEditor.putString("id",persional_collect_bean.getData().get(0).getCategoryid());
+                Persional_Collect_Bean persional_collect_bean = null;
+                try {
+                    persional_collect_bean = gson.fromJson(strSuccess, Persional_Collect_Bean.class);
+                    List<Persional_Collect_Bean.Data> mList = persional_collect_bean.getData();
+                    inter.loadData(mList);
+//                    mEditor.putString("id",persional_collect_bean.getData().get(0).getCategoryid());
 //                mEditor.putString("meta",persional_collect_bean.getData().get(0).getMeta());
-                Log.d("Activity_Persional_Coll", "mEditor.putString(\"id\",persional_collect_bean.getData().get(0).getCategoryid()):" + mEditor.putString("id", persional_collect_bean.getData().get(0).getCategoryid()));
-                mEditor.commit();
+//                    Log.d("Activity_Persional_Coll", "mEditor.putString(\"id\",persional_collect_bean.getData().get(0).getCategoryid()):" + mEditor.putString("id", persional_collect_bean.getData().get(0).getCategoryid()));
+//                    mEditor.commit();
+                } catch (JsonSyntaxException e) {
+                    e.printStackTrace();
+                }
+
             }
 
             @Override

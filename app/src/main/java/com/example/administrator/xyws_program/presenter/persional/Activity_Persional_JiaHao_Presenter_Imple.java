@@ -1,7 +1,10 @@
 package com.example.administrator.xyws_program.presenter.persional;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.util.Log;
 
+import com.example.administrator.xyws_program.MyApp;
 import com.example.administrator.xyws_program.model.bean.Persional_JiaHao_Bean;
 import com.example.administrator.xyws_program.model.callback.MyCallBack;
 import com.example.administrator.xyws_program.model.model_persional.ModelInter;
@@ -9,6 +12,8 @@ import com.example.administrator.xyws_program.model.model_persional.Modelimple;
 import com.example.administrator.xyws_program.presenter.persional.inter.Activity_Persional_JiaHao_Presenter_Inter;
 import com.example.administrator.xyws_program.view.activity.persional.inter.Activity_Persional_JiaHao_Inter;
 import com.google.gson.Gson;
+
+import org.greenrobot.eventbus.EventBus;
 
 import java.util.HashMap;
 import java.util.List;
@@ -52,12 +57,14 @@ import java.util.Map;
 public class Activity_Persional_JiaHao_Presenter_Imple implements Activity_Persional_JiaHao_Presenter_Inter {
     private ModelInter model ;
     private Activity_Persional_JiaHao_Inter inter ;
-
+    private SharedPreferences mShared;
+    private SharedPreferences.Editor mEditor;
 
     public Activity_Persional_JiaHao_Presenter_Imple(Activity_Persional_JiaHao_Inter inter) {
         this.inter = inter;
         model = new Modelimple();
-
+       mShared = MyApp.activity.getSharedPreferences("data", Context.MODE_PRIVATE);
+        mEditor = mShared.edit();
     }
 
     @Override
@@ -73,6 +80,12 @@ public class Activity_Persional_JiaHao_Presenter_Imple implements Activity_Persi
                 Gson gson = new Gson();
                 Persional_JiaHao_Bean bean = gson.fromJson(strSuccess, Persional_JiaHao_Bean.class);
                 List<Persional_JiaHao_Bean.DataBeanX.DataBean> mList = bean.getData().getData();
+                mEditor.putString("hos",mList.get(0).getHopital());
+                mEditor.putString("name",mList.get(0).getExpert());
+                mEditor.putString("time",bean.getData().getData().get(0).getTodate()+bean.getData().getData().get(0).getPlus_day());
+                mEditor.putString("type",bean.getData().getData().get(0).getDepart());
+                mEditor.putString("address",bean.getData().getData().get(0).getHopital());
+                EventBus.getDefault().postSticky(Persional_JiaHao_Bean.DataBeanX.DataBean.class);
                 inter.loadData(mList);
             }
 

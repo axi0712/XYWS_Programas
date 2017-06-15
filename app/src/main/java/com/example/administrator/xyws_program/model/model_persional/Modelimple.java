@@ -77,6 +77,30 @@ public class Modelimple implements ModelInter {
 
     @Override
     public void postFile(String url, Map<String, RequestBody> map, File file, String filekey, MyCallBack callBack) {
-        HttpFactory.initParsing().postFile(url, map, file,filekey,callBack);
+        HttpFactory.initParsing().postFile(url, map, file, filekey, callBack);
+//        Map<String,String> map1  = new HashMap<>();
+//        map1.put("button","");
+//Log.e("TAG","File---"+file.getAbsolutePath()+"----filekey--"+filekey);
+//        RetrofitClient.getInstance().updateImage(TouXiang_Bean.class,map1, "upload_avatar.php", filekey, file, new HttpCallBack() {
+//
+//            @Override
+//            public void onSuccess(Object object) {
+//                TouXiang_Bean touXiang_bean = (TouXiang_Bean) object;
+//                Log.e("TAG","status======="+touXiang_bean.getStatus()+"");
+//            }
+//
+//            @Override
+//            public void onFailure(String message) {
+//                super.onFailure(message);
+//                Log.e("TAG", message);
+//            }
+//
+//            @Override
+//            public void upload(int pro) {
+//                super.upload(pro);
+//                Log.e("TAG", "上传进度---"+pro + "");
+//            }
+//        });
+//    }
     }
 }

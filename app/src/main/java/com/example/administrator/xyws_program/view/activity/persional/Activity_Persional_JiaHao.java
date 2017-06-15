@@ -1,5 +1,6 @@
 package com.example.administrator.xyws_program.view.activity.persional;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -8,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -140,6 +142,13 @@ public class Activity_Persional_JiaHao extends BaseActivity implements Activity_
             holder.mTime.setText("预约就诊时间：" + bean.getTodate() + "");
             holder.mShenHe.setText("未通过审核");
             holder.mResult.setText(bean.getReason() + "");
+            holder.li.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent in = new Intent(Activity_Persional_JiaHao.this,Activity_Persional_JiaHao_Detail.class);
+                    startActivity(in);
+                }
+            });
             Log.d("MyApdater", bean.toString());
         }
 
@@ -152,7 +161,7 @@ public class Activity_Persional_JiaHao extends BaseActivity implements Activity_
         class MyViewHolder extends RecyclerView.ViewHolder {
             private ImageView mImage;
             private TextView mName, mTime, mShenHe, mResult;
-
+             private LinearLayout li;
             public MyViewHolder(View v) {
                 super(v);
                 mImage = (ImageView) v.findViewById(R.id.activity_persional_jiahao_item_image);
@@ -160,6 +169,7 @@ public class Activity_Persional_JiaHao extends BaseActivity implements Activity_
                 mShenHe = (TextView) v.findViewById(R.id.activity_persional_jiahao_item_shenhe);
                 mTime = (TextView) v.findViewById(R.id.activity_persional_jiahao_item_time);
                 mResult = (TextView) v.findViewById(R.id.activity_persional_jiahao_item_result);
+                li = (LinearLayout) v.findViewById(R.id.activity_persional_jiahao_item);
             }
         }
     }
