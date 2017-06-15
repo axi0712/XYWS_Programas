@@ -88,7 +88,7 @@ public class Activity_Persional_JiaHao_Presenter_Imple implements Activity_Persi
                 EventBus.getDefault().postSticky(Persional_JiaHao_Bean.DataBeanX.DataBean.class);
                 inter.loadData(mList);
             }
-
+//
             @Override
             public void onError(String strError) {
 
