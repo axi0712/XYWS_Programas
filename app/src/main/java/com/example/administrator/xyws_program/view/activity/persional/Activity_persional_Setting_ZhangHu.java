@@ -54,6 +54,7 @@ import butterknife.OnClick;
 
 
 public class Activity_persional_Setting_ZhangHu extends BaseActivity {
+  //
     @BindView(R.id.activity_persional_setting_zhanghu_cancel)
     ImageView activityPersionalSettingZhanghuCancel;
     @BindView(R.id.activity_persional_info_sex)
