@@ -301,7 +301,6 @@ public class Fragment_Doctor extends BaseFragment implements Fragment_Doctor_Int
             case R.id.doctor_img:
                 AppUtils.dialog();
                 Toast.makeText(getContext(), "开始定位", Toast.LENGTH_SHORT).show();
-
                 initLocation();
                 mLocationClient.start();
 
